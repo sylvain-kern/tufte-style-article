@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.17)  8 JAN 2021 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.17)  9 JAN 2021 00:25
 entering extended mode
 **./documentation.tex
 (documentation.tex
@@ -114,27 +114,6 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-("C:\Program Files\MiKTeX\tex/latex/ragged2e\ragged2e.sty"
-Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
-
-("C:\Program Files\MiKTeX\tex/latex/ms\everysel.sty"
-Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
-)
-\CenteringLeftskip=\skip49
-\RaggedLeftLeftskip=\skip50
-\RaggedRightLeftskip=\skip51
-\CenteringRightskip=\skip52
-\RaggedLeftRightskip=\skip53
-\RaggedRightRightskip=\skip54
-\CenteringParfillskip=\skip55
-\RaggedLeftParfillskip=\skip56
-\RaggedRightParfillskip=\skip57
-\JustifyingParfillskip=\skip58
-\CenteringParindent=\skip59
-\RaggedLeftParindent=\skip60
-\RaggedRightParindent=\skip61
-\JustifyingParindent=\skip62
-)
 ("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
@@ -158,12 +137,12 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \ar@mcellbox=\box47
 \extrarowheight=\dimen148
 \NC@list=\toks17
-\extratabsurround=\skip63
-\backup@length=\skip64
+\extratabsurround=\skip49
+\backup@length=\skip50
 \ar@cellbox=\box48
 )
 \everycr=\toks18
-\minrowclearance=\skip65
+\minrowclearance=\skip51
 )
 \rownum=\count188
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -223,112 +202,42 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen167
 \Gin@req@width=\dimen168
 )
-("C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty"
-Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count194
-\mult@box=\box49
-\multicol@leftmargin=\dimen169
-\c@unbalance=\count195
-\c@collectmore=\count196
-\doublecol@number=\count197
-\multicoltolerance=\count198
-\multicolpretolerance=\count199
-\full@width=\dimen170
-\page@free=\dimen171
-\premulticols=\dimen172
-\postmulticols=\dimen173
-\multicolsep=\skip66
-\multicolbaselineskip=\skip67
-\partial@page=\box50
-\last@line=\box51
-\maxbalancingoverflow=\dimen174
-\mult@rightbox=\box52
-\mult@grightbox=\box53
-\mult@gfirstbox=\box54
-\mult@firstbox=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\@tempa=\box63
-\@tempa=\box64
-\@tempa=\box65
-\@tempa=\box66
-\@tempa=\box67
-\@tempa=\box68
-\@tempa=\box69
-\@tempa=\box70
-\@tempa=\box71
-\@tempa=\box72
-\@tempa=\box73
-\@tempa=\box74
-\@tempa=\box75
-\@tempa=\box76
-\@tempa=\box77
-\@tempa=\box78
-\@tempa=\box79
-\@tempa=\box80
-\@tempa=\box81
-\@tempa=\box82
-\@tempa=\box83
-\@tempa=\box84
-\@tempa=\box85
-\@tempa=\box86
-\@tempa=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
-\@tempa=\box92
-\c@minrows=\count266
-\c@columnbadness=\count267
-\c@finalcolumnbadness=\count268
-\last@try=\dimen175
-\multicolovershoot=\dimen176
-\multicolundershoot=\dimen177
-\mult@nat@firstbox=\box93
-\colbreak@box=\box94
-\mc@col@check@num=\count269
-)
 ("C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip68
-\f@nch@O@elh=\skip69
-\f@nch@O@erh=\skip70
-\f@nch@O@olh=\skip71
-\f@nch@O@orh=\skip72
-\f@nch@O@elf=\skip73
-\f@nch@O@erf=\skip74
-\f@nch@O@olf=\skip75
-\f@nch@O@orf=\skip76
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
 )
 ("C:\Program Files\MiKTeX\tex/latex/caption\caption.sty"
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 ("C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty"
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen178
-\captionmargin@=\dimen179
-\captionwidth=\dimen180
-\caption@tempdima=\dimen181
-\caption@indent=\dimen182
-\caption@parindent=\dimen183
-\caption@hangindent=\dimen184
+\captionmargin=\dimen169
+\captionmargin@=\dimen170
+\captionwidth=\dimen171
+\caption@tempdima=\dimen172
+\caption@indent=\dimen173
+\caption@parindent=\dimen174
+\caption@hangindent=\dimen175
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count270
-\c@continuedfloat=\count271
+\c@caption@flags=\count194
+\c@continuedfloat=\count195
 )
 ("C:\Program Files\MiKTeX\tex/latex/natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip77
-\bibsep=\skip78
+\bibhang=\skip61
+\bibsep=\skip62
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count272
+\c@NAT@ctr=\count196
 )
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -339,13 +248,9 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX\tex/latex/jknappen\mathrsfs.sty"
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
-)
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip79
+\@mathmargin=\skip63
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty"
@@ -354,49 +259,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
-\ex@=\dimen185
+\ex@=\dimen176
 ))
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen186
+\pmbraise@=\dimen177
 )
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count273
+\inf@bad=\count197
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count274
-\leftroot@=\count275
+\uproot@=\count198
+\leftroot@=\count199
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count276
-\DOTSCASE@=\count277
+\classnum@=\count266
+\DOTSCASE@=\count267
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box95
-\strutbox@=\box96
-\big@size=\dimen187
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen178
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count278
-\c@MaxMatrixCols=\count279
+\macc@depth=\count268
+\c@MaxMatrixCols=\count269
 \dotsspace@=\muskip16
-\c@parentequation=\count280
-\dspbrk@lvl=\count281
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
 \tag@help=\toks22
-\row@=\count282
-\column@=\count283
-\maxfields@=\count284
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
 \andhelp@=\toks23
-\eqnshift@=\dimen188
-\alignsep@=\dimen189
-\tagshift@=\dimen190
-\tagwidth@=\dimen191
-\totwidth@=\dimen192
-\lineht@=\dimen193
+\eqnshift@=\dimen179
+\alignsep@=\dimen180
+\tagshift@=\dimen181
+\tagwidth@=\dimen182
+\totwidth@=\dimen183
+\lineht@=\dimen184
 \@envbody=\toks24
-\multlinegap=\skip80
-\multlinetaggap=\skip81
+\multlinegap=\skip64
+\multlinetaggap=\skip65
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
@@ -412,49 +317,49 @@ Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 
 ("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count285
-\calc@Bcount=\count286
-\calc@Adimen=\dimen194
-\calc@Bdimen=\dimen195
-\calc@Askip=\skip82
-\calc@Bskip=\skip83
+\calc@Acount=\count275
+\calc@Bcount=\count276
+\calc@Adimen=\dimen185
+\calc@Bdimen=\dimen186
+\calc@Askip=\skip66
+\calc@Bskip=\skip67
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count287
-\calc@Cskip=\skip84
+\calc@Ccount=\count277
+\calc@Cskip=\skip68
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count288
-\l_MT_multwidth_dim=\dimen196
-\origjot=\skip85
-\l_MT_shortvdotswithinadjustabove_dim=\dimen197
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen198
-\l_MT_above_intertext_sep=\dimen199
-\l_MT_below_intertext_sep=\dimen256
-\l_MT_above_shortintertext_sep=\dimen257
-\l_MT_below_shortintertext_sep=\dimen258
-\xmathstrut@box=\box97
-\xmathstrut@dim=\dimen259
+\g_MT_multlinerow_int=\count278
+\l_MT_multwidth_dim=\dimen187
+\origjot=\skip69
+\l_MT_shortvdotswithinadjustabove_dim=\dimen188
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen189
+\l_MT_above_intertext_sep=\dimen190
+\l_MT_below_intertext_sep=\dimen191
+\l_MT_above_shortintertext_sep=\dimen192
+\l_MT_below_shortintertext_sep=\dimen193
+\xmathstrut@box=\box51
+\xmathstrut@dim=\dimen194
 )
-\l_EQ_equationtype_int=\count289
-\l_EQ_alignmentmode_int=\count290
-\l_EQ_totalwidth_dim=\dimen260
-\l_EQ_displaywidth_dim=\dimen261
-\l_EQ_temp_linewidth_dim=\dimen262
-\l_EQ_linewidth_dim=\dimen263
-\EmphEqdelimitershortfall=\dimen264
-\EmphEqdelimiterfactor=\count291
-\g_EQ_toptag_height_dim=\dimen265
-\g_EQ_bottomtag_depth_dim=\dimen266
-\g_EQ_toprow_height_dim=\dimen267
-\g_EQ_bottomrow_depth_dim=\dimen268
-\g_EQ_widesttag_dim=\dimen269
-\EQ_mathdisplay_box=\box98
-\EQ_tag_box=\box99
-\g_EQ_temprow_int=\count292
+\l_EQ_equationtype_int=\count279
+\l_EQ_alignmentmode_int=\count280
+\l_EQ_totalwidth_dim=\dimen195
+\l_EQ_displaywidth_dim=\dimen196
+\l_EQ_temp_linewidth_dim=\dimen197
+\l_EQ_linewidth_dim=\dimen198
+\EmphEqdelimitershortfall=\dimen199
+\EmphEqdelimiterfactor=\count281
+\g_EQ_toptag_height_dim=\dimen256
+\g_EQ_bottomtag_depth_dim=\dimen257
+\g_EQ_toprow_height_dim=\dimen258
+\g_EQ_bottomrow_depth_dim=\dimen259
+\g_EQ_widesttag_dim=\dimen260
+\EQ_mathdisplay_box=\box52
+\EQ_tag_box=\box53
+\g_EQ_temprow_int=\count282
 )
 ("C:\Program Files\MiKTeX\tex/latex/physics\physics.sty"
 Package: physics 
@@ -465,8 +370,8 @@ Package: expl3 2020-12-07 L3 programming layer (loader)
 
 ("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def"
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count293
-\l__pdf_internal_box=\box100
+\l__kernel_color_stack_int=\count283
+\l__pdf_internal_box=\box54
 ))
 Package: xparse 2020-10-27 L3 Experimental document command parser
 
@@ -474,17 +379,17 @@ Package: xparse 2020-10-27 L3 Experimental document command parser
 ("C:\Program Files\MiKTeX\tex/latex/microtype\microtype.sty"
 Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
 \MT@toks=\toks26
-\MT@count=\count294
+\MT@count=\count284
 LaTeX Info: Redefining \textls on input line 788.
-\MT@outer@kern=\dimen270
+\MT@outer@kern=\dimen261
 LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
-\MT@listname@count=\count295
+\MT@listname@count=\count285
 
 ("C:\Program Files\MiKTeX\tex/latex/microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2020/12/07 v2.8 Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip86
+\MT@outer@space=\skip70
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -529,9 +434,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ("C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty"
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen271
-\Hy@linkcounter=\count296
-\Hy@pagecounter=\count297
+\@linkdim=\dimen262
+\Hy@linkcounter=\count286
+\Hy@pagecounter=\count287
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def"
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
@@ -544,7 +449,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ("C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty"
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count298
+\Hy@SavedSpaceFactor=\count288
 Package hyperref Info: Hyper figures OFF on input line 4464.
 Package hyperref Info: Link nesting OFF on input line 4469.
 Package hyperref Info: Hyper index ON on input line 4472.
@@ -552,14 +457,14 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count299
+\c@Hy@tempcnt=\count289
 
 ("C:\Program Files\MiKTeX\tex/latex/url\url.sty"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen272
+\XeTeXLinkMargin=\dimen263
 
 ("C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -568,9 +473,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count300
-\Field@Width=\dimen273
-\Fld@charsize=\dimen274
+\Fld@menulength=\count290
+\Field@Width=\dimen264
+\Fld@charsize=\dimen265
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -586,9 +491,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count301
-\c@Item=\count302
-\c@Hfootnote=\count303
+\Hy@abspage=\count291
+\c@Item=\count292
+\c@Hfootnote=\count293
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -600,8 +505,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count304
-\c@bookmark@seq@number=\count305
+\Fld@listcount=\count294
+\c@bookmark@seq@number=\count295
 
 ("C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty"
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -612,11 +517,11 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip87
+\Hy@SectionHShift=\skip71
 )
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\mathpazo.sty"
 Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup7
+\symupright=\mathgroup6
 )
 ("C:\Program Files\MiKTeX\tex/latex/gillius\gillius.sty"
 Package: gillius 2013/11/03 (Bob Tennent) Supports Gillius fonts for all LaTeX 
@@ -636,7 +541,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
 )
-\XKV@depth=\count306
+\XKV@depth=\count296
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 ("C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty"
@@ -668,23 +573,23 @@ Package: droidsansmono 2019/06/20 Style file for Droid Sans Mono.
 )
 ("C:\Program Files\MiKTeX\tex/latex/titlesec\titletoc.sty"
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen275
+\ttl@leftsep=\dimen266
 )
 ("C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty"
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count307
+\etb@tempcnta=\count297
 )
 ("C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty"
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box101
-\beforetitleunit=\skip88
-\aftertitleunit=\skip89
-\ttl@plus=\dimen276
-\ttl@minus=\dimen277
+\ttl@box=\box55
+\beforetitleunit=\skip72
+\aftertitleunit=\skip73
+\ttl@plus=\dimen267
+\ttl@minus=\dimen268
 \ttl@toksa=\toks29
-\titlewidth=\dimen278
-\titlewidthlast=\dimen279
-\titlewidthfirst=\dimen280
+\titlewidth=\dimen269
+\titlewidthlast=\dimen270
+\titlewidthfirst=\dimen271
 )
 ("C:\Program Files\MiKTeX\tex/latex/tools\verbatim.sty"
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
@@ -703,11 +608,11 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count308
+\FV@CodeLineNo=\count298
 \FV@InFile=\read3
-\FV@TabBox=\box102
-\c@FancyVerbLine=\count309
-\FV@StepNumber=\count310
+\FV@TabBox=\box56
+\c@FancyVerbLine=\count299
+\FV@StepNumber=\count300
 \FV@OutFile=\write3
 )
 ("C:\Program Files\MiKTeX\tex/latex/upquote\upquote.sty"
@@ -716,44 +621,44 @@ tim
 )
 ("C:\Program Files\MiKTeX\tex/latex/lineno\lineno.sty"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count311
+\linenopenalty=\count301
 \output=\toks32
-\linenoprevgraf=\count312
-\linenumbersep=\dimen281
-\linenumberwidth=\dimen282
-\c@linenumber=\count313
-\c@pagewiselinenumber=\count314
-\c@LN@truepage=\count315
-\c@internallinenumber=\count316
-\c@internallinenumbers=\count317
-\quotelinenumbersep=\dimen283
-\bframerule=\dimen284
-\bframesep=\dimen285
-\bframebox=\box103
+\linenoprevgraf=\count302
+\linenumbersep=\dimen272
+\linenumberwidth=\dimen273
+\c@linenumber=\count303
+\c@pagewiselinenumber=\count304
+\c@LN@truepage=\count305
+\c@internallinenumber=\count306
+\c@internallinenumbers=\count307
+\quotelinenumbersep=\dimen274
+\bframerule=\dimen275
+\bframesep=\dimen276
+\bframebox=\box57
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count318
-\c@FV@TrueTabCounter=\count319
-\FV@TabBox@Group=\box104
-\FV@TmpLength=\skip90
-\c@FV@HighlightLinesStart=\count320
-\c@FV@HighlightLinesStop=\count321
-\FV@LoopCount=\count322
-\FV@NCharsBox=\box105
-\FV@BreakIndent=\dimen286
-\FV@BreakIndentNChars=\count323
-\FV@BreakSymbolSepLeft=\dimen287
-\FV@BreakSymbolSepLeftNChars=\count324
-\FV@BreakSymbolSepRight=\dimen288
-\FV@BreakSymbolSepRightNChars=\count325
-\FV@BreakSymbolIndentLeft=\dimen289
-\FV@BreakSymbolIndentLeftNChars=\count326
-\FV@BreakSymbolIndentRight=\dimen290
-\FV@BreakSymbolIndentRightNChars=\count327
-\c@FancyVerbLineBreakLast=\count328
-\FV@LineBox=\box106
-\FV@LineIndentBox=\box107
-\FV@LineWidth=\dimen291
+\c@FV@TrueTabGroupLevel=\count308
+\c@FV@TrueTabCounter=\count309
+\FV@TabBox@Group=\box58
+\FV@TmpLength=\skip74
+\c@FV@HighlightLinesStart=\count310
+\c@FV@HighlightLinesStop=\count311
+\FV@LoopCount=\count312
+\FV@NCharsBox=\box59
+\FV@BreakIndent=\dimen277
+\FV@BreakIndentNChars=\count313
+\FV@BreakSymbolSepLeft=\dimen278
+\FV@BreakSymbolSepLeftNChars=\count314
+\FV@BreakSymbolSepRight=\dimen279
+\FV@BreakSymbolSepRightNChars=\count315
+\FV@BreakSymbolIndentLeft=\dimen280
+\FV@BreakSymbolIndentLeftNChars=\count316
+\FV@BreakSymbolIndentRight=\dimen281
+\FV@BreakSymbolIndentRightNChars=\count317
+\c@FancyVerbLineBreakLast=\count318
+\FV@LineBox=\box60
+\FV@LineIndentBox=\box61
+\FV@LineWidth=\dimen282
 )
 ("C:\Program Files\MiKTeX\tex/latex/tools\shellesc.sty"
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
@@ -767,34 +672,34 @@ Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 ))
 ("C:\Program Files\MiKTeX\tex/latex/xstring\xstring.sty"
 ("C:\Program Files\MiKTeX\tex/generic/xstring\xstring.tex"
-\integerpart=\count329
-\decimalpart=\count330
+\integerpart=\count319
+\decimalpart=\count320
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
 ("C:\Program Files\MiKTeX\tex/latex/framed\framed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip91
-\fb@frw=\dimen292
-\fb@frh=\dimen293
-\FrameRule=\dimen294
-\FrameSep=\dimen295
+\OuterFrameSep=\skip75
+\fb@frw=\dimen283
+\fb@frh=\dimen284
+\FrameRule=\dimen285
+\FrameSep=\dimen286
 )
 ("C:\Program Files\MiKTeX\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count331
+\c@float@type=\count321
 \float@exts=\toks33
-\float@box=\box108
+\float@box=\box62
 \@float@everytoks=\toks34
-\@floatcapt=\box109
+\@floatcapt=\box63
 )
 \minted@appexistsfile=\read4
-\minted@bgbox=\box110
+\minted@bgbox=\box64
 \minted@code=\write4
-\c@minted@FancyVerbLineTemp=\count332
-\c@minted@pygmentizecounter=\count333
+\c@minted@FancyVerbLineTemp=\count322
+\c@minted@pygmentizecounter=\count323
 \@float@every@listing=\toks35
-\c@listing=\count334
+\c@listing=\count324
 )
 runsystem(if not exist _minted-documentation mkdir _minted-documentation)...exe
 cuted.
@@ -812,104 +717,104 @@ Package zref Info: New property list: main on input line 764.
 Package zref Info: New property: default on input line 765.
 Package zref Info: New property: page on input line 766.
 )
-\c@abspage=\count335
+\c@abspage=\count325
 Package zref Info: New property: abspage on input line 66.
 )
 ("C:\Program Files\MiKTeX\tex/latex/needspace\needspace.sty"
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
-\mdf@templength=\skip92
-\c@mdf@globalstyle@cnt=\count336
-\mdf@skipabove@length=\skip93
-\mdf@skipbelow@length=\skip94
-\mdf@leftmargin@length=\skip95
-\mdf@rightmargin@length=\skip96
-\mdf@innerleftmargin@length=\skip97
-\mdf@innerrightmargin@length=\skip98
-\mdf@innertopmargin@length=\skip99
-\mdf@innerbottommargin@length=\skip100
-\mdf@splittopskip@length=\skip101
-\mdf@splitbottomskip@length=\skip102
-\mdf@outermargin@length=\skip103
-\mdf@innermargin@length=\skip104
-\mdf@linewidth@length=\skip105
-\mdf@innerlinewidth@length=\skip106
-\mdf@middlelinewidth@length=\skip107
-\mdf@outerlinewidth@length=\skip108
-\mdf@roundcorner@length=\skip109
-\mdf@footenotedistance@length=\skip110
-\mdf@userdefinedwidth@length=\skip111
-\mdf@needspace@length=\skip112
-\mdf@frametitleaboveskip@length=\skip113
-\mdf@frametitlebelowskip@length=\skip114
-\mdf@frametitlerulewidth@length=\skip115
-\mdf@frametitleleftmargin@length=\skip116
-\mdf@frametitlerightmargin@length=\skip117
-\mdf@shadowsize@length=\skip118
-\mdf@extratopheight@length=\skip119
-\mdf@subtitleabovelinewidth@length=\skip120
-\mdf@subtitlebelowlinewidth@length=\skip121
-\mdf@subtitleaboveskip@length=\skip122
-\mdf@subtitlebelowskip@length=\skip123
-\mdf@subtitleinneraboveskip@length=\skip124
-\mdf@subtitleinnerbelowskip@length=\skip125
-\mdf@subsubtitleabovelinewidth@length=\skip126
-\mdf@subsubtitlebelowlinewidth@length=\skip127
-\mdf@subsubtitleaboveskip@length=\skip128
-\mdf@subsubtitlebelowskip@length=\skip129
-\mdf@subsubtitleinneraboveskip@length=\skip130
-\mdf@subsubtitleinnerbelowskip@length=\skip131
+\mdf@templength=\skip76
+\c@mdf@globalstyle@cnt=\count326
+\mdf@skipabove@length=\skip77
+\mdf@skipbelow@length=\skip78
+\mdf@leftmargin@length=\skip79
+\mdf@rightmargin@length=\skip80
+\mdf@innerleftmargin@length=\skip81
+\mdf@innerrightmargin@length=\skip82
+\mdf@innertopmargin@length=\skip83
+\mdf@innerbottommargin@length=\skip84
+\mdf@splittopskip@length=\skip85
+\mdf@splitbottomskip@length=\skip86
+\mdf@outermargin@length=\skip87
+\mdf@innermargin@length=\skip88
+\mdf@linewidth@length=\skip89
+\mdf@innerlinewidth@length=\skip90
+\mdf@middlelinewidth@length=\skip91
+\mdf@outerlinewidth@length=\skip92
+\mdf@roundcorner@length=\skip93
+\mdf@footenotedistance@length=\skip94
+\mdf@userdefinedwidth@length=\skip95
+\mdf@needspace@length=\skip96
+\mdf@frametitleaboveskip@length=\skip97
+\mdf@frametitlebelowskip@length=\skip98
+\mdf@frametitlerulewidth@length=\skip99
+\mdf@frametitleleftmargin@length=\skip100
+\mdf@frametitlerightmargin@length=\skip101
+\mdf@shadowsize@length=\skip102
+\mdf@extratopheight@length=\skip103
+\mdf@subtitleabovelinewidth@length=\skip104
+\mdf@subtitlebelowlinewidth@length=\skip105
+\mdf@subtitleaboveskip@length=\skip106
+\mdf@subtitlebelowskip@length=\skip107
+\mdf@subtitleinneraboveskip@length=\skip108
+\mdf@subtitleinnerbelowskip@length=\skip109
+\mdf@subsubtitleabovelinewidth@length=\skip110
+\mdf@subsubtitlebelowlinewidth@length=\skip111
+\mdf@subsubtitleaboveskip@length=\skip112
+\mdf@subsubtitlebelowskip@length=\skip113
+\mdf@subsubtitleinneraboveskip@length=\skip114
+\mdf@subsubtitleinnerbelowskip@length=\skip115
 
 ("C:\Program Files\MiKTeX\tex/latex/mdframed\md-frame-0.mdf"
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
-\mdf@frametitlebox=\box111
-\mdf@footnotebox=\box112
-\mdf@splitbox@one=\box113
-\mdf@splitbox@two=\box114
-\mdf@splitbox@save=\box115
-\mdfsplitboxwidth=\skip132
-\mdfsplitboxtotalwidth=\skip133
-\mdfsplitboxheight=\skip134
-\mdfsplitboxdepth=\skip135
-\mdfsplitboxtotalheight=\skip136
-\mdfframetitleboxwidth=\skip137
-\mdfframetitleboxtotalwidth=\skip138
-\mdfframetitleboxheight=\skip139
-\mdfframetitleboxdepth=\skip140
-\mdfframetitleboxtotalheight=\skip141
-\mdffootnoteboxwidth=\skip142
-\mdffootnoteboxtotalwidth=\skip143
-\mdffootnoteboxheight=\skip144
-\mdffootnoteboxdepth=\skip145
-\mdffootnoteboxtotalheight=\skip146
-\mdftotallinewidth=\skip147
-\mdfboundingboxwidth=\skip148
-\mdfboundingboxtotalwidth=\skip149
-\mdfboundingboxheight=\skip150
-\mdfboundingboxdepth=\skip151
-\mdfboundingboxtotalheight=\skip152
-\mdf@freevspace@length=\skip153
-\mdf@horizontalwidthofbox@length=\skip154
-\mdf@verticalmarginwhole@length=\skip155
-\mdf@horizontalspaceofbox=\skip156
-\mdfsubtitleheight=\skip157
-\mdfsubsubtitleheight=\skip158
-\c@mdfcountframes=\count337
+\mdf@frametitlebox=\box65
+\mdf@footnotebox=\box66
+\mdf@splitbox@one=\box67
+\mdf@splitbox@two=\box68
+\mdf@splitbox@save=\box69
+\mdfsplitboxwidth=\skip116
+\mdfsplitboxtotalwidth=\skip117
+\mdfsplitboxheight=\skip118
+\mdfsplitboxdepth=\skip119
+\mdfsplitboxtotalheight=\skip120
+\mdfframetitleboxwidth=\skip121
+\mdfframetitleboxtotalwidth=\skip122
+\mdfframetitleboxheight=\skip123
+\mdfframetitleboxdepth=\skip124
+\mdfframetitleboxtotalheight=\skip125
+\mdffootnoteboxwidth=\skip126
+\mdffootnoteboxtotalwidth=\skip127
+\mdffootnoteboxheight=\skip128
+\mdffootnoteboxdepth=\skip129
+\mdffootnoteboxtotalheight=\skip130
+\mdftotallinewidth=\skip131
+\mdfboundingboxwidth=\skip132
+\mdfboundingboxtotalwidth=\skip133
+\mdfboundingboxheight=\skip134
+\mdfboundingboxdepth=\skip135
+\mdfboundingboxtotalheight=\skip136
+\mdf@freevspace@length=\skip137
+\mdf@horizontalwidthofbox@length=\skip138
+\mdf@verticalmarginwhole@length=\skip139
+\mdf@horizontalspaceofbox=\skip140
+\mdfsubtitleheight=\skip141
+\mdfsubsubtitleheight=\skip142
+\c@mdfcountframes=\count327
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count338
-\c@mdf@env@i=\count339
-\c@mdf@env@ii=\count340
-\c@mdf@zref@counter=\count341
+\mdf@envdepth=\count328
+\c@mdf@env@i=\count329
+\c@mdf@env@ii=\count330
+\c@mdf@zref@counter=\count331
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 373.
+less on input line 374.
 
 ("C:\Program Files\MiKTeX\tex/latex/emptypage\emptypage.sty"
 Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
@@ -917,12 +822,12 @@ pages
 )
 ("C:\Program Files\MiKTeX\tex/latex/sidecap\sidecap.sty"
 Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
-\SC@BOXWD=\dimen296
-\SC@CAPWD=\dimen297
-\SC@tempdima=\dimen298
-\SC@tempdimb=\dimen299
-\c@SC@C=\count342
-\SC@BOX=\box116
+\SC@BOXWD=\dimen287
+\SC@CAPWD=\dimen288
+\SC@tempdima=\dimen289
+\SC@tempdimb=\dimen290
+\c@SC@C=\count332
+\SC@BOX=\box70
 )
 ("C:\Program Files\MiKTeX\tex/latex/adjustbox\adjustbox.sty"
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
@@ -936,49 +841,49 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
 ("C:\Program Files\MiKTeX\tex/latex/collectbox\collectbox.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box117
+\collectedbox=\box71
 )
-\tc@llx=\dimen300
-\tc@lly=\dimen301
-\tc@urx=\dimen302
-\tc@ury=\dimen303
+\tc@llx=\dimen291
+\tc@lly=\dimen292
+\tc@urx=\dimen293
+\tc@ury=\dimen294
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 ("C:\Program Files\MiKTeX\tex/latex/adjustbox\tc-pdftex.def"
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen304
-\adjbox@Height=\dimen305
-\adjbox@Depth=\dimen306
-\adjbox@Totalheight=\dimen307
-\adjbox@pwidth=\dimen308
-\adjbox@pheight=\dimen309
-\adjbox@pdepth=\dimen310
-\adjbox@ptotalheight=\dimen311
+\adjbox@Width=\dimen295
+\adjbox@Height=\dimen296
+\adjbox@Depth=\dimen297
+\adjbox@Totalheight=\dimen298
+\adjbox@pwidth=\dimen299
+\adjbox@pheight=\dimen300
+\adjbox@pdepth=\dimen301
+\adjbox@ptotalheight=\dimen302
 
 ("C:\Program Files\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count343
+\c@checkoddpage=\count333
 )
 ("C:\Program Files\MiKTeX\tex/latex/varwidth\varwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box118
-\sift@deathcycles=\count344
-\@vwid@loff=\dimen312
-\@vwid@roff=\dimen313
+\@vwid@box=\box72
+\sift@deathcycles=\count334
+\@vwid@loff=\dimen303
+\@vwid@roff=\dimen304
 ))
 ("C:\Program Files\MiKTeX\tex/latex/wrapfig\wrapfig.sty"
-\wrapoverhang=\dimen314
-\WF@size=\dimen315
-\c@WF@wrappedlines=\count345
-\WF@box=\box119
+\wrapoverhang=\dimen305
+\WF@size=\dimen306
+\c@WF@wrappedlines=\count335
+\WF@box=\box73
 \WF@everypar=\toks36
 Package: wrapfig 2003/01/31  v 3.6
 )
 ("C:\Program Files\MiKTeX\tex/latex/caption\subcaption.sty"
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count346
-\c@subtable=\count347
+\c@subfigure=\count336
+\c@subtable=\count337
 )
 ("C:\Program Files\MiKTeX\tex/latex/sidenotes\sidenotes.sty"
 ("C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty"
@@ -988,17 +893,17 @@ Package: sidenotes 2016/04/21 v1.00 rich text in the margin for LaTeX
 
 ("C:\Program Files\MiKTeX\tex/latex/marginnote\marginnote.sty"
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count348
+\c@mn@abspage=\count338
 )
 ("C:\Program Files\MiKTeX\tex/latex/changepage\changepage.sty"
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count349
-\cp@tempcnt=\count350
+\c@cp@cntr=\count339
+\cp@tempcnt=\count340
 LaTeX Info: Redefining \checkoddpage on input line 59.
 )
-\c@sidenote=\count351
-\@sidenotes@marginfigurebox=\box120
-\@sidenotes@margintablebox=\box121
+\c@sidenote=\count341
+\@sidenotes@marginfigurebox=\box74
+\@sidenotes@margintablebox=\box75
 ))
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > do
 cumentation.aex <nul: /p x=^%~$PATH:i>> documentation.aex)...executed.
@@ -1009,34 +914,46 @@ runsystem(del documentation.aex)...executed.
 (documentation.aux)
 \openout1 = `documentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+ ("C:\Program Files\MiKTeX\tex/latex/ragged2e\ragged2e.sty"
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
 
-! Undefined control sequence.
-\__hook begindocument -> \RaggedRightParIndent 
-                                               \Gm@savelength {paperwidth}\G...
-l.6 \begin{document}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+("C:\Program Files\MiKTeX\tex/latex/ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
+)
+\CenteringLeftskip=\skip143
+\RaggedLeftLeftskip=\skip144
+\RaggedRightLeftskip=\skip145
+\CenteringRightskip=\skip146
+\RaggedLeftRightskip=\skip147
+\RaggedRightRightskip=\skip148
+\CenteringParfillskip=\skip149
+\RaggedLeftParfillskip=\skip150
+\RaggedRightParfillskip=\skip151
+\JustifyingParfillskip=\skip152
+\CenteringParindent=\skip153
+\RaggedLeftParindent=\skip154
+\RaggedRightParindent=\skip155
+\JustifyingParindent=\skip156
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1071,52 +988,41 @@ and I'll forget about whatever was undefined.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 6.
-
 ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
-\scratchdimen=\dimen316
-\scratchbox=\box122
-\nofMPsegments=\count353
-\nofMParguments=\count354
+\scratchcounter=\count342
+\scratchdimen=\dimen307
+\scratchbox=\box76
+\nofMPsegments=\count343
+\nofMParguments=\count344
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count355
-\MPscratchDim=\dimen317
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen308
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
 \everyMPtoPDFconversion=\toks38
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-("C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty"
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen318
-\caption@adjustwidth@linewidth=\dimen319
+\caption@adjustwidth@hsize=\dimen309
+\caption@adjustwidth@linewidth=\dimen310
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: sidecap package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 6.
+LaTeX Info: Redefining \microtypecontext on input line 7.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 6.
+LaTeX Info: Redefining \showhyphens on input line 7.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: No adjustment of interword spacing.
@@ -1129,7 +1035,7 @@ Package microtype Warning: You did not load the babel package.
 ("C:\Program Files\MiKTeX\tex/latex/microtype\mt-ppl.cfg"
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 6.
+Package hyperref Info: Link coloring OFF on input line 7.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1140,83 +1046,77 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count358
+\c@section@level=\count348
 )
-LaTeX Info: Redefining \ref on input line 6.
-LaTeX Info: Redefining \pageref on input line 6.
-LaTeX Info: Redefining \nameref on input line 6.
+LaTeX Info: Redefining \ref on input line 7.
+LaTeX Info: Redefining \pageref on input line 7.
+LaTeX Info: Redefining \nameref on input line 7.
 
 (documentation.out) (documentation.out)
 \@outlinefile=\write5
 \openout5 = `documentation.out'.
 
-\c@mv@tabular=\count359
-\c@mv@boldtabular=\count360
-\@sidenotes@extrawidth=\skip159
+\c@mv@tabular=\count349
+\c@mv@boldtabular=\count350
+\@sidenotes@extrawidth=\skip157
 LaTeX Font Info:    Trying to load font information for T1+droidsansmono on inp
-ut line 8.
+ut line 9.
 
 ("C:\Program Files\MiKTeX\tex/latex/droid\t1droidsansmono.fd"
 File: T1droidsansmono.fd 2019/06/24 Font definitions for T1/droidsansmono.
 )
 LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
-(Font)              scaled to size 14.86081pt on input line 8.
+(Font)              scaled to size 14.86081pt on input line 9.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `droidsansmono' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 8
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 9
 .
 
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-8.
+9.
 
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-8.
+9.
 
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-8.
+9.
 
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 8.
+(Font)              scaled to size 11.40997pt on input line 9.
 
 ("C:\Program Files\MiKTeX\tex/latex/microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 8.
+(Font)              scaled to size 8.33606pt on input line 9.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 8.
+(Font)              scaled to size 6.25204pt on input line 9.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 8.
+(Font)              scaled to size 11.40997pt on input line 9.
 
 ("C:\Program Files\MiKTeX\tex/latex/microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 8.
+(Font)              scaled to size 8.33606pt on input line 9.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 8.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 8.
-
-
-("C:\Program Files\MiKTeX\tex/latex/jknappen\ursfs.fd"
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+(Font)              scaled to size 6.25204pt on input line 9.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-8.
+9.
 
 ("C:\Program Files\MiKTeX\tex/latex/psnfss\ot1zplm.fd"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1226,27 +1126,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
-(Font)              scaled to size 9.41699pt on input line 10.
+(Font)              scaled to size 9.41699pt on input line 11.
 LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
-(Font)              scaled to size 7.74pt on input line 10.
+(Font)              scaled to size 7.74pt on input line 11.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 10.
+(Font)              scaled to size 9.37807pt on input line 11.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 10.
+(Font)              scaled to size 7.29405pt on input line 11.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 10.
+(Font)              scaled to size 5.21004pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 10.
+(Font)              scaled to size 9.37807pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 10.
+(Font)              scaled to size 7.29405pt on input line 11.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 10.
+(Font)              scaled to size 5.21004pt on input line 11.
 
 
 LaTeX Warning: Marginpar on page 1 moved.
 
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 14.
+LaTeX Warning: Reference `' on page 1 undefined on input line 15.
 
 (documentation.toc
 Overfull \hbox (6.0pt too wide) detected at line 1
@@ -1297,43 +1197,66 @@ Overfull \hbox (6.0pt too wide) detected at line 7
 
 LaTeX Warning: Marginpar on page 2 moved.
 
+\openout3 = `documentation.pyg'.
+
+(_minted-documentation/default-pyg-prefix.pygstyle)
+(_minted-documentation/colorful.pygstyle)
+(_minted-documentation/C6B27A4F25CF06EB2CD6FE2A89801AA84F313A74D9D90D5463EBAAD7
+460AE256.pygtex
+LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
+(Font)              scaled to size 8.6pt on input line 1.
+
+
+LaTeX Font Warning: Font shape `T1/droidsansmono/b/n' undefined
+(Font)              using `T1/droidsansmono/m/n' instead on input line 2.
+
+LaTeX Font Info:    Font shape `T1/droidsansmono/b/n' will be
+(Font)              scaled to size 8.6pt on input line 2.
+LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
+(Font)              scaled to size 6.88pt on input line 2.
+)
 LaTeX Font Info:    Trying to load font information for T1+GilliusADF-LF on inp
-ut line 40.
-("C:\Program Files\MiKTeX\tex/latex/gillius\t1gilliusadf-lf.fd"
+ut line 47.
+ ("C:\Program Files\MiKTeX\tex/latex/gillius\t1gilliusadf-lf.fd"
 File: T1GilliusADF-LF.fd 2013/11/03 (autoinst) Font definitions for T1/GilliusA
 DF-LF.
 )
 LaTeX Font Info:    Font shape `T1/GilliusADF-LF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 40.
+(Font)              scaled to size 10.0pt on input line 47.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `GilliusADF-LF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 40.
+(Font)              scaled to size 10.42007pt on input line 47.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 40.
+(Font)              scaled to size 7.91925pt on input line 47.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 40.
+(Font)              scaled to size 10.42007pt on input line 47.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 40.
+(Font)              scaled to size 7.91925pt on input line 47.
  [2]
 (documentation.aux)
 Package rerunfilecheck Info: File `documentation.out' has not changed.
 (rerunfilecheck)             Checksum: 2CA699E3EEFDE67CD53C67D1F082661C;425.
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were undefined references.
+
+runsystem(del documentation.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 18460 strings out of 479697
- 308258 string characters out of 2877008
- 737217 words of memory out of 3000000
- 34826 multiletter control sequences out of 15000+200000
- 487297 words of font info for 303 fonts, out of 3000000 for 9000
+ 18466 strings out of 479697
+ 308781 string characters out of 2877008
+ 732514 words of memory out of 3000000
+ 34871 multiletter control sequences out of 15000+200000
+ 485333 words of font info for 270 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 92i,13n,99p,727b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 92i,13n,99p,727b,695s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Program Files/MiKTeX
 /fonts/enc/dvips/droid/a_xgvdme.enc}<C:/Program Files/MiKTeX/fonts/type1/ascend
 er/droid/droidsansmono/DroidSansMono.pfb><C:/Program Files/MiKTeX/fonts/type1/p
@@ -1341,9 +1264,9 @@ ublic/fpl/fplrc8a.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fpl/fplrij8a.
 pfb><C:/Program Files/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Fi
 les/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on documentation.pdf (2 pages, 96178 bytes).
+Output written on documentation.pdf (2 pages, 97454 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  12 named destinations out of 1000 (max. 500000)
- 116281 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 117305 words of extra memory for PDF output out of 128383 (max. 10000000)
 

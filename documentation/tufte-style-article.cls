@@ -9,7 +9,9 @@
 
 \DeclareOption{raggedright}{
 	\AtBeginDocument{
-		\RaggedRightParIndent
+		\usepackage{ragged2e}
+		\setlength{\RaggedRightParindent}{1.5em}
+		\RaggedRight
 	}
 }
 
@@ -73,8 +75,6 @@
 
 %\RequirePackage{parskip}
 
-\RequirePackage{ragged2e}
-
 %	Basic stuff
 
 \RequirePackage[T1]{fontenc}
@@ -88,8 +88,6 @@
 \newenvironment{ol}
 {\begin{enumerate}}
 	{\end{enumerate}}
-
-\newcommand{\p}[1]{\paragraph{#1}}
 
 %   Colors
 
@@ -106,8 +104,6 @@
 %	Pictures and advanced tt
 
 \RequirePackage{graphicx}		% for pictures
-
-\RequirePackage{multicol}		% for multicolumn sections especially toc
 
 \RequirePackage{fancyhdr}		% custom headers and footers
 
@@ -126,7 +122,6 @@
 %	m a t h
 
 \RequirePackage{amsfonts}	% fonts
-\RequirePackage{mathrsfs}	
 \RequirePackage{amsmath}
 
 %\renewcommand{\phi}{\varphi}	
@@ -255,7 +250,7 @@ tracking,
 \RequirePackage{verbatim}   % for verbatim environments
 
 \RequirePackage{minted} % for color highlighting
-\usemintedstyle{friendly}
+\usemintedstyle{colorful}
 
 \definecolor{bg}{rgb}{.95,.95,.95} % background color
 
@@ -302,6 +297,7 @@ tracking,
 	\VerbatimEnvironment
 	%\smallskip
 	\begin{mdframed}[style = code_box]%
+		\medskip
 		\begin{minted}[
 			breaklines,
 			fontsize=\small,
@@ -310,6 +306,7 @@ tracking,
 			]{#1}%
 		}{%
 		\end{minted}%
+		\smallskip
 	\end{mdframed}%
 	%\medskip
 }
@@ -318,6 +315,7 @@ tracking,
 	\VerbatimEnvironment
 	%\smallskip
 	\begin{mdframed}[style = code_box_nonos]%
+		\medskip
 		\begin{minted}[
 			breaklines,
 			fontsize=\small,
@@ -325,6 +323,7 @@ tracking,
 			]{#1}%
 		}{%
 		\end{minted}%
+		\smallskip
 	\end{mdframed}%
 	%\medskip
 }
@@ -333,6 +332,7 @@ tracking,
 	\VerbatimEnvironment
 	%\smallskip
 	\begin{mdframed}[style = boite_code]
+		\medskip
 		\begin{minted}[
 			breaklines,
 			fontsize=\small,
@@ -343,6 +343,7 @@ tracking,
 		}
 		{
 		\end{minted}
+		\smallskip
 	\end{mdframed}
 	%\medskip
 }
@@ -529,7 +530,7 @@ tracking,
 \newcommand\@maketitlebis{%
 	\hfill
 	\begin{minipage}{0.9\textwidth}
-		\vskip -4em
+		\vskip -3em
 		\let\footnote\thanks 
 		{\LARGE\raggedright \@title \par }
 		\vskip 1em

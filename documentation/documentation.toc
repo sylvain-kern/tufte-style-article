@@ -1,2 +1,8 @@
 \contentsline {section}{\numberline {1}Installation}{2}{section.1}%
+\contentsline {section}{\numberline {2}Presentation and Usage}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The big margin}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Figures, tables and stuff}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Paragraph behavior}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Code}{2}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Adaptation and c ustomization}{2}{section.3}%
 \contentsfinish 

@@ -8,8 +8,14 @@
 %                    8888888b.  888b     d888         
 
 \DeclareOption{raggedright}{
-	\AtBeginDocument{\raggedright}
-	\AtBeginDocument{\usepackage{parskip}}
+	\AtBeginDocument{
+		\RaggedRightParIndent
+	}
+}
+
+\DeclareOption{parskip}{
+	\renewcommand{\leftmark}{}
+	\AtBeginDocument{\RequirePackage{parskip}}
 }
 
 \DeclareOption{noheaders}{
@@ -36,7 +42,7 @@
 
 %	Page geometry
 
-\usepackage{geometry}
+\RequirePackage{geometry}
 
 \newgeometry{
 	textwidth = .75\paperwidth,
@@ -54,8 +60,8 @@
 	textwidth = .6\paperwidth,
 	textheight = .73\paperheight,
 	lmargin = 90pt,
-	marginparwidth = .25\textwidth,
-	marginparsep = 15pt,
+	marginparwidth = .26\textwidth,
+	marginparsep = 10pt,
 	headheight = 15pt,
 	tmargin = 100pt,
 	%showframe,
@@ -65,11 +71,13 @@
 
 %	Paragraphs
 
-%\usepackage{parskip}
+%\RequirePackage{parskip}
+
+\RequirePackage{ragged2e}
 
 %	Basic stuff
 
-\usepackage[T1]{fontenc}
+\RequirePackage[T1]{fontenc}
 
 %	Raccourcis sympa
 
@@ -85,25 +93,25 @@
 
 %   Colors
 
-\usepackage[table]{xcolor}
+\RequirePackage[table]{xcolor}
 
 %	Tables
 
-\usepackage{tabularx}		% tables with adaptive columns
+\RequirePackage{tabularx}		% tables with adaptive columns
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X} % tabularx column type
 
-\usepackage{booktabs}		% cleaner tables
+\RequirePackage{booktabs}		% cleaner tables
 
-%	Pictures and advanced layout
+%	Pictures and advanced tt
 
-\usepackage{graphicx}		% for pictures
+\RequirePackage{graphicx}		% for pictures
 
-\usepackage{multicol}		% for multicolumn sections especially toc
+\RequirePackage{multicol}		% for multicolumn sections especially toc
 
-\usepackage{fancyhdr}		% custom headers and footers
+\RequirePackage{fancyhdr}		% custom headers and footers
 
-\usepackage{caption} %custom caption
+\RequirePackage{caption} %custom caption
 \captionsetup{
 	labelsep = endash,
 	justification=raggedright,
@@ -111,19 +119,15 @@
 	singlelinecheck=off,
 }
 
-%	Other
-
-\usepackage{numprint}	% to display large numbers in a clean way
-
 %	Biblio
 
-\usepackage[super,square]{natbib} % for custom bibliography references
+\RequirePackage[super,square]{natbib} % for custom bibliography references
 
 %	m a t h
 
-\usepackage{amsfonts}	% fonts
-\usepackage{mathrsfs}	
-\usepackage{amsmath}
+\RequirePackage{amsfonts}	% fonts
+\RequirePackage{mathrsfs}	
+\RequirePackage{amsmath}
 
 %\renewcommand{\phi}{\varphi}	
 %\renewcommand{\epsilon}{\varepsilon}	% i find it more pleasing
@@ -134,7 +138,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 
-\usepackage{empheq}		% to have numbered equations in arrays
+\RequirePackage{empheq}		% to have numbered equations in arrays
 
 % vectors with a space before
 \let\oldvec\vec
@@ -149,18 +153,16 @@
 %   88                     .88                               
 %   dP                 d8888P  
 
-\usepackage[squaren, Gray, cdot]{SIunits} % units
-
 \newcommand{\ee}[1]{\cdot 10^{#1}} 	% powers of 10
 
 \newcommand{\vect}[1]{\:\overrightarrow{#1}} % new vect with overrightarrow style
 
-\usepackage{physics}    % best package on earth
+\RequirePackage{physics}    % best package on earth
 
 %	Micro-typesetting
 
 
-\usepackage[  protrusion=true,
+\RequirePackage[  protrusion=true,
 expansion=true,
 final,
 babel,
@@ -170,7 +172,7 @@ tracking,
 
 %	Hyperlinks in PDFs
 
-\usepackage[hidelinks]{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 
 
 %=======================================%
@@ -179,19 +181,19 @@ tracking,
 
 %	default serif font
 
-%\usepackage[T1]{fontenc}
-%\usepackage[urw-garamond]{mathdesign}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage[urw-garamond]{mathdesign}
 
-\usepackage[osf]{mathpazo}
-%\usepackage{lmodern}
+\RequirePackage[osf]{mathpazo}
+%\RequirePackage{lmodern}
 
 %   sans font
 
-\usepackage{gillius}
-%\usepackage{tgheros}
+\RequirePackage{gillius}
+%\RequirePackage{tgheros}
 
 %	mono font
-\usepackage[defaultmono, scale=.86]{droidsansmono}
+\RequirePackage[defaultmono, scale=.86]{droidsansmono}
 
 
 %	oldstyle nums
@@ -201,7 +203,7 @@ tracking,
 %	two-column TOC
 %	-- not needed since ET's tocs look tight af
 
-\usepackage{titletoc}
+\RequirePackage{titletoc}
 
 \contentsmargin[1cm]{0cm}
 
@@ -220,12 +222,12 @@ tracking,
 {\itshape}
 {\quad\quad\contentspage}[\vskip 0pt]
 
-\usepackage{etoolbox}
+\RequirePackage{etoolbox}
 \pretocmd{\contentsname}{}{}{}
 
 %	Custom chapters
 
-\usepackage{titlesec}
+\RequirePackage{titlesec}
 
 \titleformat{\section}
 {\itshape\Large}
@@ -250,14 +252,14 @@ tracking,
 %      CODE                             %
 %=======================================%
 
-\usepackage{verbatim}   % for verbatim environments
+\RequirePackage{verbatim}   % for verbatim environments
 
-\usepackage{minted} % for color highlighting
+\RequirePackage{minted} % for color highlighting
 \usemintedstyle{friendly}
 
 \definecolor{bg}{rgb}{.95,.95,.95} % background color
 
-\usepackage{mdframed} % for custom code boxes
+\RequirePackage{mdframed} % for custom code boxes
 
 \mdfdefinestyle{code_box}{%
 	backgroundcolor=bg,
@@ -379,7 +381,7 @@ tracking,
 
 %	when there is no content on a page, remove the header
 
-\usepackage{emptypage}
+\RequirePackage{emptypage}
 
 
 %=======================================%
@@ -389,12 +391,12 @@ tracking,
 
 % Figures shortcuts
 
-\usepackage[margincaption,outercaption, raggedright]{sidecap}
+\RequirePackage[margincaption,outercaption, raggedright]{sidecap}
 \sidecaptionvpos{figure}{t}
 \sidecaptionvpos{table}{t}
 \sidecaptionvpos{listing}{t}
 
-\usepackage{adjustbox}
+\RequirePackage{adjustbox}
 
 \newcommand{\textfig}[4][]{
 	\medskip
@@ -443,12 +445,12 @@ tracking,
 
 
 
-\usepackage{wrapfig}
+\RequirePackage{wrapfig}
 
 \setlength{\intextsep}{0pt}%
 \setlength{\columnsep}{8pt}%
 
-\usepackage{subcaption}
+\RequirePackage{subcaption}
 
 \newcommand{\wrapfig}[3]
 {
@@ -486,7 +488,7 @@ tracking,
 }
 \fi
 
-\usepackage{xparse}
+\RequirePackage{xparse}
 
 \NewDocumentEnvironment{multifig}{mm}
 {
@@ -504,7 +506,7 @@ tracking,
 %       MARGINS						    %
 %=======================================%
 
-\usepackage{sidenotes}
+\RequirePackage{sidenotes}
 \renewcommand*{\marginfont}{\footnotesize}
 \renewcommand{\marginnote}[1]
 {\sidenote{\raggedright\footnotesize #1 \vskip 4pt}}

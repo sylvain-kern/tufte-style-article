@@ -191,6 +191,10 @@ tracking,
 \usepackage{gillius}
 %\usepackage{tgheros}
 
+%	mono font
+
+\usepackage[defaultmono]{droidsansmono}
+
 
 %	oldstyle nums
 %	-- the [osf] options above put old style numbers for the selected fonts

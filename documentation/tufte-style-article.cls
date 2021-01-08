@@ -63,7 +63,6 @@
 \savegeometry{regular}
 
 
-
 %	Paragraphs
 
 %\usepackage{parskip}
@@ -192,7 +191,7 @@ tracking,
 %\usepackage{tgheros}
 
 %	mono font
-\usepackage[defaultmono, scale=.85]{droidsansmono}
+\usepackage[defaultmono, scale=.86]{droidsansmono}
 
 
 %	oldstyle nums
@@ -528,12 +527,12 @@ tracking,
 \newcommand\@maketitlebis{%
 	\hfill
 	\begin{minipage}{0.9\textwidth}
-		\vskip 2em
+		\vskip -4em
 		\let\footnote\thanks 
 		{\LARGE\raggedright \@title \par }
 		\vskip 1em
 		{\Large \itshape \@author \hfill \normalsize \@date}
-		\vskip 1em~	
+		\vskip 2em~	
 	\end{minipage}
 }
 

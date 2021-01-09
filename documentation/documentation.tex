@@ -8,6 +8,7 @@
 	
 \maketitle	
 
+\noindent
 \texttt{tufte-style-article}\margintext{Edward Tufte is a statistician, computer scientist and professor at Yale University. His personal website: \url{edwardtufte.com}} is a \LaTeX{} class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight graphic integration in the text. This class is however not a rigourous copy of Tufte's works, it is more of an inspiration. This also includes design features from \textit{The Elements of Typographic Style}.\marginnote{\textls{\scshape robert bringhurst}, \textit{The Elements of Typographic Style}, 1999.}
 
 This documentation gives a glimpse of what the class looks like, while explaining how to install and use it. I tried to make it as complete as I could; some parts can still be unexplained or unclear. I tested it on several \LaTeX{} distributions, but it can still spit unexpected errors. Feel free to ask me for information or report a malfunction if you encounter one!\margintext{My email: \href{mailto:sylvain.kern98@gmail.com}{\texttt{sylvain.kern98\\@gmail.com}}}
@@ -22,10 +23,6 @@ I am aware that numerous Tufte-based classes exist around the Internet, I just w
 
 \section{Installation}
 
-\texttt{tufte-style-article}\margintext{Edward Tufte is a statistician, computer scientist and professor at Yale University. His personal website: \url{edwardtufte.com}} is a \LaTeX{} class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight graphic integration in the text. This class is however not a rigourous copy of Tufte's works, it is more of an inspiration. This also includes design features from \textit{The Elements of Typographic Style}.\marginnote{\textls{\scshape robert bringhurst}, \textit{The Elements of Typographic Style}, 1999.}
-
-This documentation gives a glimpse of what the class looks like, while explaining how to install and use it. I tried to make it as complete as I could; some parts can still be unexplained or unclear. I tested it on several \LaTeX{} distributions, but it can still spit unexpected errors. Feel free to ask me for information or report a malfunction if you encounter one!\margintext{My email: \href{mailto:sylvain.kern98@gmail.com}{\texttt{sylvain.kern98\\@gmail.com}}}
-
 \section{Presentation and Usage}
 
 \subsection{The big margin}
@@ -37,11 +34,25 @@ This documentation gives a glimpse of what the class looks like, while explainin
 \subsection{Code}
 
 \begin{codebox}{c}
-int main() {
+int main(int argc, char * argv[]) {
 	return 0;	
 }
 \end{codebox}
 
-\section{Adaptation and c	ustomization}
+\begin{codeboxnonos}{c}
+int main(int argc, char * argv[]) {
+	return 0;	
+}
+\end{codeboxnonos}
+
+\begin{nextcodebox}{c}
+int main(int argc, char * argv[]) {
+	return 0;	
+}
+\end{nextcodebox}
+
+Texte \inlinecode{python}{def f(x,y,z):} bonsoir
+
+\section{Adaptation and customization}
 
 \end{document}

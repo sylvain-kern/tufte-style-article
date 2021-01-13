@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.2}The big margin}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Paragraphs}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Fonts}{4}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Figures, tables and stuff}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Figures, tables and stuff}{6}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Code}{9}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Advice for text formatting}{12}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Compilation}{12}{subsection.2.8}%

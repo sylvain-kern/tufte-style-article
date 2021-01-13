@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.17)  13 JAN 2021 19:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.17)  13 JAN 2021 19:38
 entering extended mode
 **./documentation.tex
 (documentation.tex
@@ -1438,7 +1438,7 @@ Overfull \hbox (5.47499pt too wide) detected at line 8
 
 {C:/Users/sylva/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Overfull \hbox (5.47499pt too wide) detected at line 9
- \T1/pplj/m/n/10.95 5
+ \T1/pplj/m/n/10.95 6
  []
 
 
@@ -1666,38 +1666,33 @@ LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
 
 LaTeX Warning: Marginpar on page 5 moved.
 
-
-Overfull \hbox (0.12938pt too wide) in paragraph at lines 159--160
+[5]
+Overfull \hbox (0.12938pt too wide) in paragraph at lines 160--161
 \T1/pplj/m/n/10.95 (+6) clud-ing im-ages with text. The main pet peeve I had wi
 th one-column de-signs 
  []
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 163.
+(caption)                particular \caption on input line 164.
 See the caption package documentation for explanation.
 
-<figures/bretagne.png, id=150, 602.25pt x 420.82219pt>
+<figures/bretagne.png, id=160, 602.25pt x 420.82219pt>
 File: figures/bretagne.png Graphic file (type png)
 <use figures/bretagne.png>
-Package pdftex.def Info: figures/bretagne.png  used on input line 163.
+Package pdftex.def Info: figures/bretagne.png  used on input line 164.
 (pdftex.def)             Requested size: 380.8599pt x 266.13393pt.
-
-Underfull \vbox (badness 7777) has occurred while \output is active []
-
- [5]
-<figures/marine-knots.jpg, id=162, 1027.84pt x 1027.84pt>
+<figures/marine-knots.jpg, id=161, 1027.84pt x 1027.84pt>
 File: figures/marine-knots.jpg Graphic file (type jpg)
 <use figures/marine-knots.jpg>
-Package pdftex.def Info: figures/marine-knots.jpg  used on input line 165.
+Package pdftex.def Info: figures/marine-knots.jpg  used on input line 166.
 (pdftex.def)             Requested size: 100.79956pt x 100.7982pt.
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 165.
+(caption)                particular \caption on input line 166.
 See the caption package documentation for explanation.
 
-Package mdframed Info: mdframed works in twoside mode on input line 168.
+Package mdframed Info: mdframed works in twoside mode on input line 169.
 \openout3 = `documentation.pyg'.
 
 
@@ -1708,45 +1703,32 @@ Package mdframed Info: mdframed works in twoside mode on input line 168.
 
 (_minted-documentation/B7F0FD2D92B5535BFD519BBEF7DFF56BD4DE369533403E06D8B541A3
 822F6B7B.pygtex)
-Package mdframed Info: mdframed works in twoside mode on input line 174.
+Package mdframed Info: mdframed works in twoside mode on input line 175.
 \openout3 = `documentation.pyg'.
 
 
 (_minted-documentation/269087491D3615CD334ED1A676700C701D9EA2AACDDB88D4260CCC9B
 79D59269.pygtex)
-<figures/usa-census.png, id=167, 445.9059pt x 282.5757pt>
+Package mdframed Info: Not enough space on this page on input line 178.
+ [6 <./figures/bretagne.png> <./figures/marine-knots.jpg>]
+Package mdframed Info: Not enough space on this page on input line 178.
+<figures/usa-census.png, id=173, 445.9059pt x 282.5757pt>
 File: figures/usa-census.png Graphic file (type png)
 <use figures/usa-census.png>
-Package pdftex.def Info: figures/usa-census.png  used on input line 179.
+Package pdftex.def Info: figures/usa-census.png  used on input line 180.
 (pdftex.def)             Requested size: 491.65945pt x 311.58878pt.
 
 
 Package fullwidth inside float 
- fullwidth uses option nobreak Warning: \def  on input line 179.
+ fullwidth uses option nobreak Warning: \def  on input line 180.
 
-
-Underfull \vbox (badness 10000) detected at line 179
- []
-
-[6 <./figures/bretagne.png> <./figures/marine-knots.jpg>]
-
-Package fullwidth Warning: You got a bad break
-(fullwidth)                you have to change it manually
-(fullwidth)                by changing the text, the space
-(fullwidth)                or something else on input line 179.
-
-
-Underfull \vbox (badness 10000) detected at line 179
- []
-
-[7 <./figures/usa-census.png>]
 
 Package fullwidth Warning: The environment is empty
-(fullwidth)                 on input line 179.
+(fullwidth)                 on input line 180.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 179.
+(caption)                particular \caption on input line 180.
 See the caption package documentation for explanation.
 
 \openout4 = `documentation.pyg'.
@@ -1754,47 +1736,55 @@ See the caption package documentation for explanation.
 
 (_minted-documentation/96D8B16BB09C74615551AA5BF23B3AD91D9EA2AACDDB88D4260CCC9B
 79D59269.pygtex)
-Package mdframed Info: mdframed works in twoside mode on input line 184.
+Package mdframed Info: mdframed works in twoside mode on input line 185.
 \openout3 = `documentation.pyg'.
 
 
 (_minted-documentation/F85FAD7C5DC111515ECEE388F184CD111D9EA2AACDDB88D4260CCC9B
 79D59269.pygtex)
-<figures/mandelbrot.png, id=183, 702.625pt x 752.8125pt>
+<figures/mandelbrot.png, id=177, 702.625pt x 752.8125pt>
 File: figures/mandelbrot.png Graphic file (type png)
 <use figures/mandelbrot.png>
-Package pdftex.def Info: figures/mandelbrot.png  used on input line 191.
+Package pdftex.def Info: figures/mandelbrot.png  used on input line 192.
 (pdftex.def)             Requested size: 266.60075pt x 285.6467pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 191.
+(caption)                particular \caption on input line 192.
 See the caption package documentation for explanation.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./figures/usa-census.png>]
 \openout4 = `documentation.pyg'.
 
 
 (_minted-documentation/18B68DED28B3B7DA233821C5F7DFFD7A1D9EA2AACDDB88D4260CCC9B
-79D59269.pygtex) [8 <./figures/mandelbrot.png>]
+79D59269.pygtex)
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 201.
+(caption)                particular \caption on input line 202.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 214.
+(caption)                particular \caption on input line 215.
 See the caption package documentation for explanation.
 
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 214.
+t line 215.
 
-Overfull \hbox (0.14618pt too wide) in paragraph at lines 213--214
+Overfull \hbox (0.14618pt too wide) in paragraph at lines 214--215
 \T1/pplj/m/n/10.95 (+17) Code can be inserted, whether with simple code boxes o
 r captioned snippets 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 214.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./figures/mandelbrot.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 215.
 \openout3 = `documentation.pyg'.
 
 
@@ -1830,7 +1820,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 214.
 
 (_minted-documentation/E1CBB0C3879AF8347246F12C559A86B5D4DE369533403E06D8B541A3
 822F6B7B.pygtex)
-Package mdframed Info: mdframed works in twoside mode on input line 234.
+Package mdframed Info: mdframed works in twoside mode on input line 235.
 \openout3 = `documentation.pyg'.
 
 
@@ -1839,26 +1829,18 @@ Package mdframed Info: mdframed works in twoside mode on input line 234.
 LaTeX Font Info:    Font shape `T1/droidsansmono/m/n' will be
 (Font)              scaled to size 5.16pt on input line 4.
 )
-Package mdframed Info: mdframed works in twoside mode on input line 245.
+Package mdframed Info: mdframed works in twoside mode on input line 246.
 \openout3 = `documentation.pyg'.
 
 
 (_minted-documentation/1DB1EEBE11C7E85D442A1B38D5A871261D9EA2AACDDB88D4260CCC9B
 79D59269.pygtex)
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 249.
-
-[9]
-Package mdframed Info: mdframed works in twoside mode on input line 253.
+Package mdframed Info: mdframed works in twoside mode on input line 254.
 \openout3 = `documentation.pyg'.
 
 
 (_minted-documentation/64F2F919B4BDA3C54B2A15BC66CE83F11D9EA2AACDDB88D4260CCC9B
-79D59269.pygtex)
+79D59269.pygtex) [9]
 \openout4 = `documentation.pyg'.
 
 
@@ -1869,7 +1851,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 253.
 
 (_minted-documentation/5FD16645C2F063333455EFD17EE27D621D9EA2AACDDB88D4260CCC9B
 79D59269.pygtex)
-Package mdframed Info: mdframed works in twoside mode on input line 267.
+Package mdframed Info: mdframed works in twoside mode on input line 268.
 \openout3 = `documentation.pyg'.
 
 
@@ -1892,16 +1874,19 @@ Package mdframed Info: mdframed works in twoside mode on input line 267.
 79D59269.pygtex)
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 279.
+(caption)                particular \caption on input line 280.
 See the caption package documentation for explanation.
 
-Package mdframed Info: mdframed works in twoside mode on input line 279.
+Package mdframed Info: mdframed works in twoside mode on input line 280.
 \openout3 = `documentation.pyg'.
 
 
 (_minted-documentation/2D880031ED96DAA8348A59993EB5D0972DBF3A069AE1CF3D530B2D61
-00CEA56C.pygtex) [10] [11]
-Package mdframed Info: mdframed works in twoside mode on input line 353.
+00CEA56C.pygtex) [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Package mdframed Info: mdframed works in twoside mode on input line 354.
 \openout3 = `documentation.pyg'.
 
 
@@ -1920,10 +1905,10 @@ runsystem(del documentation.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29163 strings out of 479697
- 554016 string characters out of 2877008
- 1206186 words of memory out of 3000000
- 45099 multiletter control sequences out of 15000+200000
+ 29160 strings out of 479697
+ 553950 string characters out of 2877008
+ 1203186 words of memory out of 3000000
+ 45096 multiletter control sequences out of 15000+200000
  504850 words of font info for 359 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  118i,14n,135p,813b,1032s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1940,7 +1925,7 @@ ic/mathpazo/fplmri.pfb><C:/Program Files/MiKTeX/fonts/type1/public/fpl/fplrc8a.
 pfb><C:/Program Files/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Program Fi
 les/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on documentation.pdf (12 pages, 1952168 bytes).
+Output written on documentation.pdf (12 pages, 1952002 bytes).
 PDF statistics:
  267 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)

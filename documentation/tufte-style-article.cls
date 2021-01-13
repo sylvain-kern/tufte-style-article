@@ -10,14 +10,14 @@
 \DeclareOption{raggedright}{
 	\AtBeginDocument{
 		\usepackage{ragged2e}
-		\setlength{\RaggedRightParindent}{1.5em}
+		\setlength{\RaggedRightParindent}{1em}
 		\RaggedRight
 	}
 }
 
 \DeclareOption{parskip}{
-	\renewcommand{\leftmark}{}
 	\AtBeginDocument{\RequirePackage{parskip}}
+	\setlength{\parskip}{1em}
 }
 
 \DeclareOption{noheaders}{
@@ -47,33 +47,28 @@
 \RequirePackage{geometry}
 
 \newgeometry{
-	textwidth = .75\paperwidth,
-	textheight = .73\paperheight,
-	lmargin = 90pt,
+	textwidth = .8\paperwidth,
+	textheight = .75\paperheight,
+	lmargin = 70pt,
 	marginparwidth = 0pt,
 	marginparsep = 0pt,
 	headheight = 15pt,
-	tmargin = 100pt,
+	tmargin = 80pt,
 	%showframe,
 }
 \savegeometry{headaz}
 
 \newgeometry{
-	textwidth = .6\paperwidth,
-	textheight = .73\paperheight,
-	lmargin = 90pt,
-	marginparwidth = .26\textwidth,
+	textwidth = .62\paperwidth,
+	textheight = .75\paperheight,
+	lmargin = 70pt,
+	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
 	headheight = 15pt,
-	tmargin = 100pt,
+	tmargin = 80pt,
 	%showframe,
 }
 \savegeometry{regular}
-
-
-%	Paragraphs
-
-%\RequirePackage{parskip}
 
 %	Basic stuff
 
@@ -89,9 +84,6 @@
 {\begin{enumerate}}
 	{\end{enumerate}}
 
-%   Colors
-
-\RequirePackage[table]{xcolor}
 
 %	Tables
 
@@ -252,6 +244,7 @@ tracking,
 \RequirePackage{minted} % for color highlighting
 \usemintedstyle{colorful}
 
+\RequirePackage{xcolor}
 \definecolor{bg}{rgb}{.95,.95,.95} % background color
 
 \RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
@@ -264,7 +257,7 @@ tracking,
 	bottomline=false,
 	leftline=false,
 	rightline=false,
-	innerleftmargin=35pt,
+	innerleftmargin=32pt,
 	innertopmargin=1em,
 	innerbottommargin=1em, 
 	roundcorner=3pt
@@ -278,7 +271,7 @@ tracking,
 	bottomline=false,
 	leftline=false,
 	rightline=false,
-	innerleftmargin=9pt,
+	innerleftmargin=12pt,
 	innertopmargin=1em,
 	innerbottommargin=1em, 
 	roundcorner=3pt
@@ -295,55 +288,140 @@ tracking,
 
 %	Macro environments
 
-\newenvironment{codebox}[1]{%
+\newenvironment{codeboxnum}[1]{%
 	\VerbatimEnvironment
-	%\smallskip
 	\begin{mdframed}[style = code_box]%
 		\begin{minted}[
 			breaklines,
+			breakanywhere,
 			fontsize=\small,
 			linenos,
 			tabsize=2,
+			autogobble,
+			numbersep=4pt,
 			]{#1}%
 		}{%
-		\end{minted}%
-	\end{mdframed}%
-	%\medskip
+		\end{minted}
+	\end{mdframed}
 }
 
-\newenvironment{codeboxnonos}[1]{%
+\newenvironment{codebox}[1]{%
 	\VerbatimEnvironment
-	%\smallskip
 	\begin{mdframed}[style = code_box_nonos]%
 		\begin{minted}[
 			breaklines,
+		 	breakanywhere,
 			fontsize=\small,
 			tabsize=2,
 			]{#1}%
 		}{%
-		\end{minted}%
-	\end{mdframed}%
-	%\medskip
+		\end{minted}
+	\end{mdframed}
+}
+
+\newenvironment{altcodebox}[1]{% to cite latex code containing codeboxes
+	\VerbatimEnvironment
+	\begin{mdframed}[style = code_box_nonos]%
+		\begin{minted}[
+			breaklines,
+			breakanywhere,
+			fontsize=\small,
+			tabsize=2,
+			]{#1}%
+		}{%
+		\end{minted}
+	\end{mdframed}
 }
 
 \newenvironment{nextcodebox}[1]{
 	\VerbatimEnvironment
-	%\smallskip
 	\begin{mdframed}[style = code_box]
 		\begin{minted}[
 			breaklines,
+			breakanywhere,
 			fontsize=\small,
 			linenos,
 			firstnumber = last,
 			tabsize=2,
+			autogobble,
+			numbersep=4pt,
 			]{#1}
 		}
 		{
 		\end{minted}
 	\end{mdframed}
-	%\medskip
 }
 
+
+%	Listings
+
+\newenvironment{snippetnum}[3]{%
+	\VerbatimEnvironment%
+	\marginpar{%
+		\vskip 8pt%
+		\captionof{listing}{#2}%
+		\label{#3}%
+	}%
+	\begin{mdframed}[style = code_box]%
+		\begin{minted}[
+			breaklines,
+			breakanywhere,
+			fontsize=\small,
+			linenos,
+			tabsize=2,
+			autogobble,
+			numbersep=4pt,
+		]{#1}%
+		}%
+		{%
+		\end{minted}%
+	\end{mdframed}%
+}
+
+\newenvironment{snippet}[3]{
+	\VerbatimEnvironment
+	\marginpar{
+		\vskip 8pt
+		\captionof{listing}{#2}
+		\label{#3}
+	}
+	\begin{mdframed}[style = code_box_nonos]%
+		\begin{minted}[
+			breaklines,
+			breakanywhere,
+			fontsize=\small,
+			tabsize=2,
+			autogobble,
+			]{#1}%
+		}%
+		{
+		\end{minted}
+	\end{mdframed}
+}
+
+\newenvironment{nextsnippet}[3]{
+	\VerbatimEnvironment
+	\marginpar{
+		\vskip 8pt
+		\captionof{listing}{#2}
+		\label{#3}
+	}
+	\begin{mdframed}[style = code_box]%
+		\begin{minted}[
+			breaklines,
+			breakanywhere,
+			fontsize=\small,
+			linenos,
+			firstnumber = last,
+			tabsize=2,
+			autogobble,
+			numbersep=4pt,
+		]{#1}
+		}%
+		{
+		\end{minted}
+	\end{mdframed}
+}
 
 %   Inline code
 
@@ -386,63 +464,95 @@ tracking,
 %       CUSTOM MACROS                   %
 %=======================================%
 
+% Full width environment
+
+\RequirePackage{fullwidth}
+
+\newenvironment{wide}{
+\begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
+}%
+{
+\end{fullwidth}
+}
 
 % Figures shortcuts
 
-\RequirePackage[margincaption,outercaption, raggedright]{sidecap}
-\sidecaptionvpos{figure}{t}
-\sidecaptionvpos{table}{t}
-\sidecaptionvpos{listing}{t}
+\AtBeginDocument{\usepackage[export]{adjustbox}}
 
-\RequirePackage{adjustbox}
-
-\newcommand{\textfig}[4][]{
-	\medskip
-	\marginpar{
-		\vskip 8pt
-		\captionof{figure}{#3}
-		\label{#4}
-	}\\
-	\noindent\includegraphics[width=#1\textwidth, outer]{#2}
+\newcommand{\textfig}[4][]{%
+	\medskip%
+	\marginpar{%
+		\vskip 8pt%
+		\captionof{figure}{#3}%
+		\label{#4}%
+	}%
+	\noindent\includegraphics[width=#1\textwidth, outer]{#2}%
+	\medskip%
 }
 
 \newcommand{\marginfig}[3]{
-	\marginpar{
-		\includegraphics[width=\marginparwidth]{#1}
-		\vskip-5pt
+	\marginpar{%
+		\includegraphics[width=\marginparwidth]{#1}%
+		\vskip-5pt%
 		\captionof{figure}{#2}
-		\label{#3}
-	}
+		\label{#3}%
+	}%
 }
 
-\newcommand{\widefig}[3]{
-	\vskip 8pt
+\newcommand{\widefig}[4][]{%
+	\medskip%
+	\begin{wide}%
+		\noindent\includegraphics[width=#1\linewidth, outer]{#2}%
+		\vskip-5pt%
+	\end{wide}%
+	\marginpar{%
+		\vskip 8pt%
+		\captionof{figure}{#3}%
+		\label{#4}%
+	}%
+	\medskip%
+}
+
+\newcommand{\plainfig}[4][]{%
+	\begingroup
+	\includegraphics[width=#1\textwidth]{#2}%
+	\vskip -5pt%
+	\captionof{figure}{#3}%
+	\label{#4}%
+	\vskip 8pt%
+	\endgroup
+}
+
+\newcommand{\plainwidefig}[4][]{%
+	\begingroup
 	\begin{wide}
-		\includegraphics[width=\linewidth]{#1}
-		\vskip-5pt
+	\includegraphics[width=#1\linewidth]{#2}%
+	\vskip -5pt%
+	\captionof{figure}{#3}%
+	\label{#4}%
+	\vskip 8pt%
 	\end{wide}
-	\marginpar{
-		\vskip 8pt
-		\captionof{figure}{#2}
-		\label{#3}
-		\vskip 8pt
+	\endgroup
+}
+
+
+% Tables environments
+
+\newenvironment{texttable}[2]{%
+	\begingroup
+	\small
+	\marginpar{%
+		\vskip 8pt%
+		\captionof{table}{#1}%
+		\label{#2}%
 	}
-	\vskip 8pt
+	}%
+	{
+	\endgroup
 }
 
 
-
-\newcommand{\plainfig}[3][]{
-	\begin{figure}[ht!]
-		\includegraphics[width=\textwidth]{#1}
-		\vskip-5pt
-		\caption{#2}
-		\label{#3}
-	\end{figure}
-}
-
-
-
+\iffalse
 \RequirePackage{wrapfig}
 
 \setlength{\intextsep}{0pt}%
@@ -453,7 +563,7 @@ tracking,
 \newcommand{\wrapfig}[3]
 {
 	\begin{wrapfigure}{O}{0.5\textwidth}
-		\includegraphics[width=.5\textwidth]{#1}
+		\includegraphics[width=.5\textwidth, outer]{#1}
 		\caption{\raggedright #2}
 		\label{#3}
 		\vskip 10pt
@@ -499,6 +609,8 @@ tracking,
 	\end{figure}
 }
 
+\fi
+
 
 %=======================================%
 %       MARGINS						    %
@@ -517,22 +629,26 @@ tracking,
 %       THINGS THAT MUST BE PUT HERE    %
 %=======================================%
 
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\newcommand{\littletitle}[1]{
-\medskip
-\noindent\textit{#1}
-\smallskip\\\noindent
+\usepackage{minipage-marginpar}
+
+\newcommand{\littletitle}[1]{%
+\medskip%
+\noindent\textit{#1}%
+\\\smallskip%
 }
 
 \newcommand\@maketitlebis{%
 	\hfill
 	\begin{minipage}{0.9\textwidth}
-		\vskip -3em
+		\vskip -40pt
 		\let\footnote\thanks 
 		{\LARGE\raggedright \@title \par }
-		\vskip 1em
+		\vskip 10pt
 		{\Large \itshape \@author \hfill \normalsize \@date}
-		\vskip 2em~	
+		\vskip 60pt~
 	\end{minipage}
 }
 
@@ -542,5 +658,13 @@ tracking,
 \thispagestyle{empty}
 }
 
+
+\let\oldtoc\tableofcontents
+
+\renewcommand{\tableofcontents}{
+\begin{quote}
+\oldtoc
+\end{quote}
+}
 
 

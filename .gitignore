@@ -1,0 +1,10 @@
+# just to clean LaTeX junk
+
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.log
+
+/_minted-documentation

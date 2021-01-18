@@ -539,16 +539,18 @@ tracking,
 % Tables environments
 
 \newenvironment{texttable}[2]{%
-	\begingroup
-	\small
+	\begingroup%
+	\small%
 	\marginpar{%
 		\vskip 8pt%
 		\captionof{table}{#1}%
 		\label{#2}%
 	}
-	}%
-	{
-	\endgroup
+
+	\noindent%
+}
+{
+	\endgroup%
 }
 
 

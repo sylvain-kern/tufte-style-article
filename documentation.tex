@@ -6,8 +6,9 @@
 \usepackage{lipsum}
 \usepackage{hologo}
 
+
 \begin{document}
-	
+
 \maketitle	
 
 \noindent
@@ -19,8 +20,9 @@ I am aware that numerous E.Tufte-based classes exist around the Internet, I just
 
 Before I get into the subject, I want to thank the members of\\\noindent \href{www.tex.stackexchange.com}{\texttt{tex.stackexchange.com}}, who are basically an endless source of knowledge. Without this forum I would have gave up on the very first issue I encountered. 
 
-
+\newpage
 \tableofcontents
+\newpage
 
 
 \section{Installation}
@@ -29,13 +31,15 @@ This class' source file is \texttt{tufte-style-article.cls}, avaliable on the fo
 
 \url{www.github.com/sylvain-kern/tufte-style-article}
 
-This class file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For users on Windows or Linux, please see respectively the two following sections, on how to install \texttt{tufte-style-artice} on your \LaTeX{} distribution.
+The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your distribution.
 
 \subsection{Windows users}
 
 \subsection{Linux users}
 
 \section{Presentation and Usage}
+
+This section has come quite thick, so a cheat sheet should come soon to summarize all this.
 
 \subsection{Class definition and options}
 
@@ -44,7 +48,7 @@ This class is named \texttt{tufte-style-article}. The preamble is therfore writt
 \begin{codebox}{latex}
 \documentclass[<options>]{tufte-style-article}
 \end{codebox}
-It is inherited from the \texttt{article} class, so all the options of the latter fit in \texttt{tufte-style-article}'s options. There are also new options for this class, which are:
+It is inherited from the \texttt{article} class, so all the options of the latter fit in \texttt{tufte-style-article}'s options. There are also new ones for this class, which are:
 
 \medskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
@@ -75,7 +79,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 
 \subsection{The big margin}
 
-It may noticeable that there is a big margin that runs all through the document, a design feature present in all E.Tufte's works but also in the \textit{Elements of Typographic style}. I find this design --a \textit{1.5-column} setup-- to have many advantages over a regular one-column setup. Here are a few reasons why I chose this setup.
+It may noticeable that there is a big margin running all through the document, a design feature present in all E.Tufte's works but also in the \textit{Elements of Typographic style}. I find this design --a \textit{1.5-column} setup-- to have many advantages over a regular one-column setup. Here are a few reasons why.
 \begin{ul}
 	\tightlist
 	\item The main text block has a reduced width of about thirteen words per line, which makes the eyes follow the lines easier.
@@ -92,7 +96,9 @@ To insert a numbered margin note, use \inlinecode{latex}{\marginnote{<your note>
 
 To insert an unnumbered piece of text in the margin, use\\\noindent\inlinecode{latex}{\margintext{<your text>}}, which gives the following result in the margin.\margintext{This is unnumbered margin text.}
 
-All pieces of text in the margin are in \texttt{\textbackslash footnotesize} and \texttt{\textbackslash raggedright}, as defined in this class' macros. To insert raw, unformatted text or graphics or whatever in the margins, use the command\\ \inlinecode{latex}{\marginpar{<unformatted margin text>}} and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick way too much out.}. Note how it is the same size as the main text. Also \LaTeX{} tries to fully justifiy it which is hard on such a small width.
+All pieces of text in the margin are in \texttt{\textbackslash footnotesize} and \texttt{\textbackslash raggedright}, as defined in this class' macros.
+
+To insert raw, unformatted text or graphics or whatever in the margin, use the command\\ \inlinecode{latex}{\marginpar{<unformatted margin text>}} and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick way too much out.}. Note how it is the same size as the main text. Also \LaTeX{} tries to fully justifiy it which is hard on such a small width.
 
 
 \subsection{Paragraphs}
@@ -145,7 +151,7 @@ $$
 $$
 
 \begingroup\sffamily
-The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{gillius}} package, which is almost identical as Gill Sans, E.Tufte's choice for sans-serif and book titling. It does not clash with Palatino while being elegant and readable. It particularly suits for titles or page headers as it can be seen on this page.
+The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{gillius}} package, which is almost identical as Gill Sans, E.Tufte's choice for sans-serif and book titling. It does not clash with Palatino while being elegant and readable. It particularly suits for titles or page headers as it can be seen on this document.
 \endgroup
 
 \begingroup\ttfamily
@@ -153,6 +159,7 @@ The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt
 \endgroup
 
 \newpage
+
 
 \subsection{Figures, tables and stuff}
 
@@ -177,7 +184,7 @@ The same macros are provided for images in the magins and wide images, respectiv
 \widefig[<optional width>]{<file path>}{<caption>}{<label>}	
 \end{codebox}
 
-\widefig{figures/usa-census.png}{The US census map from data collected in 2010 -- \url{ecpmlangues.u-strasbg.fr}\\This is a wide figure, stretching from the innermost to the outermost margin.}{fig:figure-fullwidth}
+\widefig{figures/usa-census.png}{The US census map from data collected in 2010 -- \url{www.ecpmlangues.u-strasbg.fr}\\This is a wide figure, stretching from the innermost to the outermost margin.}{fig:figure-fullwidth}
 
 
 If for any reason a figure caption has to be put in the main text block, no worries, the following macros will do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
@@ -196,17 +203,24 @@ The figures generated by all these macros do \textit{not} float: \LaTeX{} will p
 The positions of the macros are to be fine-tuned once the document is completely written, in order to have full control of the text-graphic integration. Figures may be moved to prevent overcrowding the margin, or some \inlinecode{latex}{\newpage} can be inserted when figures need to be on the next page, for instance when an image is rejected to the next page while its caption is still on the current page.
 
 
+\newpage
+
 \littletitle{Tables}
 As tables can change by a lot, I do not have provided macros for quick table formatting. However, there are tools for a table placement similar to the figures.
 
-\begin{texttable}{Just a simple table}{tab:table}
-\hfill
-\begin{tabular}{ll}
-yo & yo \\
-yoyo & yoyo \\	
-\end{tabular}	
+\iffalse
+\begin{texttable}{Table inserted in text}{tab:texttable}
+\begin{tabularx}{\textwidth}{lll}
+\multicolumn{4}{l}{\bfseries The Vox-ATypI classification}\\
+\toprule
+Classical & Modern & Calligraphics \\
+yo & yo & yo \\
+yo & yo & yo \\
+yo & yo & yo \\
+\bottomrule
+\end{tabularx}	
 \end{texttable}
-
+\fi
 
 \subsection{Code}
 \label{sub:code}
@@ -346,7 +360,9 @@ mb2_tag_t* mb2_find_tag(mb2_t* boot, uint32_t tag_type) {
 }
 \end{snippetnum}
 
+
 \subsection{Advice for text formatting}
+
 
 \subsection{Compilation}
 
@@ -354,16 +370,10 @@ This class compiles with \texttt{pdflatex}. I tested it with \hologo{MiKTeX} on 
 \begin{codebox}{text}
 pdflatex --shell-escape yourdocument.tex
 \end{codebox}
-The compilation times can be quite long, especially if there are many heavy code snippets,\margintext{I am still working to optimize the class by reducing the compilation time.} hopefully it is not a problem for most cases.
+The compilation times can be quite long, especially if there is a lot of heavy code,\margintext{I am still working to optimize the class by reducing the compilation time.} hopefully it is not a problem for most cases.
 
 
 \section{Customization possibilities}
-
-
-\section{Package definition}
-
-
-\section{Implementation}
 
 
 \section{Known issues}
@@ -378,8 +388,16 @@ In this section I gather the issues that have popped and been reported. I will t
 \tightlist
 \end{ul}
 \fi
-	
+
+
 \section{Contribute}
 \label{sec:contribute}
+
+
+\section{Package definition}
+
+
+\section{Implementation}
+
 
 \end{document}

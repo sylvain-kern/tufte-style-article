@@ -42,7 +42,7 @@ pip install pygments
 
 \subsection{\hologo{MiKTeX} users on Windows}
 
-\begin{ol}
+\begin{enumerate}
 
 \item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \hologo{MiKTeX} here:\\\url{https://tex.stackexchange.com/questions/10498/installing-a-class}.} directory if you do not already have one, for instance
 \begin{codebox}{text}
@@ -63,14 +63,14 @@ C:\Users<you>\localtexmf
 
 \item Finally, go to the \inlinecode{text}{tasks} tab, and hit \inlinecode{text}{Refresh file name database}.
 
-\end{ol}	
+\end{enumerate}	
 
 \texttt{tufte-style-article} is now installed on your system ! \hologo{MiKTeX} will recognize and find the class file without it having to be in your project folder.
 
 
 \subsection{\TeX{} Live users on Linux}
 
-\begin{ol}
+\begin{enumerate}
 	
 \item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \TeX{} Live here:\\\url{https://tex.stackexchange.com/questions/96976/install-custom-cls-using-tex-live-in-local-directory}.} directory if you do not already have one, for instance
 \begin{codebox}{text}
@@ -94,7 +94,7 @@ mktexlsr $HOME/.texmf
 kpsewhich tufte-style-article.cls
 \end{codebox}
 		
-\end{ol}	
+\end{enumerate}	
 	
 \texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
 
@@ -142,7 +142,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \subsection{The big margin}
 
 It may noticeable that there is a big margin running all through the document, a design feature present in all E.Tufte's works but also in the \textit{Elements of Typographic style}. I find this design --a \textit{1.5-column} setup-- to have many advantages over a regular one-column setup. Here are a few reasons why.
-\begin{ul}
+\begin{itemize}
 	\tightlist
 	\item The main text block has a reduced width of about thirteen words per line, which makes the eyes follow the lines easier.
 	
@@ -151,7 +151,7 @@ It may noticeable that there is a big margin running all through the document, a
 	\item The margin can be used to place elements that would break the main prose, such as sidenotes,\marginnote{Hello there!} captions of figures, tables and other stuff, and even small figures. This tidies up the main text area while making margin stuff immediately noticeable, but not disturbing.
 	
 	\item The overall text-image inclusion comes tighter and more natural.
-\end{ul}
+\end{itemize}
 All in all, this design is neither too crowded as everything is at its place, nor too empty due to huge blank margins.
 
 To insert a numbered margin note, use \inlinecode{latex}{\marginnote{<your note>}}. This gives the following result in the margin.\marginnote{This is a numbered note.}
@@ -189,7 +189,6 @@ To stretch the main text area to the margins, use the following environment.
 \end{codebox}
 
 \LaTeX{} may not get the formatting right upon first compilation, so if that occurs, just re-execute the compiling program and it should work properly.
-
 \end{wide}
 
 
@@ -446,9 +445,9 @@ In this section I gather the issues that have popped and been reported. I will t
 \href{mailto:sylvain.kern98@gmail.com}{\texttt{sylvain.kern98@gmail.com}}.
 
 \iffalse
-\begin{ul}
+\begin{itemize}
 \tightlist
-\end{ul}
+\end{itemize}
 \fi
 
 

@@ -1,5 +1,16 @@
 \documentclass[raggedright, twoside, 11pt]{tufte-style-article}
 
+%	This is documentation.tex, the source file of the class'
+%	documentation.
+
+%	All (most of the) implementations of the features of
+%	tufte-style-article can be seen here, as a usage example.
+
+%	The compiled result is documentation.pdf.
+%	It can be compiled as a test to see if everything works
+%		--use pdflatex --shell-escape documentation.tex
+
+
 \usepackage{lipsum}	% for blind texts generation
 \usepackage{hologo}	% for special logos such as MiKTeX
 \usepackage{xurl}	% to make urls break lines
@@ -8,10 +19,13 @@
 \author{Sylvain Kern}
 
 
-
 \begin{document}
 
 \maketitle	
+
+\vskip -25pt
+\noindent\hspace{.1\textwidth}\url{https://github.com/sylvain-kern/tufte-style-article}
+\vskip 25pt
 
 \noindent
 \texttt{tufte-style-article}\margintext{Edward Tufte is a statistician, computer scientist and professor at Yale University. His personal website: \url{www.edwardtufte.com}} is a \LaTeX{} class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight text and graphic integration. This class is however not a rigourous copy of E.Tufte's works, it is more of an inspiration. It also includes design features from \textit{The Elements of Typographic Style}.\marginnote{\textls{\scshape robert bringhurst}, \textit{The Elements of Typographic Style}, 1999.}
@@ -29,7 +43,7 @@ Before I get into the subject, I want to thank the members of\\\noindent \href{w
 
 \section{Installation}
 
-This class' source file is \texttt{tufte-style-article.cls}, avaliable on the following GitHub repository:
+This class' source file is \texttt{tufte-style-article.cls}, avaliable on the following repository:
 
 \url{www.github.com/sylvain-kern/tufte-style-article}
 

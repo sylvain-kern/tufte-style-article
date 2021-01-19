@@ -1,10 +1,12 @@
 \documentclass[raggedright, twoside, 11pt]{tufte-style-article}
 
+\usepackage{lipsum}	% for blind texts generation
+\usepackage{hologo}	% for special logos such as MiKTeX
+\usepackage{xurl}	% to make urls break lines
+
 \title{The \texttt{tufte-style-article} class}
 \author{Sylvain Kern}
 
-\usepackage{lipsum}
-\usepackage{hologo}
 
 
 \begin{document}
@@ -33,9 +35,69 @@ This class' source file is \texttt{tufte-style-article.cls}, avaliable on the fo
 
 The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your distribution.
 
-\subsection{Windows users}
+In order to make the code environments\marginnote{See section \ref{sub:code}.} and syntax highlighting work, it is needed to have Python\marginnote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
+\begin{codebox}{text}
+pip install pygments
+\end{codebox}
 
-\subsection{Linux users}
+\subsection{\hologo{MiKTeX} users on Windows}
+
+\begin{ol}
+
+\item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \hologo{MiKTeX} here:\\\url{https://tex.stackexchange.com/questions/10498/installing-a-class}.} directory if you do not already have one, for instance
+\begin{codebox}{text}
+C:\Users<you>\localtexmf	
+\end{codebox}
+
+\item Create a \inlinecode{text}{tex\latex\} directory in the \texttt{texmf} one, and inside it, create a \inlinecode{latex}{tufte-style-article} folder.
+		
+\item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
+\begin{codebox}{text}
+C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
+\end{codebox}
+
+\item Open \hologo{MiKTeX} console, go to \inlinecode{text}{Settings}, \texttt{Directories} tab. Click on \inlinecode{text}{add}, and enter yout \texttt{texmf} path.
+\begin{codebox}{text}
+C:\Users<you>\localtexmf	
+\end{codebox}
+
+\item Finally, go to the \inlinecode{text}{tasks} tab, and hit \inlinecode{text}{Refresh file name database}.
+
+\end{ol}	
+
+\texttt{tufte-style-article} is now installed on your system ! \hologo{MiKTeX} will recognize and find the class file without it having to be in your project folder.
+
+
+\subsection{\TeX{} Live users on Linux}
+
+\begin{ol}
+	
+\item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \TeX{} Live here:\\\url{https://tex.stackexchange.com/questions/96976/install-custom-cls-using-tex-live-in-local-directory}.} directory if you do not already have one, for instance
+\begin{codebox}{text}
+home/.texmf
+\end{codebox}
+	
+\item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{texmf} one, and inside it, create a \inlinecode{latex}{tufte-style-article} folder.
+		
+\item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
+\begin{codebox}{text}
+home/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
+\end{codebox}
+		
+\item Update the \texttt{texmf} with
+\begin{codebox}{bash}
+mktexlsr $HOME/.texmf 
+\end{codebox}
+
+\item Check if it worked with
+\begin{codebox}{bash}
+kpsewhich tufte-style-article.cls
+\end{codebox}
+		
+\end{ol}	
+	
+\texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
+
 
 \section{Presentation and Usage}
 

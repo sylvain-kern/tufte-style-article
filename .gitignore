@@ -1,10 +1,13 @@
 # just to clean LaTeX junk
 
 *.aux
+*.fdb_latexmk
+*.fls
 *.log
 *.out
+*.pyg
 *.synctex.gz
 *.toc
 *.log
 
-/_minted-documentation
+_minted-documentation/

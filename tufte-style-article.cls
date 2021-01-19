@@ -31,7 +31,7 @@
 % 	a LaTeX class inherited from article
 %	with a style similar to E.Tufte's designs.
 	
-% 	For more information, about installation and usage,
+% 	For more information about installation and usage,
 % 	see readme.md and documentation.pdf. 
 
 %	This class is hosted and maintained
@@ -99,7 +99,6 @@
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage{verbatim}   	% for verbatim environments
 
-
 %	G E O M E T R Y  D E F I N I T I O N
 %
 \newgeometry{
@@ -125,7 +124,6 @@
 }
 \savegeometry{regular}
 
-
 %	M A R G I N S
 %
 \renewcommand*{\marginfont}{\footnotesize}
@@ -141,7 +139,6 @@
 {
 \end{fullwidth}
 }
-
 
 %	P A G E  H E A D E R S
 %
@@ -316,7 +313,6 @@
 \end{quote}
 }
 
-
 %	C O D E
 %
 \usemintedstyle{colorful}
@@ -488,7 +484,6 @@
 %   Inline code
 \newcommand{\inlinecode}[1]{\mintinline[bgcolor=bg, fontsize=\small]{#1}}
 
-
 %	M I S C E L L A N E O U S
 %
 %	for  t i g h t  lists (pandoc style)
@@ -496,7 +491,6 @@
 	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \usepackage{minipage-marginpar}
-
 
 %	M A T H  &  P H Y S I C S
 %	S H O R T C U T S

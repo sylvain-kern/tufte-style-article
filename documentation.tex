@@ -87,15 +87,15 @@ C:\Users<you>\localtexmf
 \begin{enumerate}
 	
 \item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \TeX{} Live here:\\\url{https://tex.stackexchange.com/questions/96976/install-custom-cls-using-tex-live-in-local-directory}.} directory if you do not already have one, for instance
-\begin{codebox}{text}
-home/.texmf
+\begin{codebox}{bash}
+$HOME/.texmf
 \end{codebox}
 	
 \item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{texmf} one, and inside it, create a \inlinecode{latex}{tufte-style-article} folder.
 		
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
-\begin{codebox}{text}
-home/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
+\begin{codebox}{bash}
+$HOME/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
 \end{codebox}
 		
 \item Update the \texttt{texmf} with

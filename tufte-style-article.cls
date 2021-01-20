@@ -65,7 +65,9 @@
 \RequirePackage{emptypage}		% if a page is empty, is is really empty
 \RequirePackage{fullwidth}		% for wide environments
 \RequirePackage{sidenotes}		% for margin stuff
-\RequirePackage{caption}		% for caption formatting
+\RequirePackage[
+	hypcap=false			% hypcap=true spits an error
+]{caption}						% for caption formatting
 \RequirePackage[T1]{fontenc}	% font encoding
 \RequirePackage[osf]{mathpazo}	% main font
 \RequirePackage{gillius}		% sans font

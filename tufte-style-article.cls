@@ -163,7 +163,6 @@
 }
 \loadgeometry{regular}
 
-
 %	T I T L E  H E A D E R S
 %
 \titleformat{\section}
@@ -293,7 +292,7 @@
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
-	{\makebox[-1em][r]{\normalfont\thecontentslabel}\hspace{1em}\itshape}
+	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\normalfont\normalsize\hspace{1em}}
 	{\itshape}
 	{\quad\quad\contentspage}[\vskip 0pt]
 \titlecontents{subsection}[0em]

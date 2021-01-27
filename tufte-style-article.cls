@@ -93,6 +93,7 @@
 \RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
 \RequirePackage{tabularx}		% adaptive columns on tables
 \RequirePackage{booktabs}		% better looking tables
+\RequirePackage{enumitem}		% better looking lists
 \RequirePackage[
 	super,
 	square
@@ -292,15 +293,15 @@
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
-	{\normalfont\thecontentslabel\enspace\itshape}
+	{\makebox[-1em][r]{\normalfont\thecontentslabel}\hspace{1em}\itshape}
 	{\itshape}
 	{\quad\quad\contentspage}[\vskip 0pt]
-\titlecontents{subsection}[1em]
+\titlecontents{subsection}[0em]
 	{\vspace{4pt}}
 	{\normalfont\thecontentslabel\enspace\itshape}
 	{\itshape}
 	{\quad\quad\contentspage}[\vskip 0pt]
-\titlecontents{subsubsection}[2em]
+\titlecontents{subsubsection}[1em]
 	{\vspace{0pt}}
 	{\normalfont\thecontentslabel\enspace\itshape}
 	{\itshape}
@@ -314,6 +315,11 @@
 \oldtoc
 \end{quote}
 }
+
+%	T I G H T  L I S T S
+%
+\setitemize{topsep=0pt}
+\setenumerate{topsep=0pt}
 
 %	C O D E
 %

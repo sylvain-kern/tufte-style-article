@@ -30,7 +30,7 @@
 \noindent
 \texttt{tufte-style-article}\margintext{Edward Tufte is a statistician, computer scientist and professor at Yale University. His personal website: \url{www.edwardtufte.com}} is a \LaTeX{} class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight text and graphic integration. This class is however not a rigourous copy of E.Tufte's works, it is more of an inspiration. It also includes design features from \textit{The Elements of Typographic Style}.\marginnote{\textls{\scshape robert bringhurst}, \textit{The Elements of Typographic Style}, 1999.}
 
-This documentation gives a glimpse of what the class looks like and does, while explaining how to install and use it. I tried to make it as complete as I could; some parts can still be unexplained or so do not hesitate ton ask me if something remains unclear. I tested it on several \LaTeX{} distributions, but it can still spit unexpected errors. Feel free to ask me for information or report a malfunction if you encounter one!\margintext{See section \ref{sec:known-issues} for known issues, questions about this class and bug reporting.}
+This documentation gives a glimpse of what the class looks like and does, while explaining how to install and use it. I tried to make it as complete as I could; some parts can still be unexplained or so do not hesitate to ask me if something remains unclear. I tested it on several \LaTeX{} distributions, but it can still spit unexpected errors. Feel free to ask me for information or report a malfunction if you encounter one!\margintext{See section \ref{sec:known-issues} for known issues, questions about this class and bug reporting.}
 
 I am aware that numerous E.Tufte-based classes exist around the Internet, I just wanted to create my own to really feel and internalize this design grammar. Eventually, this is just my view of what I find well-presented and eye-pleasing in a document and not prescriptive rules and guidelines. Everybody can feel free to adapt, customize, or contribute to this class\margintext{I give some information for contributors on section \ref{sec:contribute}.}.
 
@@ -47,7 +47,7 @@ This class' source file is \texttt{tufte-style-article.cls}, avaliable on the fo
 
 \url{www.github.com/sylvain-kern/tufte-style-article}
 
-The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your distribution.
+The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your system.
 
 In order to make the code environments\marginnote{See section \ref{sub:code}.} and syntax highlighting work, it is needed to have Python\marginnote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
 \begin{codebox}{text}
@@ -63,14 +63,14 @@ pip install pygments
 C:\Users<you>\localtexmf	
 \end{codebox}
 
-\item Create a \inlinecode{text}{tex\latex\} directory in the \texttt{texmf} one, and inside it, create a \inlinecode{latex}{tufte-style-article} folder.
+\item Create a \inlinecode{text}{tex\latex\} directory in the \texttt{localtexmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
 		
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
 \begin{codebox}{text}
 C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
 \end{codebox}
 
-\item Open \hologo{MiKTeX} console, go to \inlinecode{text}{Settings}, \texttt{Directories} tab. Click on \inlinecode{text}{add}, and enter yout \texttt{texmf} path.
+\item Open \hologo{MiKTeX} console, go to \inlinecode{text}{Settings}, \inlinecode{latex}{Directories} tab. Click on \inlinecode{text}{add}, and enter yout \texttt{texmf} path.
 \begin{codebox}{text}
 C:\Users<you>\localtexmf	
 \end{codebox}
@@ -91,7 +91,7 @@ C:\Users<you>\localtexmf
 $HOME/.texmf
 \end{codebox}
 	
-\item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{texmf} one, and inside it, create a \inlinecode{latex}{tufte-style-article} folder.
+\item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
 		
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
 \begin{codebox}{bash}

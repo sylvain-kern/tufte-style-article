@@ -56,6 +56,9 @@
 	\renewcommand{\leftmark}{}
 	\renewcommand{\rightmark}{}
 }
+\DeclareOption{casual}{		% removes header numbering --still puts them in toc
+	\AtBeginDocument{\setcounter{secnumdepth}{0}}
+}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
@@ -307,11 +310,11 @@
 	{\itshape}
 	{~~\thecontentspage}
 	[\qquad]
-	% \titlecontents{subsubsection}[1em]
-	% {\vspace{0pt}}
-	% {\normalfont\thecontentslabel\enspace\itshape}
-	% {\itshape}
-	% {\quad\quad\contentspage}[\vskip 0pt]
+% \titlecontents{subsubsection}[1em]
+% 	{\vspace{0pt}}
+% 	{\normalfont\thecontentslabel\enspace\itshape}
+% 	{\itshape}
+% 	{\quad\quad\contentspage}[\vskip 0pt]
 \pretocmd{\contentsname}{}{}{}
 
 %	toc offset	

@@ -292,19 +292,26 @@
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
-	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\normalfont\normalsize\hspace{1em}}
+	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\large\hspace{1em}}
+	{\large}
+	{~~~~\contentspage}[\vskip 0pt]
+% \titlecontents{subsection}[0em]
+% 	{\vspace{4pt}}
+% 	{\normalfont\thecontentslabel\enspace\itshape}
+% 	{\itshape}
+% 	{\qquad\contentspage}[\vskip 0pt]
+\titlecontents*{subsection}
+	[0em]
+	{}
+	{{\thecontentslabel}~~\itshape}
 	{\itshape}
-	{\quad\quad\contentspage}[\vskip 0pt]
-\titlecontents{subsection}[0em]
-	{\vspace{4pt}}
-	{\normalfont\thecontentslabel\enspace\itshape}
-	{\itshape}
-	{\quad\quad\contentspage}[\vskip 0pt]
-\titlecontents{subsubsection}[1em]
-	{\vspace{0pt}}
-	{\normalfont\thecontentslabel\enspace\itshape}
-	{\itshape}
-	{\quad\quad\contentspage}[\vskip 0pt]
+	{~~\thecontentspage}
+	[\qquad]
+	% \titlecontents{subsubsection}[1em]
+	% {\vspace{0pt}}
+	% {\normalfont\thecontentslabel\enspace\itshape}
+	% {\itshape}
+	% {\quad\quad\contentspage}[\vskip 0pt]
 \pretocmd{\contentsname}{}{}{}
 
 %	toc offset	

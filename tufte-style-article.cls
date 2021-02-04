@@ -49,7 +49,7 @@
 	}
 }
 \DeclareOption{parskip}{		% changes paragraph indents vor vertical skips
-	\AtBeginDocument{\RequirePackage{parskip}}
+	\AtBeginDocument{\usepackage{parskip}}
 	\setlength{\parskip}{\baselineskip}
 }
 \DeclareOption{noheaders}{		% disables section titles on page headers
@@ -58,6 +58,12 @@
 }
 \DeclareOption{casual}{		% removes header numbering --still puts them in toc
 	\AtBeginDocument{\setcounter{secnumdepth}{0}}
+}
+\DeclareOption{sans}{
+	\renewcommand{\familydefault}{\sfdefault}
+	\AtBeginDocument{
+		\usepackage[osf, default]{sourcesanspro}
+	}
 }
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
@@ -69,7 +75,7 @@
 \RequirePackage{fullwidth}		% for wide environments
 \RequirePackage{sidenotes}		% for margin stuff
 \RequirePackage[
-	hypcap=false			% hypcap=true spits an error
+	hypcap=false				% hypcap=true spits an error
 ]{caption}						% for caption formatting
 \RequirePackage[T1]{fontenc}	% font encoding
 \RequirePackage[osf]{mathpazo}	% main font
@@ -212,8 +218,12 @@
 %	F I G U R E S  A N D  S T U F F
 %
 % 	caption formatting
+\DeclareCaptionLabelFormat{lc}{\MakeLowercase{#1}~#2}
+\DeclareCaptionLabelSeparator{mysep}{.\quad}
 \captionsetup{
-	labelsep = endash,
+	labelfont = bf,
+	%labelformat = lc,
+	labelsep = mysep,
 	justification=raggedright,
 	font=footnotesize,
 	singlelinecheck=off,
@@ -325,10 +335,16 @@
 \end{quote}
 }
 
+%	toc depth
+\AtBeginDocument{\setcounter{tocdepth}{2}}
+
 %	T I G H T  L I S T S
 %
 \setitemize{topsep=0pt}
 \setenumerate{topsep=0pt}
+
+% 	smallet bullets
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\scriptsize$\bullet$}}$}
 
 %	C O D E
 %
@@ -382,7 +398,8 @@
 			autogobble,
 			numbersep=4pt,
 			]{#1}%
-		}{%
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -395,7 +412,8 @@
 			fontsize=\small,
 			tabsize=2,
 			]{#1}%
-		}{%
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -408,7 +426,8 @@
 			fontsize=\small,
 			tabsize=2,
 			]{#1}%
-		}{%
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -425,8 +444,8 @@
 			autogobble,
 			numbersep=4pt,
 			]{#1}
-		}
-		{
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -449,8 +468,8 @@
 			autogobble,
 			numbersep=4pt,
 		]{#1}%
-		}%
-		{%
+}%
+{%
 		\end{minted}%
 	\end{mdframed}%
 }
@@ -469,8 +488,8 @@
 			tabsize=2,
 			autogobble,
 			]{#1}%
-		}%
-		{
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -492,8 +511,8 @@
 			autogobble,
 			numbersep=4pt,
 		]{#1}
-		}%
-		{
+}%
+{%
 		\end{minted}
 	\end{mdframed}
 }
@@ -505,7 +524,8 @@
 %
 %	for  t i g h t  lists (pandoc style)
 \providecommand{\tightlist}{%
-	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
 
 \usepackage{minipage-marginpar}
 

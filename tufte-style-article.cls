@@ -59,11 +59,10 @@
 \DeclareOption{casual}{		% removes header numbering --still puts them in toc
 	\AtBeginDocument{\setcounter{secnumdepth}{0}}
 }
+\newif\if@sans\@sansfalse
 \DeclareOption{sans}{
+	\@sanstrue
 	\renewcommand{\familydefault}{\sfdefault}
-	\AtBeginDocument{
-		\usepackage[osf, default]{sourcesanspro}
-	}
 }
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
@@ -80,6 +79,11 @@
 \RequirePackage[T1]{fontenc}	% font encoding
 \RequirePackage[osf]{mathpazo}	% main font
 \RequirePackage{gillius}		% sans font
+\if@sans
+	\RequirePackage[			% font for full sans document
+		osf, default
+	]{sourcesanspro}	
+\fi
 \RequirePackage[
 	defaultmono,
 	scale=.86

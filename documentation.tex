@@ -1,4 +1,4 @@
-\documentclass[raggedright, twoside, 11pt]{tufte-style-article}
+\documentclass[raggedright, twoside, 11pt, colorful]{tufte-style-article}
 
 %	This is documentation.tex, the source file of the class'
 %	documentation.
@@ -18,7 +18,6 @@
 
 \title{The \texttt{tufte-style-article} class}
 \author{Sylvain Kern}
-
 
 \begin{document}
 
@@ -239,7 +238,7 @@ The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt
 
 \subsection{Figures, tables and stuff}
 
-\littletitle{Images in figures}
+\subsubsection{Images in figures}
 Edward Tufte's designs are known to be really tight when it comes to including images with text. The main pet peeve I had with one-column designs is when I included a small figure in the document, it had to visually break the text and generate large unpleasing blank spaces. Also, more often than not, the text width is too much for the images, resulting in huge one-liner captions for very small figures.
 
 The 1.5-column design fixes this by putting all captions in the margins, as well as small enough figures, which tidies the document a lot.
@@ -281,7 +280,7 @@ The positions of the macros are to be fine-tuned once the document is completely
 
 \newpage
 
-\littletitle{Tables}
+\subsubsection{Tables}
 As tables can change by a lot, I do not have provided macros for quick table formatting. However, there are tools for a table placement similar to the figures.
 
 \iffalse

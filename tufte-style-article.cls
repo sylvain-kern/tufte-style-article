@@ -64,6 +64,61 @@
 	\@sanstrue
 	\renewcommand{\familydefault}{\sfdefault}
 }
+\newif\if@colorful\@colorfulfalse
+\DeclareOption{black}{
+	\@colorfulfalse
+}
+\DeclareOption{colorful}{
+	\@colorfultrue
+}
+\newif\if@nomargins\@nomarginsfalse
+\DeclareOption{notufte}{
+	\@nomarginstrue
+	\AtBeginDocument{
+		\renewcommand{\textfig}[4][]{%
+			\begin{figure}[ht!]
+				\noindent\includegraphics[width=#1\textwidth]{#2}%
+				\caption{#3}%
+				\label{#4}%
+			\end{figure}
+		}
+		\renewcommand{\marginfig}[3]{%
+			\begin{figure}[ht!]
+				\noindent\includegraphics[width=.5\textwidth]{#1}%
+				\caption{#2}%
+				\label{#3}%
+			\end{figure}
+		}
+		\renewcommand{\widefig}[4][]{%
+			\begin{figure}[ht!]
+				\noindent\includegraphics[width=#1\textwidth]{#2}%
+				\caption{#3}%
+				\label{#4}%
+			\end{figure}
+		}
+		\renewcommand{\plainfig}[4][]{%
+			\begin{figure}[ht!]
+				\noindent\includegraphics[width=#1\textwidth]{#2}%
+				\caption{#3}%
+				\label{#4}%
+			\end{figure}
+		}
+		\renewcommand{\plainwidefig}[4][]{%
+			\begin{figure}[ht!]
+				\noindent\includegraphics[width=#1\textwidth]{#2}%
+				\caption{#3}%
+				\label{#4}%
+			\end{figure}
+		}
+		\renewcommand{\marginnote}[1]{
+			\footnote{#1}
+		}
+		\renewcommand{\margintext}[1]{
+			\footnote{#1}
+		}
+	}
+}
+\ExecuteOptions{black}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
@@ -81,7 +136,8 @@
 \RequirePackage{gillius}		% sans font
 \if@sans
 	\RequirePackage[			% font for full sans document
-		osf, default
+		osf,
+		default
 	]{sourcesanspro}	
 \fi
 \RequirePackage[
@@ -115,14 +171,39 @@
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage{verbatim}   	% for verbatim environments
 
+%	C O L O R  D E F I N I T I O N
+%
+\if@colorful
+	\definecolor{main_accent}{HTML}{cb3004}
+	\definecolor{lighter_accent}{HTML}{f36605}
+	\definecolor{darker_gray}{HTML}{393136}
+	\definecolor{dark_gray}{HTML}{5a565c}
+	\definecolor{light_blue}{HTML}{0695c4}
+	\definecolor{dark_blue}{HTML}{084983}
+	\hypersetup{
+		colorlinks = true,
+		linkcolor = .,
+		anchorcolor = main_accent,
+		urlcolor = light_blue
+	}
+	\renewcommand\thefootnote{\color{main_accent}\arabic{footnote}}
+	\renewcommand\thesidenote{\color{main_accent}\arabic{sidenote}}
+\else
+	\definecolor{main_accent}{HTML}{000000}
+	\definecolor{lighter_accent}{HTML}{000000}
+	\definecolor{darker_gray}{HTML}{000000}
+	\definecolor{dark_gray}{HTML}{000000}
+\fi
+
+
 %	G E O M E T R Y  D E F I N I T I O N
 %
 \newgeometry{
 	textwidth = .8\paperwidth,
 	textheight = .75\paperheight,
 	lmargin = 70pt,
-	marginparwidth = 0pt,
-	marginparsep = 0pt,
+	marginparwidth = .28\textwidth,
+	marginparsep = 10pt,
 	headheight = 15pt,
 	tmargin = 80pt,
 	%showframe,
@@ -140,14 +221,39 @@
 }
 \savegeometry{regular}
 
+\if@nomargins
+	\newgeometry{
+		textwidth = .7\paperwidth,
+		textheight = .8\paperheight,
+		lmargin = 80pt,
+		marginparwidth = 50pt,
+		marginparsep = 10pt,
+		headheight = 15pt,
+		tmargin = 100pt,
+		%showframe,
+	}
+	\savegeometry{headaz}
+	\newgeometry{
+		textwidth = .7\paperwidth,
+		textheight = .8\paperheight,
+		lmargin = 80pt,
+		marginparwidth = 50pt,
+		marginparsep = 10pt,
+		headheight = 15pt,
+		tmargin = 100pt,
+		%showframe,
+	}
+	\savegeometry{regular}
+\fi
+
 %	M A R G I N S
 %
 \renewcommand*{\marginfont}{\footnotesize}
 \renewcommand{\marginnote}[1]
-{\sidenote{\raggedright\footnotesize #1 \vskip 4pt}}
+{\sidenote{\color{darker_gray}\raggedright\footnotesize #1 \vskip 4pt}}
 
 \newcommand{\margintext}[1]
-{\marginpar{\raggedright\footnotesize #1 \vskip 4pt}}
+{\marginpar{\color{darker_gray}\raggedright\footnotesize #1 \vskip 4pt}}
 
 \newenvironment{wide}{
 \begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
@@ -163,10 +269,10 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[LO]{
-	\small\textls{\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
+	\small\textls{\color{dark_gray}\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
 }
 \fancyhead[RE]{
-	\normalfont\normalsize\thepage \hfill \small\textls{\MakeUppercase{\sffamily\leftmark}}
+	\normalfont\normalsize\thepage \hfill \small\textls{\color{dark_gray}\MakeUppercase{\sffamily\leftmark}}
 }
 
 \fancypagestyle{plain}{
@@ -180,19 +286,19 @@
 %
 \titleformat{\section}
 	{\itshape\Large}
-	{\normalfont\thesection}
+	{\color{main_accent}\normalfont\thesection}
 	{1em}
-	{\itshape}
+	{\color{main_accent}\itshape}
 \titleformat{\subsection}
 	{\itshape\large}
-	{\normalfont\thesubsection}
+	{\color{lighter_accent}\normalfont\thesubsection}
 	{1em}
-	{\itshape}
+	{\color{lighter_accent}\itshape}
 \titleformat{\subsubsection}
 	{\itshape}
-	{\normalfont\thesubsubsection}
+	{\color{dark_gray}\normalfont\thesubsubsection}
 	{1em}
-	{\itshape}
+	{\color{dark_gray}\itshape}
 
 % new title without numbering
 \newcommand{\littletitle}[1]{%
@@ -210,7 +316,7 @@
 		\let\footnote\thanks 
 		{\LARGE\raggedright \@title \par }
 		\vskip 10pt
-		{\Large \itshape \@author \hfill \normalsize \@date}
+		{\color{darker_gray}\Large \itshape \@author \hfill \normalsize \@date}
 		\vskip 60pt~
 	\end{minipage}
 }
@@ -225,11 +331,11 @@
 \DeclareCaptionLabelFormat{lc}{\MakeLowercase{#1}~#2}
 \DeclareCaptionLabelSeparator{mysep}{.\quad}
 \captionsetup{
-	labelfont = bf,
+	labelfont = {bf, color=main_accent},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=raggedright,
-	font=footnotesize,
+	font={footnotesize, color=darker_gray},
 	singlelinecheck=off,
 }
 
@@ -309,9 +415,9 @@
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
-	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\large\hspace{1em}}
+	{\makebox[-1em][r]{\color{darker_gray}\bfseries\large\thecontentslabel}\large\hspace{1em}}
 	{\large}
-	{~~~~\contentspage}[\vskip 0pt]
+	{~~~~{\color{main_accent}\contentspage}}[\vskip 0pt]
 % \titlecontents{subsection}[0em]
 % 	{\vspace{4pt}}
 % 	{\normalfont\thecontentslabel\enspace\itshape}
@@ -322,7 +428,7 @@
 	{}
 	{{\thecontentslabel}~~\itshape}
 	{\itshape}
-	{~~\thecontentspage}
+	{~~{\color{main_accent}\contentspage}}
 	[\qquad]
 % \titlecontents{subsubsection}[1em]
 % 	{\vspace{0pt}}
@@ -344,8 +450,9 @@
 
 %	T I G H T  L I S T S
 %
-\setitemize{topsep=0pt}
-\setenumerate{topsep=0pt}
+\AtBeginDocument{
+	\setlist{topsep=0pt, itemsep=0pt}
+}
 
 % 	smallet bullets
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\scriptsize$\bullet$}}$}

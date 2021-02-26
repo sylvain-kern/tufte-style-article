@@ -43,7 +43,6 @@
 %
 \DeclareOption{raggedright}{	% makes all paragraphs left-aligned
 	\AtBeginDocument{
-		\usepackage{ragged2e}
 		\setlength{\RaggedRightParindent}{1em}
 		\RaggedRight
 	}
@@ -144,6 +143,7 @@
 	defaultmono,
 	scale=.86
 ]{droidsansmono}				% mono font
+\RequirePackage{ragged2e}		% for better raggedright
 \RequirePackage{titlesec}		% header customization
 \RequirePackage{titletoc}		% toc customization
 \RequirePackage{fancyhdr}		% page header customization
@@ -156,6 +156,7 @@
 ]{microtype}					% microtypography: fine-tuning in text
 \RequirePackage{amsfonts}		% math fonts
 \RequirePackage{amsmath}		% math stuff
+\RequirePackage{mathtools}		% amsmath extension
 \RequirePackage{physics}		% handy shortcuts for physics
 \RequirePackage{minted} 		% for code display
 \RequirePackage{xcolor}			% colorz
@@ -184,6 +185,7 @@
 		colorlinks = true,
 		linkcolor = .,
 		anchorcolor = main_accent,
+		citecolor = main_accent,
 		urlcolor = light_blue
 	}
 	\renewcommand\thefootnote{\color{main_accent}\arabic{footnote}}
@@ -223,9 +225,9 @@
 
 \if@nomargins
 	\newgeometry{
-		textwidth = .7\paperwidth,
 		textheight = .8\paperheight,
 		lmargin = 80pt,
+		rmargin = 80pt,
 		marginparwidth = 50pt,
 		marginparsep = 10pt,
 		headheight = 15pt,
@@ -234,9 +236,9 @@
 	}
 	\savegeometry{headaz}
 	\newgeometry{
-		textwidth = .7\paperwidth,
 		textheight = .8\paperheight,
 		lmargin = 80pt,
+		rmargin = 80pt,
 		marginparwidth = 50pt,
 		marginparsep = 10pt,
 		headheight = 15pt,
@@ -250,10 +252,10 @@
 %
 \renewcommand*{\marginfont}{\footnotesize}
 \renewcommand{\marginnote}[1]
-{\sidenote{\color{darker_gray}\raggedright\footnotesize #1 \vskip 4pt}}
+{\sidenote{\color{darker_gray}\RaggedRight\footnotesize #1 \vskip 4pt}}
 
 \newcommand{\margintext}[1]
-{\marginpar{\color{darker_gray}\raggedright\footnotesize #1 \vskip 4pt}}
+{\marginpar{\color{darker_gray}\RaggedRight\footnotesize #1 \vskip 4pt}}
 
 \newenvironment{wide}{
 \begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
@@ -288,17 +290,17 @@
 	{\itshape\Large}
 	{\color{main_accent}\normalfont\thesection}
 	{1em}
-	{\color{main_accent}\itshape}
+	{\raggedright\color{main_accent}\itshape}
 \titleformat{\subsection}
 	{\itshape\large}
-	{\color{lighter_accent}\normalfont\thesubsection}
+	{\raggedright\color{lighter_accent}\normalfont\thesubsection}
 	{1em}
 	{\color{lighter_accent}\itshape}
 \titleformat{\subsubsection}
 	{\itshape}
 	{\color{dark_gray}\normalfont\thesubsubsection}
 	{1em}
-	{\color{dark_gray}\itshape}
+	{\raggedright\color{dark_gray}\itshape}
 
 % new title without numbering
 \newcommand{\littletitle}[1]{%
@@ -334,7 +336,7 @@
 	labelfont = {bf, color=main_accent},
 	%labelformat = lc,
 	labelsep = mysep,
-	justification=raggedright,
+	justification=RaggedRight,
 	font={footnotesize, color=darker_gray},
 	singlelinecheck=off,
 }
@@ -427,7 +429,7 @@
 	[0em]
 	{}
 	{{\thecontentslabel}~~\itshape}
-	{\itshape}
+	{\color{darker_gray}\itshape}
 	{~~{\color{main_accent}\contentspage}}
 	[\qquad]
 % \titlecontents{subsubsection}[1em]
@@ -654,9 +656,6 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
-%	vectors with a space before
-\let\oldvec\vec
-\renewcommand{\vec}{\:\oldvec}
 % powers of 10
 \newcommand{\ee}[1]{\cdot 10^{#1}}
 % new vect with overrightarrow style

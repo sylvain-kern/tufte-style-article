@@ -26,7 +26,7 @@ pip install pygments
 
 ##  MikTeX users on Windows
 
-1.  Create a \texttt{localtexmf} directory if you do not already have one,
+1.  Create a `localtexmf` directory if you do not already have one,
     for instance
     ```
     C:\Users<you>\localtexmf

@@ -29,7 +29,7 @@ pip install pygments
 1.  Create a `localtexmf` directory if you do not already have one,
     for instance
     ```
-    C:\Users<you>\localtexmf
+    C:\Users\<you>\localtexmf
     ```
 
 2.  Create a `tex\latex\` directory in the
@@ -44,7 +44,7 @@ pip install pygments
 4.  Open MikTeX console, go to `Settings`,
     `Directories` tab. Click on `add`, and enter yout `texmf` path.
     ```
-    C:\Users<you>\localtexmf
+    C:\Users\<you>\localtexmf
     ```
 
 5.  Finally, go to the `tasks` tab, and hit

@@ -64,9 +64,9 @@ and find the class file without it having to be in your project folder.
 
     - Create a `tex/latex/` directory in the `.texmf` one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
 
-2.   Paste the `tufte-style-article.cls` file in that
-    `tufte-style-article` folder and you should be good.
 
+2. Paste the `tufte-style-article.cls` file in that
+    `tufte-style-article` folder and you should be good.
     Eventually, the class file is located at:
 
     ```

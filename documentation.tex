@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\maketitle	
+\maketitle
 
 \vskip -25pt
 \noindent\hspace{.1\textwidth}\url{https://github.com/sylvain-kern/tufte-style-article}
@@ -34,7 +34,7 @@ This documentation gives a glimpse of what the class looks like and does, while 
 
 I am aware that numerous E.Tufte-based classes exist around the Internet, I just wanted to create my own to really feel and internalize this design grammar. Eventually, this is just my view of what I find well-presented and eye-pleasing in a document and not prescriptive rules and guidelines. Everybody can feel free to adapt, customize, or contribute to this class\margintext{I give some information for contributors on section \ref{sec:contribute}.}.
 
-Before I get into the subject, I want to thank the members of\\\noindent \href{www.tex.stackexchange.com}{\texttt{tex.stackexchange.com}}, who are basically an endless source of knowledge. Without this forum I would have gave up on the very first issue I encountered. 
+Before I get into the subject, I want to thank the members of\\\noindent \href{www.tex.stackexchange.com}{\texttt{tex.stackexchange.com}}, who are basically an endless source of knowledge. Without this forum I would have gave up on the very first issue I encountered.
 
 \newpage
 \tableofcontents
@@ -60,11 +60,11 @@ pip install pygments
 
 \item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \hologo{MiKTeX} here:\\\url{https://tex.stackexchange.com/questions/10498/installing-a-class}.} directory if you do not already have one, for instance
 \begin{codebox}{text}
-C:\Users<you>\localtexmf	
+C:\Users<you>\localtexmf
 \end{codebox}
 
 \item Create a \inlinecode{text}{tex\latex\} directory in the \texttt{localtexmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
-		
+
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
 \begin{codebox}{text}
 C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
@@ -72,12 +72,12 @@ C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
 
 \item Open \hologo{MiKTeX} console, go to \inlinecode{text}{Settings}, \inlinecode{latex}{Directories} tab. Click on \inlinecode{text}{add}, and enter yout \texttt{texmf} path.
 \begin{codebox}{text}
-C:\Users<you>\localtexmf	
+C:\Users<you>\localtexmf
 \end{codebox}
 
 \item Finally, go to the \inlinecode{text}{tasks} tab, and hit \inlinecode{text}{Refresh file name database}.
 
-\end{enumerate}	
+\end{enumerate}
 
 \texttt{tufte-style-article} is now installed on your system ! \hologo{MiKTeX} will recognize and find the class file without it having to be in your project folder.
 
@@ -85,31 +85,33 @@ C:\Users<you>\localtexmf
 \subsection{\TeX{} Live users on Linux}
 
 \begin{enumerate}
-	
+
 \item Create a \texttt{localtexmf}\marginnote{More on \texttt{texmf} and how to install custom classes and packages on \TeX{} Live here:\\\url{https://tex.stackexchange.com/questions/96976/install-custom-cls-using-tex-live-in-local-directory}.} directory if you do not already have one, for instance
 \begin{codebox}{bash}
 $HOME/.texmf
 \end{codebox}
-	
+
+\iffalse $ \fi
+
 \item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
-		
+
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
 \begin{codebox}{bash}
 $HOME/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
 \end{codebox}
-		
+
 \item Update the \texttt{texmf} with
 \begin{codebox}{bash}
-mktexlsr $HOME/.texmf 
+mktexlsr $HOME/.texmf
 \end{codebox}
 
 \item Check if it worked with
 \begin{codebox}{bash}
 kpsewhich tufte-style-article.cls
 \end{codebox}
-		
-\end{enumerate}	
-	
+
+\end{enumerate}
+
 \texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
 
 
@@ -150,7 +152,38 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Deletes the current section reminder on page header, just displays the page number on the top outer corner.
 \end{minipagewithmarginpars}
-
+\smallskip
+\begin{minipagewithmarginpars}[t]{.2\textwidth}
+	\raggedleft
+	\inlinecode{latex}{casual}
+\end{minipagewithmarginpars}\hfill%
+\begin{minipagewithmarginpars}[t]{.72\textwidth}
+	Makes all sections numberless. Puts them natively in the toc anyway.
+\end{minipagewithmarginpars}
+\smallskip
+\begin{minipagewithmarginpars}[t]{.2\textwidth}
+	\raggedleft
+	\inlinecode{latex}{sans}
+\end{minipagewithmarginpars}\hfill%
+\begin{minipagewithmarginpars}[t]{.72\textwidth}
+	Turns the font to sans serif Source Sans Pro, for extreme casualness.
+\end{minipagewithmarginpars}
+\smallskip
+\begin{minipagewithmarginpars}[t]{.2\textwidth}
+	\raggedleft
+	\inlinecode{latex}{colorful}
+\end{minipagewithmarginpars}\hfill%
+\begin{minipagewithmarginpars}[t]{.72\textwidth}
+	Like in this document, makes titles, figure labels and note numbers colored. The accent color is defined by \texttt{main\_accent}.
+\end{minipagewithmarginpars}
+\smallskip
+\begin{minipagewithmarginpars}[t]{.2\textwidth}
+	\raggedleft
+	\inlinecode{latex}{notufte}
+\end{minipagewithmarginpars}\hfill%
+\begin{minipagewithmarginpars}[t]{.72\textwidth}
+	Remove margins. Turns sidenotes to footnotes and makes figure captions appear under them. Appropried for small casual reports or for \texttt{pandoc conversion}.
+\end{minipagewithmarginpars}
 
 
 \subsection{The big margin}
@@ -159,11 +192,11 @@ It may noticeable that there is a big margin running all through the document, a
 \begin{itemize}
 	\tightlist
 	\item The main text block has a reduced width of about thirteen words per line, which makes the eyes follow the lines easier.
-	
+
 	\item The layout is less constrained thanks to the negative space freed in the margin.
-	
+
 	\item The margin can be used to place elements that would break the main prose, such as sidenotes,\marginnote{Hello there!} captions of figures, tables and other stuff, and even small figures. This tidies up the main text area while making margin stuff immediately noticeable, but not disturbing.
-	
+
 	\item The overall text-image inclusion comes tighter and more natural.
 \end{itemize}
 All in all, this design is neither too crowded as everything is at its place, nor too empty due to huge blank margins.
@@ -198,7 +231,7 @@ There is a way to make paragraphs stretch all the way to the margins, like this 
 To stretch the main text area to the margins, use the following environment.
 \begin{codebox}{latex}
 \begin{wide}
-<...your content will be displayed in a wide mode...>	
+<...your content will be displayed in a wide mode...>
 \end{wide}
 \end{codebox}
 
@@ -210,7 +243,7 @@ To stretch the main text area to the margins, use the following environment.
 
 The main serif font is Palatino,\margintext{Although E.Tufte uses \href{www.catalog.monotype.com/family/monotype/bembo}{Monotype Bembo} as his main serif font, Palatino seems to be a fair alternative, from the same family, and easy to get with \LaTeX{}.} loaded with the \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} package. I find it really legible and well-balanced, while being less harsh than Computer Modern, the default \LaTeX{} font. \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} has full math support too; here are some examples:
 $$
-e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \;; 
+e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \;;
 $$
 
 $$
@@ -242,21 +275,21 @@ The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt
 Edward Tufte's designs are known to be really tight when it comes to including images with text. The main pet peeve I had with one-column designs is when I included a small figure in the document, it had to visually break the text and generate large unpleasing blank spaces. Also, more often than not, the text width is too much for the images, resulting in huge one-liner captions for very small figures.
 
 The 1.5-column design fixes this by putting all captions in the margins, as well as small enough figures, which tidies the document a lot.
-	
+
 \textfig[1]{figures/bretagne.png}{1919 map of the Finistère in French Brittany. This figure is in the main text column, with a caption in the margin aligned with the top of the image. For images with width less than the text width, they will be outer-aligned so that they are close to the caption.}{fig:figure-text}
 
 \marginfig{figures/marine-knots.jpg}{The most common sea boat knots. This image can be displayed rather small, so it fits in the margin. The caption is displayed below.}{fig:figure-margin}
 
 To put a graphics in the text like in the figure \ref{fig:figure-text}, use
 \begin{codebox}{latex}
-\textfig[<optional width>]{<file path>}{<caption>}{<label>}	
+\textfig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 The \inlinecode{text}{<optional width>} is a number between zero and one wich determines the image width relative to the text width. The default value is 1, like on the figure \ref{fig:figure-text}.
 
 The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}:
 \begin{codebox}{latex}
 \marginfig[<optional width>]{<file path>}{<caption>}{<label>}
-\widefig[<optional width>]{<file path>}{<caption>}{<label>}	
+\widefig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 
 \widefig{figures/usa-census.png}{The US census map from data collected in 2010 -- \url{www.ecpmlangues.u-strasbg.fr}\\This is a wide figure, stretching from the innermost to the outermost margin.}{fig:figure-fullwidth}
@@ -293,7 +326,7 @@ yo & yo & yo \\
 yo & yo & yo \\
 yo & yo & yo \\
 \bottomrule
-\end{tabularx}	
+\end{tabularx}
 \end{texttable}
 \fi
 
@@ -347,7 +380,7 @@ This code will be displayed in a captioned code box, without line numbering.
 
 \begin{snippetnum}{<language>}{<caption>}{<label>}
 This code will be displayed in a captioned code box, with line numbering.
-\end{snippetnum}	
+\end{snippetnum}
 \end{codebox}
 
 Small pieces of code can be useful to put inline in the main text flow. This class provides a command to things like this: \inlinecode{c++}_public int size() {}_. Use the following to insert a piece of code in the text.
@@ -396,21 +429,21 @@ void mb2_print_tags(mb2_t* boot) {
 		printke("no tags given");
 		return;
 	}
-	
+
 	mb2_tag_t* tag = boot->tags;
 	mb2_tag_t* prev_tag = tag;
-	
+
 	do {
 		const char* tag_name;
-		
+
 		if (tag->type < sizeof(tag_table) / sizeof(tag_table[0])) {
 			tag_name = tag_table[tag->type];
 		} else {
 			tag_name = "<unknown>";
 		}
-		
+
 		printk("%12s (%2d): %d bytes", tag_name, tag->type, tag->size);
-		
+
 		prev_tag = tag;
 		tag = (mb2_tag_t*) ((uintptr_t) tag + align_to(tag->size, 8));
 	} while (prev_tag->type != MB2_TAG_END);
@@ -421,16 +454,16 @@ void mb2_print_tags(mb2_t* boot) {
 mb2_tag_t* mb2_find_tag(mb2_t* boot, uint32_t tag_type) {
 	mb2_tag_t* tag = boot->tags;
 	mb2_tag_t* prev_tag = tag;
-	
+
 	do {
 		if (tag->type == tag_type) {
 			return tag;
 		}
-		
+
 		prev_tag = tag;
 		tag = (mb2_tag_t*) ((uintptr_t) tag + align_to(tag->size, 8));
 	} while (prev_tag->type != MB2_TAG_END);
-	
+
 	return NULL;
 }
 \end{snippetnum}

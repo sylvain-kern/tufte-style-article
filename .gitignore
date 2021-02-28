@@ -11,3 +11,4 @@
 *.log
 
 _minted-documentation/
+.vscode/

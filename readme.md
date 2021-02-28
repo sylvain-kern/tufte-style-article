@@ -1,8 +1,3 @@
----
-title:  readme.md
-author: Sylvain Kern
----
-
 # `tufte-style-article`
 
 `tufte-style-article` is a LaTeX class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight text and graphic integration. This class is however not a rigourous copy of E.Tufte's works, it is more of an inspiration. It also includes design features from *The Elements of Typographic Style*.

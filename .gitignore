@@ -10,5 +10,5 @@
 *.toc
 *.log
 
-_minted-documentation/
-.vscode/
+_minted-documentation/*
+.vscode/*

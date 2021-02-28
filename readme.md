@@ -55,8 +55,8 @@ and find the class file without it having to be in your project folder.
 
 ## TeX Live users on Linux
 
-1.  Create a `localtexmf` directory if you do not already have one, for
-    instance
+1.  Create a `localtexmf` directory if you do not already
+    have one, for instance
 
     ```
     $HOME/.texmf
@@ -64,18 +64,21 @@ and find the class file without it having to be in your project folder.
 
     - Create a `tex/latex/` directory in the `.texmf` one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
 
-    \item Paste the `tufte-style-article.cls` file in that `tufte-style-article` folder and you should be good. Eventually, the class file is located at:
+2.   Paste the `tufte-style-article.cls` file in that
+    `tufte-style-article` folder and you should be good.
+
+    Eventually, the class file is located at:
 
     ```
-    HOME/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
+    HOME/.texmf/tex/latex/tufte-style-article tufte-style-article.cls
     ```
 
-2.  Update the `texmf` with
+3.  Update the `texmf` with
     ```
     mktexlsr $HOME/.texmf
     ```
 
-3.  Check if it worked with
+4.  Check if it worked with
 
     ```
     kpsewhich tufte-style-article.cls

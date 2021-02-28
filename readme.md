@@ -110,13 +110,13 @@ The options are the following :
 | `noheaders`       | Deletes the current section reminder on page header, just displays the page number on the top outer corner. |
 | `casual`          | Makes all sections numberless. Puts them natively in the toc anyway. |
 | `sans`            | Turns the font to sans serif Source Sans Pro, for extreme casualness. |
-| `colorful`        | Like in this document, makes titles, figure labels and note numbers colored. The accent color is defined by `main_accent`. |
+| `colorful`        | Like in the documentation, makes titles, figure labels and note numbers colored. The accent color is defined by `main_accent`. |
 | `notufte`         | Remove margins. Turns sidenotes to footnotes and makes figure captions appear under them. Appropried for small casual reports or for `pandoc` conversion. |
 
 
 ### Main document
 
-All native LaTeX commands work with this class. However, it adds some more to spice up the document.
+All native LaTeX commands work with this class. However, some new macros are addedd to spice up the document.
 
 #### Margin notes
 

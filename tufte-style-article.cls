@@ -1,38 +1,38 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tufte-style-article}[]
 
-%  _________  ___  ___  ________ _________  _______                      
-% |\___   ___\\  \|\  \|\  _____\\___   ___\\  ___ \                     
-% \|___ \  \_\ \  \\\  \ \  \__/\|___ \  \_\ \   __/|   ____________     
-%      \ \  \ \ \  \\\  \ \   __\    \ \  \ \ \  \_|/__|\____________\   
-%       \ \  \ \ \  \\\  \ \  \_|     \ \  \ \ \  \_|\ \|____________|   
-%        \ \__\ \ \_______\ \__\       \ \__\ \ \_______\                
-%         \|__|  \|_______|\|__|        \|__|  \|_______|                
+%  _________  ___  ___  ________ _________  _______
+% |\___   ___\\  \|\  \|\  _____\\___   ___\\  ___ \
+% \|___ \  \_\ \  \\\  \ \  \__/\|___ \  \_\ \   __/|   ____________
+%      \ \  \ \ \  \\\  \ \   __\    \ \  \ \ \  \_|/__|\____________\
+%       \ \  \ \ \  \\\  \ \  \_|     \ \  \ \ \  \_|\ \|____________|
+%        \ \__\ \ \_______\ \__\       \ \__\ \ \_______\
+%         \|__|  \|_______|\|__|        \|__|  \|_______|
 
-%  ________  _________    ___    ___ ___       _______                   
-% |\   ____\|\___   ___\ |\  \  /  /|\  \     |\  ___ \                  
-% \ \  \___|\|___ \  \_| \ \  \/  / | \  \    \ \   __/|   ____________  
+%  ________  _________    ___    ___ ___       _______
+% |\   ____\|\___   ___\ |\  \  /  /|\  \     |\  ___ \
+% \ \  \___|\|___ \  \_| \ \  \/  / | \  \    \ \   __/|   ____________
 %  \ \_____  \   \ \  \   \ \    / / \ \  \    \ \  \_|/__|\____________\
 %   \|____|\  \   \ \  \   \/  /  /   \ \  \____\ \  \_|\ \|____________|
-%     ____\_\  \   \ \__\__/  / /      \ \_______\ \_______\             
-%    |\_________\   \|__|\___/ /        \|_______|\|_______|             
-%    \|_________|       \|___|/                                          
+%     ____\_\  \   \ \__\__/  / /      \ \_______\ \_______\
+%    |\_________\   \|__|\___/ /        \|_______|\|_______|
+%    \|_________|       \|___|/
 
-%  ________  ________  _________  ___  ________  ___       _______       
-% |\   __  \|\   __  \|\___   ___\\  \|\   ____\|\  \     |\  ___ \      
-% \ \  \|\  \ \  \|\  \|___ \  \_\ \  \ \  \___|\ \  \    \ \   __/|     
-%  \ \   __  \ \   _  _\   \ \  \ \ \  \ \  \    \ \  \    \ \  \_|/__   
-%   \ \  \ \  \ \  \\  \|   \ \  \ \ \  \ \  \____\ \  \____\ \  \_|\ \  
-%    \ \__\ \__\ \__\\ _\    \ \__\ \ \__\ \_______\ \_______\ \_______\ 
+%  ________  ________  _________  ___  ________  ___       _______
+% |\   __  \|\   __  \|\___   ___\\  \|\   ____\|\  \     |\  ___ \
+% \ \  \|\  \ \  \|\  \|___ \  \_\ \  \ \  \___|\ \  \    \ \   __/|
+%  \ \   __  \ \   _  _\   \ \  \ \ \  \ \  \    \ \  \    \ \  \_|/__
+%   \ \  \ \  \ \  \\  \|   \ \  \ \ \  \ \  \____\ \  \____\ \  \_|\ \
+%    \ \__\ \__\ \__\\ _\    \ \__\ \ \__\ \_______\ \_______\ \_______\
 %     \|__|\|__|\|__|\|__|    \|__|  \|__|\|_______|\|_______|\|_______|
 
 
 % 	This is tufte-style-article.cls,
 % 	a LaTeX class inherited from article
 %	with a style similar to E.Tufte's designs.
-	
+
 % 	For more information about installation and usage,
-% 	see readme.md and documentation.pdf. 
+% 	see readme.md and documentation.pdf.
 
 %	This class is hosted and maintained
 %	by Sylvain Kern
@@ -74,6 +74,7 @@
 \DeclareOption{notufte}{
 	\@nomarginstrue
 	\AtBeginDocument{
+		\captionsetup{width = .7\textwidth}
 		\renewcommand{\textfig}[4][]{%
 			\begin{figure}[ht!]
 				\noindent\includegraphics[width=#1\textwidth]{#2}%
@@ -137,7 +138,7 @@
 	\RequirePackage[			% font for full sans document
 		osf,
 		default
-	]{sourcesanspro}	
+	]{sourcesanspro}
 \fi
 \RequirePackage[
 	defaultmono,
@@ -252,10 +253,10 @@
 %
 \renewcommand*{\marginfont}{\footnotesize}
 \renewcommand{\marginnote}[1]
-{\sidenote{\color{darker_gray}\RaggedRight\footnotesize #1 \vskip 4pt}}
+{\sidenote{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
 \newcommand{\margintext}[1]
-{\marginpar{\color{darker_gray}\RaggedRight\footnotesize #1 \vskip 4pt}}
+{\marginpar{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
 \newenvironment{wide}{
 \begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
@@ -280,7 +281,7 @@
 \fancypagestyle{plain}{
 \fancyhf{}
 \fancyhead[RO]{\thepage}
-\fancyhead[LE]{\hfill}	
+\fancyhead[LE]{\hfill}
 }
 \loadgeometry{regular}
 
@@ -315,7 +316,7 @@
 	\hfill
 	\begin{minipage}{0.9\textwidth}
 		\vskip -40pt
-		\let\footnote\thanks 
+		\let\footnote\thanks
 		{\LARGE\raggedright \@title \par }
 		\vskip 10pt
 		{\color{darker_gray}\Large \itshape \@author \hfill \normalsize \@date}
@@ -439,7 +440,7 @@
 % 	{\quad\quad\contentspage}[\vskip 0pt]
 \pretocmd{\contentsname}{}{}{}
 
-%	toc offset	
+%	toc offset
 \let\oldtoc\tableofcontents
 \renewcommand{\tableofcontents}{
 \begin{quote}
@@ -473,7 +474,7 @@
 	rightline=false,
 	innerleftmargin=32pt,
 	innertopmargin=1em,
-	innerbottommargin=1em, 
+	innerbottommargin=1em,
 	roundcorner=3pt
 }
 \mdfdefinestyle{code_box_nonos}{%
@@ -486,7 +487,7 @@
 	rightline=false,
 	innerleftmargin=12pt,
 	innertopmargin=1em,
-	innerbottommargin=1em, 
+	innerbottommargin=1em,
 	roundcorner=3pt
 }
 \renewcommand{\theFancyVerbLine}{

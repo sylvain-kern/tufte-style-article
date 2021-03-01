@@ -1,0 +1,83 @@
+\documentclass[
+    % raggedright,
+    % parskip,
+    % noheaders,
+    % casual,
+    % sans,
+    % colorful,
+    % notufte,
+]{tufte-style-article}
+
+\title{\texttt{tufte-style-article} -- minimal template}
+\author{you}
+\date{today}
+
+\begin{document}
+
+\maketitle
+
+Introduction text.
+
+
+\section{Section}
+
+Your text here.\marginnote{A margin note.}
+
+Another paragraph.\margintext{Margin text.}
+
+\subsection{Subsection}
+
+\textfig[1]{% path
+figures/bretagne.png
+}{Caption}{fig:label}
+
+\marginfig{figures/marine-knots.jpg}{Caption}{fig:label2}
+
+\newpage
+\widefig{% path
+figures/usa-census.png
+}{Caption}{fig:label3}
+
+\subsection{Another subsection}
+
+Unlabelled code box:
+
+\begin{codebox}{c}
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+    printf("hello world");
+    return 0;
+}
+\end{codebox}
+
+Labelled code box:
+
+\begin{snippet}{c}{Caption}{lst:label}
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+    printf("hello world");
+    return 0;
+}
+\end{snippet}
+
+Inlinecode: \inlinecode{latex}_\inlinecode{<language>}{<your code>}_.
+
+
+\section{Another section}
+
+
+\subsection{Subseciton}
+
+
+\subsubsection{Subsubsection}
+
+Some other text. Equations work the same.
+
+$$
+e^{i\pi}+1 = 0.
+$$
+
+
+\end{document}

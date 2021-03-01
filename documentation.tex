@@ -1,4 +1,4 @@
-\documentclass[raggedright, twoside, 11pt, colorful]{tufte-style-article}
+\documentclass[a4paper, raggedright, twoside, 11pt, colorful]{tufte-style-article}
 
 %	This is documentation.tex, the source file of the class'
 %	documentation.
@@ -186,8 +186,6 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \end{minipagewithmarginpars}
 
 
-\newpage
-
 \subsection{The big margin}
 
 It may noticeable that there is a big margin running all through the document, a design feature present in all E.Tufte's works but also in the \textit{Elements of Typographic style}. I find this design --a \textit{1.5-column} setup-- to have many advantages over a regular one-column setup. Here are a few reasons why.
@@ -241,6 +239,8 @@ To stretch the main text area to the margins, use the following environment.
 \end{wide}
 
 
+\newpage
+
 \subsection{Fonts}
 
 The main serif font is Palatino,\margintext{Although E.Tufte uses \href{www.catalog.monotype.com/family/monotype/bembo}{Monotype Bembo} as his main serif font, Palatino seems to be a fair alternative, from the same family, and easy to get with \LaTeX{}.} loaded with the \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} package. I find it really legible and well-balanced, while being less harsh than Computer Modern, the default \LaTeX{} font. \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} has full math support too; here are some examples:
@@ -269,11 +269,11 @@ The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{
 \endgroup
 
 \begingroup\ttfamily
-The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\margintext{For examples of code writing with this class, see section \ref{sub:code}.}. The typographic gray is also about the same as Palatino, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text\marginnote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \ref{sub:code}.}.
+The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\margintext{For examples of code writing with this class, see section \textcolor{lighter_accent}{code}.}. The typographic gray is also about the same as Palatino, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text\marginnote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \ref{sub:code}.}.
 \endgroup
 
-\newpage
 
+\newpage
 
 \subsection{Figures, tables and stuff}
 
@@ -352,13 +352,19 @@ The background is a light gray that helps make the code stick out just enough wi
 
 For a simple code box with neither line numbering nor caption, the macro environment is the following.
 
-\margintext{
-This supports most of the classic languages. Here are some examples for the language option:\\
-~~\inlinecode{text}{c},\\
-~~\indent\inlinecode{text}{c++},\\
-~~\indent\inlinecode{text}{python},\\
-~~\indent\inlinecode{text}{java},\\
-~~\indent\inlinecode{text}{latex}\dots\\
+\margintext{%
+This supports most of the classic languages. Here are some examples for the language option:
+
+\inlinecode{text}{c},
+
+\indent\inlinecode{text}{c++},
+
+\indent\inlinecode{text}{python},
+
+\indent\inlinecode{text}{java},
+
+\indent\inlinecode{text}{latex}\dots
+
 If a specific language is not recognized, use the \inlinecode{text}{text} option instead: it will display the code raw, without syntax coloring.
 }%
 \begin{altcodebox}{latex}

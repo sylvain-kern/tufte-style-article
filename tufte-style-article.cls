@@ -350,7 +350,7 @@
 		\vskip 8pt%
 		\captionof{figure}{#3}%
 		\label{#4}%
-	}%
+	}\nopagebreak%
 	\noindent\includegraphics[width=#1\textwidth, outer]{#2}%
 	\medskip%
 }
@@ -367,7 +367,7 @@
 	\begin{wide}%
 		\noindent\includegraphics[width=#1\linewidth, outer]{#2}%
 		\vskip-5pt%
-	\end{wide}%
+	\end{wide}\nopagebreak%
 	\marginpar{%
 		\vskip 8pt%
 		\captionof{figure}{#3}%
@@ -376,24 +376,28 @@
 	\medskip%
 }
 \newcommand{\plainfig}[4][]{%
-	\begingroup
-	\includegraphics[width=#1\textwidth]{#2}%
-	\vskip -5pt%
-	\captionof{figure}{#3}%
-	\label{#4}%
-	\vskip 8pt%
+	\begingroup%
+	\begin{absolutelynopagebreak}%
+		\includegraphics[width=#1\textwidth]{#2}%
+		\vskip -5pt%
+		\captionof{figure}{#3}%
+		\label{#4}%
+		\vskip 8pt%
+	\end{absolutelynopagebreak}%
 	\endgroup
 }
 \newcommand{\plainwidefig}[4][]{%
-	\begingroup
-	\begin{wide}
-	\includegraphics[width=#1\linewidth]{#2}%
-	\vskip -5pt%
-	\captionof{figure}{#3}%
-	\label{#4}%
-	\vskip 8pt%
-	\end{wide}
-	\endgroup
+	\begingroup%
+	\begin{absolutelynopagebreak}%
+		\begin{wide}
+		\includegraphics[width=#1\linewidth]{#2}%
+		\vskip -5pt%
+		\captionof{figure}{#3}%
+		\label{#4}%
+		\vskip 8pt%
+		\end{wide}
+	\end{absolutelynopagebreak}%
+	\endgroup%
 }
 
 %	table macros
@@ -571,7 +575,7 @@
 		\vskip 8pt%
 		\captionof{listing}{#2}%
 		\label{#3}%
-	}%
+	}\nopagebreak%
 	\begin{mdframed}[style = code_box]%
 		\begin{minted}[
 			breaklines,
@@ -593,7 +597,7 @@
 		\vskip 8pt
 		\captionof{listing}{#2}
 		\label{#3}
-	}
+	}\nopagebreak%
 	\begin{mdframed}[style = code_box_nonos]%
 		\begin{minted}[
 			breaklines,
@@ -613,7 +617,7 @@
 		\vskip 8pt
 		\captionof{listing}{#2}
 		\label{#3}
-	}
+	}\nopagebreak%
 	\begin{mdframed}[style = code_box]%
 		\begin{minted}[
 			breaklines,
@@ -640,8 +644,14 @@
 \providecommand{\tightlist}{%
 	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
-
+%	minipages with margin notes
 \usepackage{minipage-marginpar}
+%	no page break environment
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
 
 %	M A T H  &  P H Y S I C S
 %	S H O R T C U T S

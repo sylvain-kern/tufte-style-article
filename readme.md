@@ -97,7 +97,7 @@ project folder.
 Please see the documentation fore more in-depth explanations and examples. This section gives a quick overview on how to produce a simple document.
 
 
-### Preamble
+## Preamble
 
 Call the class with the following:
 ```
@@ -117,17 +117,19 @@ The options are listed and explained below:
 | `notufte`         | Remove margins. Turns sidenotes to footnotes and makes figure captions appear under them. Appropried for small casual reports or for `pandoc` conversion. |
 
 
-### Main document
+## Main document
 
 All native LaTeX commands work with this class. However, some new macros are addedd to spice up the document.
 
-#### Margin notes
+
+### Margin notes
 
 `\marginnote{<your note>}` displays a numbered note in the margin.
 
 `\margintext{<your note>}` displays unnumbered text in the margin.
 
-#### Figure shortcuts
+
+### Figure shortcuts
 
 `\textfig[<optional with>]{<image path>}{<caption>}{<label>}` creates a figure with the cpation in the margin.
 
@@ -135,3 +137,11 @@ All native LaTeX commands work with this class. However, some new macros are add
 
 `\widefig[<optional with>]{<image path>}{<caption>}{<label>}` creates a figure that completely spreads in the margin.
 
+
+## Compilation
+
+This class compiles with `pdflatex`. It needs to be called with the `--shell-escape` flag, as shown below:
+
+```
+pdflatex --shell-escape document.tex
+```

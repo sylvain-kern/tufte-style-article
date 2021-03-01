@@ -482,9 +482,6 @@ mb2_tag_t* mb2_find_tag(mb2_t* boot, uint32_t tag_type) {
 \end{snippetnum}
 
 
-\subsection{Advice for text formatting}
-
-
 \subsection{Compilation}
 
 This class compiles with \texttt{pdflatex}. I tested it with \hologo{MiKTeX} on Windows, \TeX-live on Linux and Overleaf. If you use code boxes or snippets, make sure you compile with the \texttt{--shell-escape} flag. Eventually, the following compilation line should work everywhere.
@@ -496,6 +493,19 @@ The compilation times can be quite long, especially if there is a lot of heavy c
 
 \section{Customization possibilities}
 
+\subsection{Language}
+
+\texttt{babel} works fine, but it can change some design and layout features.\marginnote{For example, the \inlinecode{text}{french} option changes bullet lists for dashes, indents paragraphs just after section headers, and puts figure labels to \inlinecode{text}_\textsc{}_.} To prevent \texttt{babel} from changing anything, use the following in the preamble --here it is shown for french, you can adapt the language.
+\begin{codebox}{latex}
+\frenchsetup{StandardLayout=true, SmallCapsFigTabCaptions=false}
+\end{codebox}
+
+
+\section{Contribute}
+\label{sec:contribute}
+
+I am always open to improvements, so feel free to fork the repository to change things. I am relatively new to \LaTeX{}, so I am eager to put the class to higher standards.
+
 
 \section{Known issues}
 \label{sec:known-issues}
@@ -504,21 +514,81 @@ In this section I gather the issues that have popped and been reported. I will t
 
 \href{mailto:sylvain.kern98@gmail.com}{\texttt{sylvain.kern98@gmail.com}}.
 
-\iffalse
+\bigskip
+
 \begin{itemize}
 \tightlist
+\item When used, \inlinecode{text}{colorful}, \inlinecode{text}{sans}, and \inlinecode{text}{notufte} are considered unused. It generates the following warning :
+\begin{codebox}{text}
+Unused global option(s) : colorful.
+\end{codebox}
+
+\item Bad page breaks can still occur for \inlinecode{latex}_\textfig{}_, \inlinecode{latex}_\widefig{}_, and code snippet environments.
+
+\item Marginpar systematically generates the following warnings:
+\begin{codebox}{text}
+Marginpar on page 1 moved.
+\end{codebox}
+
+\item I have to work on overfull \textbackslash hboxes.
 \end{itemize}
-\fi
-
-
-\section{Contribute}
-\label{sec:contribute}
 
 
 \section{Package definition}
 
-
-\section{Implementation}
+The class requires the following packages :
+\begin{codebox}{latex}
+%	P A C K A G E   D E F I N I T I O N
+%
+\RequirePackage{geometry}		% page geometry, margin definition
+\RequirePackage{emptypage}		% if a page is empty, is is really empty
+\RequirePackage{fullwidth}		% for wide environments
+\RequirePackage{sidenotes}		% for margin stuff
+\RequirePackage[
+	hypcap=false				% hypcap=true spits an error
+]{caption}						% for caption formatting
+\RequirePackage[T1]{fontenc}	% font encoding
+\RequirePackage[osf]{mathpazo}	% main font
+\RequirePackage{gillius}		% sans font
+\if@sans
+	\RequirePackage[			% font for full sans document
+		osf,
+		default
+	]{sourcesanspro}
+\fi
+\RequirePackage[
+	defaultmono,
+	scale=.86
+]{droidsansmono}				% mono font
+\RequirePackage{ragged2e}		% for better raggedright
+\RequirePackage{titlesec}		% header customization
+\RequirePackage{titletoc}		% toc customization
+\RequirePackage{fancyhdr}		% page header customization
+\RequirePackage{graphicx}		% for images
+\RequirePackage[
+	protrusion=true,
+	expansion=true,
+	final,
+	tracking,
+]{microtype}					% microtypography: fine-tuning in text
+\RequirePackage{amsfonts}		% math fonts
+\RequirePackage{amsmath}		% math stuff
+\RequirePackage{mathtools}		% amsmath extension
+\RequirePackage{physics}		% handy shortcuts for physics
+\RequirePackage{minted} 		% for code display
+\RequirePackage{xcolor}			% colorz
+\RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
+\RequirePackage{tabularx}		% adaptive columns on tables
+\RequirePackage{booktabs}		% better looking tables
+\RequirePackage{enumitem}		% better looking lists
+\RequirePackage[
+	super,
+	square
+]{natbib}						% customize \cite{}
+\RequirePackage[hidelinks]{hyperref}	% automatic references in pdf
+\RequirePackage{etoolbox}		% really idk what this does
+\RequirePackage{verbatim}   	% for verbatim environments
+\end{codebox}
 
 
 \end{document}

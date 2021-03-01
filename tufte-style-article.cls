@@ -203,7 +203,7 @@
 %
 \newgeometry{
 	textwidth = .8\paperwidth,
-	textheight = .8\paperheight,
+	textheight = .75\paperheight,
 	lmargin = 70pt,
 	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
@@ -214,7 +214,7 @@
 \savegeometry{headaz}
 \newgeometry{
 	textwidth = .62\paperwidth,
-	textheight = .8\paperheight,
+	textheight = .75\paperheight,
 	lmargin = 70pt,
 	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
@@ -351,7 +351,6 @@
 		\captionof{figure}{#3}%
 		\label{#4}%
 	}%
-	\nopagebreak%
 	\noindent\includegraphics[width=#1\textwidth, outer]{#2}%
 	\medskip%
 }
@@ -369,7 +368,6 @@
 		\noindent\includegraphics[width=#1\linewidth, outer]{#2}%
 		\vskip-5pt%
 	\end{wide}%
-	\nopagebreak%
 	\marginpar{%
 		\vskip 8pt%
 		\captionof{figure}{#3}%
@@ -378,24 +376,24 @@
 	\medskip%
 }
 \newcommand{\plainfig}[4][]{%
-	\begin{absolutelynopagebreak}%
-		\includegraphics[width=#1\textwidth]{#2}%
-		\vskip -5pt%
-		\captionof{figure}{#3}%
-		\label{#4}%
-		\vskip 8pt%
-	\end{absolutelynopagebreak}%
+	\begingroup
+	\includegraphics[width=#1\textwidth]{#2}%
+	\vskip -5pt%
+	\captionof{figure}{#3}%
+	\label{#4}%
+	\vskip 8pt%
+	\endgroup
 }
 \newcommand{\plainwidefig}[4][]{%
-	\begin{absolutelynopagebreak}%
-		\begin{wide}
-			\includegraphics[width=#1\linewidth]{#2}%
-			\vskip -5pt%
-			\captionof{figure}{#3}%
-			\label{#4}%
-			\vskip 8pt%
-		\end{wide}
-	\end{absolutelynopagebreak}%
+	\begingroup
+	\begin{wide}
+	\includegraphics[width=#1\linewidth]{#2}%
+	\vskip -5pt%
+	\captionof{figure}{#3}%
+	\label{#4}%
+	\vskip 8pt%
+	\end{wide}
+	\endgroup
 }
 
 %	table macros
@@ -639,21 +637,11 @@
 %	M I S C E L L A N E O U S
 %
 %	for  t i g h t  lists (pandoc style)
-\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 \providecommand{\tightlist}{%
 	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
-%	to have minipage with marginpars
-\usepackage{minipage-marginpar}
-%	non page break environment
-\makeatletter
-\newenvironment{absolutelynopagebreak}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup\@minipagetrue}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
-\makeatother
 
+\usepackage{minipage-marginpar}
 
 %	M A T H  &  P H Y S I C S
 %	S H O R T C U T S

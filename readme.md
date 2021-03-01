@@ -145,3 +145,31 @@ This class compiles with `pdflatex`. It needs to be called with the `--shell-esc
 ```
 pdflatex --shell-escape document.tex
 ```
+
+
+# Contribute
+
+I am always open to improvements, so feel free to fork the repository to change things. I am relatively new to LaTeX, so I am eager to put the class to higher standards.
+
+
+# Known issues
+
+In this section I gather the issues that have popped and been reported. I will try to fix them as best as I can. If you spot a malfunction of any kind in this class or you just have a question about all this, feel free to send me an email at:
+
+sylvain.kern98@gmail.com.
+
+-   When used, `colorful`, `sans`, and `notufte` are considered
+    unused. It generates the following warning :
+    ```
+    Unused global option(s) : colorful.
+    ```
+
+-   Bad page breaks can still occur for `\textfig{}`, `\widefig`,
+    and code snippet environments.
+
+-   Marginpar systematically generates the following warnings:
+    ```
+    Marginpar on page 1 moved.
+    ```
+
+-   I have to work on overfull \hboxes.

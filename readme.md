@@ -119,7 +119,7 @@ The options are listed and explained below:
 
 ## Main document
 
-All native LaTeX commands work with this class. However, some new macros are addedd to spice up the document.
+All native LaTeX commands work with this class. However, some new macros are added to spice up the document.
 
 
 ### Margin notes

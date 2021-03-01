@@ -52,7 +52,7 @@ pip install pygments
 5.  Finally, go to the `tasks` tab, and hit
     `Refresh file name database`.
 
-`tufte-style-article` is now installed on your system ! will recognize
+`tufte-style-article` is now installed on your system ! MikTeX will recognize
 and find the class file without it having to be in your project folder.
 
 ## TeX Live users on Linux

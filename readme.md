@@ -94,7 +94,9 @@ project folder.
 
 # Usage
 
-Please see the documentation fore more in-depth explanations and examples. This section gives a quick overview on how to produce a simple document.
+I provide the template `minimal.tex`, to quickly get started.
+
+Please see the documentation for more in-depth explanations and examples. This section gives a quick overview on how to produce a simple document.
 
 
 ## Preamble
@@ -131,7 +133,7 @@ All native LaTeX commands work with this class. However, some new macros are add
 
 ### Figure shortcuts
 
-`\textfig[<optional with>]{<image path>}{<caption>}{<label>}` creates a figure with the cpation in the margin.
+`\textfig[<optional with>]{<image path>}{<caption>}{<label>}` creates a figure with the caption in the margin. Optional width is relative to `\textwidth`: 1 will make the figure as wide as the text.
 
 `\marginfig{<image path>}{<caption>}{<label>}` creates a figure completely in the margin.
 

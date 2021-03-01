@@ -1,6 +1,8 @@
 # `tufte-style-article`
 
-`tufte-style-article` is a LaTeX class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight text and graphic integration. This class is however not a rigourous copy of E.Tufte's works, it is more of an inspiration. It also includes design features from *The Elements of Typographic Style*.
+`tufte-style-article` is a LaTeX class with a design similar to Edward Tufte's works. His designs are known for their simplicty, legibleness, extensive use of sidenotes in a wide dedicated margin and tight text and graphic integration. This class is however not a rigourous copy of E.Tufte's works, it is more of an inspiration. It also includes design features from Robert Bringhurst's *Elements of Typographic Style*.
+
+The overall look and features of this class can be seen in `documentation.pdf`, with more in-depth explanation. `tufte-style-article` is meant to be adaptive: one can typeset small casual papers, or more fancy and hefty documents.
 
 
 # Installation
@@ -62,10 +64,11 @@ and find the class file without it having to be in your project folder.
     $HOME/.texmf
     ```
 
-    - Create a `tex/latex/` directory in the `.texmf` one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
+2.   Create a `tex/latex/` directory in the `.texmf` one,
+    and inside it, create a folder named `tufte-style-article`.
 
 
-2. Paste the `tufte-style-article.cls` file in that
+3. Paste the `tufte-style-article.cls` file in that
     `tufte-style-article` folder and you should be good.
     Eventually, the class file is located at:
 
@@ -73,12 +76,12 @@ and find the class file without it having to be in your project folder.
     HOME/.texmf/tex/latex/tufte-style-article tufte-style-article.cls
     ```
 
-3.  Update the `texmf` with
+4.  Update the `texmf` with
     ```
     mktexlsr $HOME/.texmf
     ```
 
-4.  Check if it worked with
+5.  Check if it worked with
 
     ```
     kpsewhich tufte-style-article.cls
@@ -96,12 +99,12 @@ Please see the documentation fore more in-depth explanations and examples. This 
 
 ### Preamble
 
-Call the class with the following :
+Call the class with the following:
 ```
 \documentclass[options]{tufte-style-article}
 ```
 
-The options are the following :
+The options are listed and explained below:
 
 | Option            | What it does      |
 |---                |---                |

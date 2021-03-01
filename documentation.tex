@@ -91,6 +91,8 @@ C:\Users<you>\localtexmf
 $HOME/.texmf
 \end{codebox}
 
+\iffalse $ \fi % to keep syntax coloring neat
+
 \item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
 
 \item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
@@ -257,6 +259,10 @@ $$
 $$
 \int_{-\infty}^{+\infty} e^{-\alpha x^2} \dd{x} = \sqrt\frac{\pi}{\alpha}.
 $$
+
+\begin{equation}
+\psi(\vec r) = \frac{j}{\lambda} \iint_S \psi(\vec{r_0})\frac{e^{jk|\vec r - \vec r_0|}}{|\vec r - \vec r_0|}\dd S.
+\end{equation}
 
 \begingroup\sffamily
 The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{gillius}} package, which is almost identical as Gill Sans, E.Tufte's choice for sans-serif and book titling. It does not clash with Palatino while being elegant and readable. It particularly suits for titles or page headers as it can be seen on this document.

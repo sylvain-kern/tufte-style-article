@@ -177,7 +177,7 @@
 %
 \if@colorful
 	\definecolor{main_accent}{HTML}{cb3004}
-	\definecolor{lighter_accent}{HTML}{f36605}
+	\definecolor{lighter_accent}{HTML}{e45826}
 	\definecolor{darker_gray}{HTML}{393136}
 	\definecolor{dark_gray}{HTML}{5a565c}
 	\definecolor{light_blue}{HTML}{0695c4}

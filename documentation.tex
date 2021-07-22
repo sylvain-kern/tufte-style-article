@@ -246,7 +246,7 @@ To stretch the main text area to the margins, use the following environment.
 
 \subsection{Fonts}
 
-The main serif font is Palatino,\sidetext{Although E.Tufte uses \href{www.catalog.monotype.com/family/monotype/bembo}{Monotype Bembo} as his main serif font, Palatino seems to be a fair alternative, from the same family, and easy to get with \LaTeX{}.} loaded with the \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} package. I find it really legible and well-balanced, while being less harsh than Computer Modern, the default \LaTeX{} font. \href{www.ctan.org/pkg/mathpazo}{\texttt{mathpazo}} has full math support too; here are some examples:
+The main serif font is Linux Libertine,\sidetext{Although E.Tufte uses \href{www.catalog.monotype.com/family/monotype/bembo}{Monotype Bembo} as his main serif font, Libertine seems to be a fair alternative, from the same family, and easy to get with \LaTeX{}.} loaded with the \href{www.ctan.org/pkg/libertinus}{\texttt{libertinus}} package. I find it really legible and well-balanced, while being less harsh than Computer Modern, the default \LaTeX{} font. \href{www.ctan.org/pkg/libertinus}{\texttt{libertinus}} has full math support too with \href{www.ctan.org/pkg/libertinust1math}{\texttt{libertinust1math}}; here are some examples:
 $$
 e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \;;
 $$
@@ -268,11 +268,11 @@ $$
 \end{equation}
 
 \begingroup\sffamily
-The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{gillius}} package, which is almost identical as Gill Sans, E.Tufte's choice for sans-serif and book titling. It does not clash with Palatino while being elegant and readable. It particularly suits for titles or page headers as it can be seen on this document.
+The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{gillius}} package, which is almost identical as Gill Sans, E.Tufte's choice for sans-serif and book titling. It does not clash with Libertine while being elegant and readable. It particularly suits for titles or page headers as it can be seen on this document.
 \endgroup
 
 \begingroup\ttfamily
-The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\sidetext{For examples of code writing with this class, see section \textcolor{lighter_accent}{code}.}. The typographic gray is also about the same as Palatino, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text\sidenote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \ref{sub:code}.}.
+The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\sidetext{For examples of code writing with this class, see section \textcolor{lighter_accent}{code}.}. The typographic gray is also about the same as Libertine, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text\sidenote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \ref{sub:code}.}.
 \endgroup
 
 
@@ -594,8 +594,6 @@ The class requires the following packages :
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage{verbatim}   	% for verbatim environments
 \end{codebox}
-
-\lipsum[1-2]\sidenote{bite}\sidenote{pénis}
 
 
 \end{document}

@@ -7,9 +7,11 @@ The overall look and features of this class can be seen in `documentation.pdf`, 
 # Latest changes
 
 - 22/07/2021 :
-    - **BIG CHANGES ** : `\marginnote{}` and `\margintext{}` are now replaced with `\sidenote{}` and `\sidetext{}` (see the documentation, it is all updated here).
+    - **BIG CHANGES** : `\marginnote{}` and `\margintext{}` are now replaced with `\sidenote{}` and `\sidetext{}` (see the documentation, it is all updated here).
 
     - Figures are now cleaned up. All kinds of figures can float freely !
+
+    - Main font was Palatino, now it is Linux Libertine (I find it better).
 
 
 # Installation

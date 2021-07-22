@@ -4,6 +4,13 @@
 
 The overall look and features of this class can be seen in `documentation.pdf`, with more in-depth explanation. `tufte-style-article` is meant to be adaptive: one can typeset small casual papers, or more fancy and hefty documents.
 
+# Latest changes
+
+- 22/07/2021 :
+    - **BIG CHANGES ** : `\marginnote{}` and `\margintext{}` are now replaced with `\sidenote{}` and `\sidetext{}` (see the documentation, it is all updated here).
+
+    - Figures are now cleaned up. All kinds of figures can float freely !
+
 
 # Installation
 

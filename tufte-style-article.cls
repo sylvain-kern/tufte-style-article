@@ -3,7 +3,7 @@
 
 %  _________  ___  ___  ________ _________  _______
 % |\___   ___\\  \|\  \|\  _____\\___   ___\\  ___ \
-% \|___ \  \_\ \  \\\  \ \  \__/\|___ \  \_\ \   __/|   ____________
+% \|___ \  \_\ \  \\\  \ \  \__/\|___ \  \_\ \   __/|    ____________
 %      \ \  \ \ \  \\\  \ \   __\    \ \  \ \ \  \_|/__|\____________\
 %       \ \  \ \ \  \\\  \ \  \_|     \ \  \ \ \  \_|\ \|____________|
 %        \ \__\ \ \_______\ \__\       \ \__\ \ \_______\
@@ -11,7 +11,7 @@
 
 %  ________  _________    ___    ___ ___       _______
 % |\   ____\|\___   ___\ |\  \  /  /|\  \     |\  ___ \
-% \ \  \___|\|___ \  \_| \ \  \/  / | \  \    \ \   __/|   ____________
+% \ \  \___|\|___ \  \_| \ \  \/  / | \  \    \ \   __/|    ____________
 %  \ \_____  \   \ \  \   \ \    / / \ \  \    \ \  \_|/__|\____________\
 %   \|____|\  \   \ \  \   \/  /  /   \ \  \____\ \  \_|\ \|____________|
 %     ____\_\  \   \ \__\__/  / /      \ \_______\ \_______\
@@ -113,7 +113,7 @@
 		\renewcommand{\marginnote}[1]{
 			\footnote{#1}
 		}
-		\renewcommand{\margintext}[1]{
+		\renewcommand{\sidetext}[1]{
 			\footnote{#1}
 		}
 	}
@@ -132,7 +132,8 @@
 	hypcap=false				% hypcap=true spits an error
 ]{caption}						% for caption formatting
 \RequirePackage[T1]{fontenc}	% font encoding
-\RequirePackage[osf]{mathpazo}	% main font
+\RequirePackage[osf]{libertinus}% main font
+\RequirePackage{libertinust1math}
 \RequirePackage{gillius}		% sans font
 \if@sans
 	\RequirePackage[			% font for full sans document
@@ -142,7 +143,7 @@
 \fi
 \RequirePackage[
 	defaultmono,
-	scale=.86
+	scale=.8
 ]{droidsansmono}				% mono font
 \RequirePackage{ragged2e}		% for better raggedright
 \RequirePackage{titlesec}		% header customization
@@ -172,6 +173,8 @@
 \RequirePackage[hidelinks]{hyperref}	% automatic references in pdf
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage{verbatim}   	% for verbatim environments
+\RequirePackage[export]{adjustbox}
+
 
 %	C O L O R  D E F I N I T I O N
 %
@@ -203,7 +206,7 @@
 %
 \newgeometry{
 	textwidth = .8\paperwidth,
-	textheight = .75\paperheight,
+	textheight = .8\paperheight,
 	lmargin = 70pt,
 	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
@@ -214,7 +217,7 @@
 \savegeometry{headaz}
 \newgeometry{
 	textwidth = .62\paperwidth,
-	textheight = .75\paperheight,
+	textheight = .8\paperheight,
 	lmargin = 70pt,
 	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
@@ -252,10 +255,13 @@
 %	M A R G I N S
 %
 \renewcommand*{\marginfont}{\footnotesize}
-\renewcommand{\marginnote}[1]
-{\sidenote{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
+\let\oldsidenote\sidenote
+\renewcommand{\sidenote}[1]
+{\oldsidenote{\color{darker_gray}\normalfont\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
-\newcommand{\margintext}[1]
+% \renewcommand{\marginnote}[1]{\sidenote{1}}
+
+\newcommand{\sidetext}[1]
 {\marginpar{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
 \newenvironment{wide}{
@@ -341,63 +347,90 @@
 	font={footnotesize, color=darker_gray},
 	singlelinecheck=off,
 }
+\DeclareCaptionStyle{sidecaption}{
+    labelfont = {bf, color=main_accent},
+	%labelformat = lc,
+	labelsep = mysep,
+	justification=RaggedRight,
+	font={footnotesize, color=darker_gray},
+	singlelinecheck=off,
+}
+\DeclareCaptionStyle{marginfigure}{
+    labelfont = {bf, color=main_accent},
+	%labelformat = lc,
+	labelsep = mysep,
+	justification=RaggedRight,
+	font={footnotesize, color=darker_gray},
+	singlelinecheck=off,
+}
+\DeclareCaptionStyle{widefigure}{
+    labelfont = {bf, color=main_accent},
+	%labelformat = lc,
+	labelsep = mysep,
+	justification=RaggedRight,
+	font={footnotesize, color=darker_gray},
+	singlelinecheck=off,
+}
+\DeclareCaptionStyle{margintable}{
+    labelfont = {bf, color=main_accent},
+	%labelformat = lc,
+	labelsep = mysep,
+	justification=RaggedRight,
+	font={footnotesize, color=darker_gray},
+	singlelinecheck=off,
+}
+\DeclareCaptionStyle{widetable}{
+    labelfont = {bf, color=main_accent},
+	%labelformat = lc,
+	labelsep = mysep,
+	justification=RaggedRight,
+	font={footnotesize, color=darker_gray},
+	singlelinecheck=off,
+}
+
+%	figures
 
 %	figure macros
 \AtBeginDocument{\usepackage[export]{adjustbox}}
+% \newcommand{\textfig}[4][]{%
+% 	\medskip%
+% 	\marginpar{%
+% 		\vskip 8pt%
+% 		\captionof{figure}{#3}%
+% 		\label{#4}%
+% 	}\nopagebreak%
+% 	\noindent\includegraphics[width=#1\textwidth, outer]{#2}%
+% 	\medskip%
+% }
 \newcommand{\textfig}[4][]{%
-	\medskip%
-	\marginpar{%
-		\vskip 8pt%
-		\captionof{figure}{#3}%
-		\label{#4}%
-	}\nopagebreak%
-	\noindent\includegraphics[width=#1\textwidth, outer]{#2}%
-	\medskip%
+	\begin{figure}[!htb]%
+		\sidecaption{#3\label{#4}}%
+		\includegraphics[width = #1\linewidth, outer]{#2}%
+	\end{figure}%
 }
 \newcommand{\marginfig}[3]{
-	\marginpar{%
-		\includegraphics[width=\marginparwidth]{#1}%
-		\vskip-5pt%
-		\captionof{figure}{#2}
-		\label{#3}%
-	}%
+	\begin{marginfigure}%
+		\includegraphics[width = \linewidth]{#1}%
+		\caption{#2\label{#3}}%
+	\end{marginfigure}%
 }
 \newcommand{\widefig}[4][]{%
-	\medskip%
-	\begin{wide}%
-		\noindent\includegraphics[width=#1\linewidth, outer]{#2}%
-		\vskip-5pt%
-	\end{wide}\nopagebreak%
-	\marginpar{%
-		\vskip 8pt%
-		\captionof{figure}{#3}%
-		\label{#4}%
-	}%
-	\medskip%
+	\begin{figure*}[!htb]%
+		\includegraphics[width=#1\linewidth, outer]{#2}%
+		\sidecaption{#3\label{#4}}%
+	\end{figure*}%
 }
 \newcommand{\plainfig}[4][]{%
-	\begingroup%
-	\begin{absolutelynopagebreak}%
-		\includegraphics[width=#1\textwidth]{#2}%
-		\vskip -5pt%
-		\captionof{figure}{#3}%
-		\label{#4}%
-		\vskip 8pt%
-	\end{absolutelynopagebreak}%
-	\endgroup
+	\begin{figure}[!htb]%
+		\includegraphics[width=#1\linewidth, left]{#2}%
+		\caption{#3\label{#4}}%
+	\end{figure}%
 }
 \newcommand{\plainwidefig}[4][]{%
-	\begingroup%
-	\begin{absolutelynopagebreak}%
-		\begin{wide}
-		\includegraphics[width=#1\linewidth]{#2}%
-		\vskip -5pt%
-		\captionof{figure}{#3}%
-		\label{#4}%
-		\vskip 8pt%
-		\end{wide}
-	\end{absolutelynopagebreak}%
-	\endgroup%
+	\begin{figure*}[!htb]%
+		\includegraphics[width=#1\linewidth, left]{#2}%
+		\caption{#3\label{#4}}%
+	\end{figure*}%
 }
 
 %	table macros
@@ -515,7 +548,7 @@
 			tabsize=2,
 			autogobble,
 			numbersep=4pt,
-			]{#1}%
+		]{#1}%
 }%
 {%
 		\end{minted}
@@ -529,7 +562,7 @@
 		 	breakanywhere,
 			fontsize=\small,
 			tabsize=2,
-			]{#1}%
+		]{#1}%
 }%
 {%
 		\end{minted}
@@ -543,7 +576,7 @@
 			breakanywhere,
 			fontsize=\small,
 			tabsize=2,
-			]{#1}%
+		]{#1}%
 }%
 {%
 		\end{minted}
@@ -561,7 +594,7 @@
 			tabsize=2,
 			autogobble,
 			numbersep=4pt,
-			]{#1}
+		]{#1}
 }%
 {%
 		\end{minted}
@@ -605,7 +638,7 @@
 			fontsize=\small,
 			tabsize=2,
 			autogobble,
-			]{#1}%
+		]{#1}%
 }%
 {%
 		\end{minted}

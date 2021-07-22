@@ -291,33 +291,71 @@ The 1.5-column design fixes this by putting all captions in the margins, as well
 % 	\includegraphics[width = \linewidth, outer]{figures/bretagne.png}
 % \end{figure}
 
+
+To put a graphics in the text like in the figure \ref{fig:figure-text}, use\sidenote{The \texttt{\textbackslash label} \textit{has} to be inside the \texttt{\textbackslash sidecaption} command, otherwise references with \texttt{\textbackslash ref} won't work.}
+
+\begin{codebox}{latex}
+\begin{figure}
+	\sidecaption{<caption>\label{<label>}} % put this on top
+	% \label HAS to be inside the \sidecaption
+	\includegraphics[]{<>} % or tikz or anything
+\end{figure}
+\end{codebox}
+
 \marginfig{figures/marine-knots.jpg}{The most common sea boat knots. This image can be displayed rather small, so it fits in the margin. The caption is displayed below.}{fig:figure-margin}
 
-To put a graphics in the text like in the figure \ref{fig:figure-text}, use
+To put a figure in the margin like the figure \ref{fig:figure-margin}, use
+
+\begin{codebox}{latex}
+	\begin{marginfigure}
+		\includegraphics[]{<>} % or tikz or anything
+		\caption{<caption>\label{<label>}}
+	\end{figure}
+\end{codebox}
+
+For wide figures like the figure \ref{fig:figure-fullwidth}, use
+
+\begin{codebox}{latex}
+	\begin{figure*}
+		\includegraphics[]{<>} % or tikz or anything
+		\sidecaption{<caption>\label{<label>}}
+	\end{figure*}
+\end{codebox}
+
+
+\widefig{figures/usa-census.png}{The US census map from data collected in 2010 -- \url{www.ecpmlangues.u-strasbg.fr}\\This is a wide figure, stretching from the innermost to the outermost margin.}{fig:figure-fullwidth}
+
+
+\subsubsection{Shortcuts}
+
+I find typing figure environments repetitive for long (even short) documents, so I made the following macro for figures with \texttt{\textbackslash sidecaption}s :
+
 \begin{codebox}{latex}
 \textfig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
+
 The \inlinecode{text}{<optional width>} is a number between zero and one wich determines the image width relative to the text width. The default value is 1, like on the figure \ref{fig:figure-text}.
 
-The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}:
+The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}
+
 \begin{codebox}{latex}
+% figure in the margin
 \marginfig[<optional width>]{<file path>}{<caption>}{<label>}
+% wide figure
 \widefig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 
 
 
-If for any reason a figure caption has to be put in the main text block, no worries, the following macros will do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
+If for any reason a figure caption has to be put in the main text block, no worries, just use the regular \texttt{figure} environment. The following shortcut macros will also do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
 
 \begin{codebox}{latex}
 % plain figure with textwidth
 \plainfig[<optional width>]{<file path>}{<caption>}{<label>}
-% plain figure with full width --like \widefig
+% plain figure with full width
 \plainwidefig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 
-
-\widefig{figures/usa-census.png}{The US census map from data collected in 2010 -- \url{www.ecpmlangues.u-strasbg.fr}\\This is a wide figure, stretching from the innermost to the outermost margin.}{fig:figure-fullwidth}
 
 \plainfig[.7]{figures/mandelbrot.png}{The Mandelbrot set with different depths of iteration. This caption is not in the margin but in the main text area. It can sometimes be useful, for example with really really long captions.}{fig:figure-plain}
 
@@ -355,6 +393,8 @@ int main(int argc, char *argv[]) {
 \end{snippet}
 
 The background is a light gray that helps make the code stick out just enough without distracting the eye too much. The code itself is syntax colored according to the used language. There are several environments for code boxes, explained below.
+
+\newpage
 
 For a simple code box with neither line numbering nor caption, the macro environment is the following.
 

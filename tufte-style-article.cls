@@ -127,6 +127,7 @@
 \RequirePackage{geometry}		% page geometry, margin definition
 \RequirePackage{emptypage}		% if a page is empty, is is really empty
 \RequirePackage{fullwidth}		% for wide environments
+\RequirePackage{marginnote}
 \RequirePackage{sidenotes}		% for margin stuff
 \RequirePackage[
 	hypcap=false				% hypcap=true spits an error
@@ -174,6 +175,7 @@
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage{verbatim}   	% for verbatim environments
 \RequirePackage[export]{adjustbox}
+\RequirePackage[strict]{changepage}	% needed by sidenotes
 
 
 %	C O L O R  D E F I N I T I O N
@@ -254,12 +256,17 @@
 
 %	M A R G I N S
 %
-\renewcommand*{\marginfont}{\footnotesize}
-\let\oldsidenote\sidenote
-\renewcommand{\sidenote}[1]
-{\oldsidenote{\color{darker_gray}\normalfont\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
-
-% \renewcommand{\marginnote}[1]{\sidenote{1}}
+% formatting sidenote text
+\makeatletter
+\RenewDocumentCommand\sidenotetext{ o o +m }{%
+    \IfNoValueOrEmptyTF{#1}{%
+        \@sidenotes@placemarginal{#2}{{\thesidenote{}}~~\color{darker_gray}\footnotesize\RaggedRight\noindent #3}%
+        \refstepcounter{sidenote}%
+    }{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%
+    }%
+}
+\makeatother
 
 \newcommand{\sidetext}[1]
 {\marginpar{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
@@ -270,6 +277,7 @@
 {
 \end{fullwidth}
 }
+
 
 %	P A G E  H E A D E R S
 %
@@ -318,6 +326,7 @@
 
 %	M A K E T I T L E
 %
+\makeatletter
 \newcommand\@maketitlebis{%
 	\hfill
 	\begin{minipage}{0.9\textwidth}
@@ -333,6 +342,7 @@
 \@maketitlebis
 \thispagestyle{empty}
 }
+\makeatother
 
 %	F I G U R E S  A N D  S T U F F
 %

@@ -260,7 +260,7 @@
 \makeatletter
 \RenewDocumentCommand\sidenotetext{ o o +m }{%
     \IfNoValueOrEmptyTF{#1}{%
-        \@sidenotes@placemarginal{#2}{{\thesidenote{}}~~\color{darker_gray}\footnotesize\RaggedRight\noindent #3}%
+        \@sidenotes@placemarginal{#2}{\footnotesize\RaggedRight{\thesidenote{}}~~\color{darker_gray} #3}%
         \refstepcounter{sidenote}%
     }{%
         \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%

@@ -75,6 +75,28 @@
 	\@nomarginstrue
 	\AtBeginDocument{
 		\captionsetup{width = .7\textwidth}
+		\renewcommand{\sidecaption}[2][]{
+    		\caption[#1]{#2}
+		}
+		\renewenvironment{marginfigure}[1][]{
+			\begin{figure}[!htb]
+		}{
+			\end{figure}
+		}
+		\renewenvironment{figure*}[1][]{
+			\begin{figure}[!htb]
+		}{
+			\end{figure}
+		}
+		\renewenvironment{margintable}[1][]{
+			\begin{table}[!htb]
+		}{
+			\end{table}
+		}		\renewenvironment{table*}[1][]{
+			\begin{table}[!htb]
+		}{
+			\end{table}
+		}
 		\renewcommand{\textfig}[4][]{%
 			\begin{figure}[ht!]
 				\noindent\includegraphics[width=#1\textwidth]{#2}%
@@ -110,7 +132,7 @@
 				\label{#4}%
 			\end{figure}
 		}
-		\renewcommand{\marginnote}[1]{
+		\renewcommand{\sidenote}[1]{
 			\footnote{#1}
 		}
 		\renewcommand{\sidetext}[1]{
@@ -176,6 +198,7 @@
 \RequirePackage{verbatim}   	% for verbatim environments
 \RequirePackage[export]{adjustbox}
 \RequirePackage[strict]{changepage}	% needed by sidenotes
+\RequirePackage{placeins}		% for floatbarrier
 
 
 %	C O L O R  D E F I N I T I O N
@@ -413,30 +436,35 @@
 % 	\medskip%
 % }
 \newcommand{\textfig}[4][]{%
+	\FloatBarrier
 	\begin{figure}[!htb]%
 		\sidecaption{#3\label{#4}}%
 		\includegraphics[width = #1\linewidth, outer]{#2}%
 	\end{figure}%
 }
-\newcommand{\marginfig}[3]{
+\newcommand{\marginfig}[3]{%
+	\FloatBarrier%
 	\begin{marginfigure}%
 		\includegraphics[width = \linewidth]{#1}%
 		\caption{#2\label{#3}}%
 	\end{marginfigure}%
 }
 \newcommand{\widefig}[4][]{%
+	\FloatBarrier%
 	\begin{figure*}[!htb]%
 		\includegraphics[width=#1\linewidth, outer]{#2}%
 		\sidecaption{#3\label{#4}}%
 	\end{figure*}%
 }
 \newcommand{\plainfig}[4][]{%
+	\FloatBarrier%
 	\begin{figure}[!htb]%
 		\includegraphics[width=#1\linewidth, left]{#2}%
 		\caption{#3\label{#4}}%
 	\end{figure}%
 }
 \newcommand{\plainwidefig}[4][]{%
+	\FloatBarrier%
 	\begin{figure*}[!htb]%
 		\includegraphics[width=#1\linewidth, left]{#2}%
 		\caption{#3\label{#4}}%
@@ -686,6 +714,9 @@
 %	for  t i g h t  lists (pandoc style)
 \providecommand{\tightlist}{%
 	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+\providecommand{\toight}{%
+	\tightlist%
 }
 %	minipages with margin notes
 \usepackage{minipage-marginpar}

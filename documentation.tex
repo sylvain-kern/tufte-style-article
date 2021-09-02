@@ -10,16 +10,19 @@
 
 
 \documentclass[
-	a4paper,
 	raggedright,
 	twoside,
 	12pt,
 	colorful,
+	% notufte,
+	% sans,
 ]{tufte-style-article}
 
+\usepackage{units}
 \usepackage{lipsum}	% for blind texts generation
 \usepackage{hologo}	% for special logos such as MiKTeX
 \usepackage{xurl}	% to make urls break lines
+\usepackage{textgreek}
 \setcounter{secnumdepth}{1}
 
 \title{The \texttt{tufte-style-article} class}
@@ -55,7 +58,7 @@ This class' source file is \texttt{tufte-style-article.cls}, available on the fo
 
 The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your system.
 
-In order to make the code environments\sidenote{See section \ref{sub:code}.} and syntax highlighting work, it is needed to have Python\sidenote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
+In order to make the code environments\sidenote{See section \href{sub:code}{code}.} and syntax highlighting work, it is needed to have Python\sidenote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
 \begin{codebox}{text}
 pip install pygments
 \end{codebox}
@@ -121,7 +124,7 @@ kpsewhich tufte-style-article.cls
 \texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
 
 
-\section{Presentation and Usage}
+\section{Presentation and usage}
 
 This section has come quite thick, so a cheat sheet should come soon to summarize all this.
 
@@ -212,8 +215,7 @@ To insert an unnumbered piece of text in the margin, use\\\noindent\inlinecode{l
 
 All pieces of text in the margin are in \texttt{\textbackslash footnotesize} and \texttt{\textbackslash raggedright}, as defined in this class' macros.
 
-To insert raw, unformatted text or graphics or whatever in the margin, use the command\\ \inlinecode{latex}{\marginpar{<unformatted margin text>}} and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick out way too much.}. Note how it is the same size as the main text. Also \LaTeX{} tries to fully justifiy it which is hard on such a small width.
-
+To insert raw, unformatted text or graphics or whatever in the margin, use the command\\ \inlinecode{latex}{\marginpar{<unformatted margin text>}} and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick out way too much.}. Note how it is the same size as the main text.
 
 \subsection{Paragraphs}
 
@@ -272,11 +274,13 @@ The sans-serif font is Gillius from the \href{www.ctan.org/pkg/gillius}{\texttt{
 \endgroup
 
 \begingroup\ttfamily
-The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\sidetext{For examples of code writing with this class, see section \textcolor{lighter_accent}{code}.}. The typographic gray is also about the same as Libertine, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text\sidenote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \ref{sub:code}.}.
+The mono font is Droid Sans Mono, from the \href{www.ctan.org/pkg/droid}{\texttt{droidmono}} package. It has a more of a sans-serif style unlike \href{www.ctan.org/tex-archive/fonts/psfonts/psnfss-source/courier}{Courier} or \href{www.ctan.org/tex-archive/fonts/cm/}{Computer Modern Teletype}, \LaTeX{}'s default mono font. I find it lighter and more adapted for code snippets\sidetext{For examples of code writing with this class, see section \href{sub:code}{code}.}. The typographic gray is also about the same as Libertine, so that little urls, emails or code references typed with Droid Sans will not stick out in the serif text.\sidenote{If you want inline pieces of code to stick out, don't worry, macros are provided. See section \href{sub:code}{code}.}
 \endgroup
 
 
 \subsection{Figures, tables and floating stuff}
+
+The integration of floats with the Tufte layout is handled with the \texttt{sidenotes} package, loaded with the class definition. The following paragraphs show how to basically use the macros, and for more information, see the package documentation at \url{https://www.ctan.org/pkg/sidenotes}.
 
 \subsubsection{Figure integration}
 
@@ -307,19 +311,19 @@ To put a graphics in the text like in the figure \ref{fig:figure-text}, use\side
 To put a figure in the margin like the figure \ref{fig:figure-margin}, use
 
 \begin{codebox}{latex}
-	\begin{marginfigure}
-		\includegraphics[]{<>} % or tikz or anything
-		\caption{<caption>\label{<label>}}
-	\end{figure}
+\begin{marginfigure}
+	\includegraphics[]{<>} % or tikz or anything
+	\caption{<caption>\label{<label>}}
+\end{figure}
 \end{codebox}
 
 For wide figures like the figure \ref{fig:figure-fullwidth}, use
 
 \begin{codebox}{latex}
-	\begin{figure*}
-		\includegraphics[]{<>} % or tikz or anything
-		\sidecaption{<caption>\label{<label>}}
-	\end{figure*}
+\begin{figure*}
+	\includegraphics[]{<>} % or tikz or anything
+	\sidecaption{<caption>\label{<label>}}
+\end{figure*}
 \end{codebox}
 
 
@@ -336,7 +340,7 @@ I find typing figure environments repetitive for long (even short) documents, so
 
 The \inlinecode{text}{<optional width>} is a number between zero and one wich determines the image width relative to the text width. The default value is 1, like on the figure \ref{fig:figure-text}.
 
-The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}
+The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}.
 
 \begin{codebox}{latex}
 % figure in the margin
@@ -347,7 +351,7 @@ The same macros are provided for images in the magins and wide images, respectiv
 
 
 
-If for any reason a figure caption has to be put in the main text block, no worries, just use the regular \texttt{figure} environment. The following shortcut macros will also do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
+If for any reason a figure caption has to be put in the main text block, just use the regular \texttt{figure} environment. The following shortcut macros will also do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
 
 \begin{codebox}{latex}
 % plain figure with textwidth
@@ -356,30 +360,146 @@ If for any reason a figure caption has to be put in the main text block, no worr
 \plainwidefig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 
+\newpage~
 
-\plainfig[.7]{figures/mandelbrot.png}{The Mandelbrot set with different depths of iteration. This caption is not in the margin but in the main text area. It can sometimes be useful, for example with really really long captions.}{fig:figure-plain}
+\plainfig[.7]{figures/mandelbrot.png}{The Mandelbrot set with different depths of iteration. This caption is not in the margin but in the main text area. It can sometimes be useful with really really long captions. \lipsum[1]}{fig:figure-plain}
 
 \newpage
 
-\subsubsection{Tables (in progress\dots)}
+\subsubsection{Tables}
 
-This is still in development, table coverage will be provided soon ! (it will be all like figures)
+Table environments work the same as figures, as is is shown in tables \ref{tab:table-text} and \ref{tab:table-wide}.
+
+\begin{table}[!htb]\small
+\sidecaption{The elementary particles included in the standard model. This is a table with a \texttt{\textbackslash sidecaption}.\label{tab:table-text}}
+\begin{tabular}{lllll}
+	\multicolumn{5}{l}{\textbf{The Standard model of Elementary Particles.}}\\
+	\toprule
+	\multicolumn{3}{l}{\textbf{Three generations of matter (fermions)}} & \multicolumn{2}{l}{\textbf{Interactions (bosons)}} \\
+	I & II & III & & \\
+	% \cmidrule(lr){1-3}\cmidrule(lr){4-5}
+	\multicolumn{3}{c}{\textsc{quarks}} & \textsc{gauge} & \textsc{scalar} \\
+	\cmidrule(lr){1-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}
+	\textbf{u}~~up & \textbf{c}~~charm & \textbf{t}~~top & \textbf{g}~~gluon & \textbf{H}~~higgs \\
+	\textbf{d}~~down & \textbf{s}~~strange & \textbf{b}~~bottom & \textbf{\textgamma}~~photon & \\
+	\multicolumn{3}{c}{\textsc{leptons}} & \textbf{Z} boson  & \\
+	\cmidrule(lr){1-3}
+	\textbf{e}~~electron & \textbf{\textmu}~~muon & \textbf{\texttau}~~tau & \textbf{W} boson & \\
+	\textbf{\textnu\textsubscript{e}}~~el. neutrino & \textbf{\textnu\textsubscript{\textmu}}~~mu. neutrino & \textbf{\textnu\textsubscript{\texttau}}~~tau neutrino &  & \\
+	\bottomrule
+\end{tabular}
+\end{table}
 
 
-\iffalse
-\begin{texttable}{Table inserted in text}{tab:texttable}
-\begin{tabularx}{\textwidth}{lll}
-\multicolumn{4}{l}{\bfseries The Vox-ATypI classification}\\
-\toprule
-Classical & Modern & Calligraphics \\
-yo & yo & yo \\
-yo & yo & yo \\
-yo & yo & yo \\
-\bottomrule
+\begin{table*}[!htb]\small
+\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
+	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
+	\toprule
+	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
+	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
+	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
+	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
+	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+	\bottomrule
 \end{tabularx}
-\end{texttable}
-\fi
+\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{latex}{table*} environment. The caption is also a \inlinecode{latex}{\sidecaption{}}.\label{tab:table-wide}}
+\end{table*}\FloatBarrier
 
+
+To typeset the table \ref{tab:table-text}, use the following code, which is just a \inlinecode{latex}{table} environment with a \inlinecode{latex}{\sidecaption}. For table \ref{tab:table-wide}, use the \inlinecode{latex}{table*} environment with either \inlinecode{latex}{\sidecaption} or \inlinecode{latex}{\caption}.\inlinecode{latex}{\FloatBarrier} is there to make sure the floats appear in order.\sidenote[][100pt]{\inlinecode{latex}{\FloatBarrier} works for all floating environments, including figures.}
+
+\begin{codebox}{latex}
+\begin{table}[!htb]\small
+	\sidecaption{The elementary particles included in the standard model. This is a table with a \texttt{\textbackslash sidecaption}.\label{tab:table-text}}
+	\begin{tabular}{lllll}
+		\multicolumn{5}{l}{\textbf{The Standard model of Elementary Particles.}}\\
+		\toprule
+		\multicolumn{3}{l}{\textbf{Three generations of matter (fermions)}} & \multicolumn{2}{l}{\textbf{Interactions (bosons)}} \\
+		I & II & III & & \\
+		\multicolumn{3}{c}{\textsc{quarks}} & \textsc{gauge} & \textsc{scalar} \\
+		\cmidrule(lr){1-3}\cmidrule(lr){4-4}\cmidrule(lr){5-5}
+		\textbf{u}~~up & \textbf{c}~~charm & \textbf{t}~~top & \textbf{g}~~gluon & \textbf{H}~~higgs \\
+		\textbf{d}~~down & \textbf{s}~~strange & \textbf{b}~~bottom & \textbf{\textgamma}~~photon & \\
+		\multicolumn{3}{c}{\textsc{leptons}} & \textbf{Z} boson  & \\
+		\cmidrule(lr){1-3}
+		\textbf{e}~~electron & \textbf{\textmu}~~muon & \textbf{\texttau}~~tau & \textbf{W} boson & \\
+		\textbf{\textnu\textsubscript{e}}~~el. neutrino & \textbf{\textnu\textsubscript{\textmu}}~~mu. neutrino & \textbf{\textnu\textsubscript{\texttau}}~~tau neutrino &  & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\end{codebox}
+
+% \begin{codebox}{latex}
+% \begin{table*}[!htb]\small
+% 	\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
+% 		\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
+% 		\toprule
+% 			& \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
+% 			& heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
+% 		\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+% 		\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
+% 		\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+% 		\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
+% 		\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+% 		\bottomrule
+% 	\end{tabularx}
+% 	\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{latex}{table*} environment. The caption is also a \inlinecode{latex}{\sidecaption{}}.\label{tab:table-wide}}
+% \end{table*}\FloatBarrier
+% \end{codebox}
+
+To produce tables in the margin like table \ref{tab:table-margin}, use the \inlinecode{latex}{margintable} environment like in the following.
+
+\begin{margintable}[0pt]\small
+\caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
+\begin{tabular}{ll}
+	\toprule
+	\textbf{ST.} & \textbf{Intervals} \\
+	\midrule
+	0 & unison \\
+	1 & minor second \\
+	2 & major second \\
+	3 & minor third \\
+	4 & major third \\
+	5 & perfect fourth \\
+	6 & aug. 4\textsuperscript{th} / dim. 5\textsuperscript{th} \\
+	7 & perfect fifth \\
+	8 & minor sixth \\
+	9 & major sixth \\
+	10 & minor seventh \\
+	11 & major seventh \\
+	12 & octave \\
+	\bottomrule
+\end{tabular}
+\end{margintable}
+
+\begin{codebox}{latex}
+\begin{margintable}[]\small
+	\caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
+	\begin{tabular}{ll}
+		\toprule
+		\textbf{ST.} & \textbf{Intervals} \\
+		\midrule
+		0 & unison \\
+		1 & minor second \\
+		2 & major second \\
+		3 & minor third \\
+		4 & major third \\
+		5 & perfect fourth \\
+		6 & aug. 4\textsuperscript{th} / dim. 5\textsuperscript{th} \\
+		7 & perfect fifth \\
+		8 & minor sixth \\
+		9 & major sixth \\
+		10 & minor seventh \\
+		11 & major seventh \\
+		12 & octave \\
+		\bottomrule
+	\end{tabular}
+\end{margintable}
+\end{codebox}
+
+\newpage
 
 \subsection{Code}
 \label{sub:code}
@@ -394,8 +514,6 @@ int main(int argc, char *argv[]) {
 
 The background is a light gray that helps make the code stick out just enough without distracting the eye too much. The code itself is syntax colored according to the used language. There are several environments for code boxes, explained below.
 
-\newpage
-
 For a simple code box with neither line numbering nor caption, the macro environment is the following.
 
 \sidetext{%
@@ -409,8 +527,7 @@ This supports most of the classic languages. Here are some examples for the lang
 
 \indent\inlinecode{text}{java},
 
-\indent\inlinecode{text}{latex}\dots
-
+\indent\inlinecode{text}{latex}\dots\\
 If a specific language is not recognized, use the \inlinecode{text}{text} option instead: it will display the code without syntax coloring.
 }%
 \begin{altcodebox}{latex}

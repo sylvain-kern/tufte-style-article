@@ -6,6 +6,8 @@
 *.log
 *.out
 *.pyg
+*.synctex.gz(busy)
+*.synctex(busy)
 *.synctex.gz
 *.toc
 *.log

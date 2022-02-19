@@ -108,6 +108,12 @@ I provide the template `minimal.tex`, to quickly get started.
 Please see the documentation for more in-depth explanations and examples. This section gives a quick overview on how to produce a simple document.
 
 
+## Packages already loaded
+
+This class is already packed with packages, so check this before adding any package that may be already included.
+
+`geometry` `emptypage` `fullwidth` `sidenotes` `caption` `fontenc` `libertinus` `libertinust1math` `gillius` `droidsansmono` `ragged2e` `titlesec` `titletoc` `tocloft` `fancyhdr` `graphicx` `microtype` `amsfonts` `amsmath` `mathtools` `physics` `xcolor` `mdframed` `tabularx` `booktabs` `enumitem` `hyperref` `etoolbox` `changepage` `placeins` `xparse` `xpatch` `biblatex` `listings`
+
 ## Preamble
 
 Call the class with the following:
@@ -126,7 +132,7 @@ The options are listed and explained below:
 | `sans`            | Turns the font to sans serif Source Sans Pro, for extreme casualness. |
 | `colorful`        | Like in the documentation, makes titles, figure labels and note numbers colored. The accent color is defined by `main_accent`. |
 | `notufte`         | Remove margins. Turns sidenotes to footnotes and makes figure captions appear under them. Appropried for small casual reports or for `pandoc` conversion. |
-
+| `black`           | Text is not colored at all. |
 
 ## Main document
 
@@ -151,10 +157,10 @@ All native LaTeX commands work with this class. However, some new macros are add
 
 ## Compilation
 
-This class compiles with `pdflatex`. It needs to be called with the `--shell-escape` flag, as shown below:
+This class compiles with `pdflatex`.
 
 ```
-pdflatex --shell-escape document.tex
+pdflatex document.tex
 ```
 
 

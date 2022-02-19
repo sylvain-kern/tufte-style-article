@@ -18,6 +18,8 @@
 	% sans,
 ]{tufte-style-article}
 
+% packages just for this documentation (the class will work without them)
+\usepackage{multicol}
 \usepackage{units}
 \usepackage{lipsum}	% for blind texts generation
 \usepackage{hologo}	% for special logos such as MiKTeX
@@ -124,7 +126,35 @@ kpsewhich tufte-style-article.cls
 \texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
 
 
+\newpage
 \section{Presentation and usage}
+
+\subsection{Packages already loaded}
+
+Here are the packages already loaded, so there is no need to re-include them in your document:
+
+\begin{wide}
+\begin{multicols}{4}
+\begin{itemize}
+\item\texttt{geometry}
+\item\texttt{emptypage}
+\item\texttt{fullwidth}
+\item\texttt{sidenotes}
+\item\texttt{caption}
+\item\texttt{fontenc}
+\item\texttt{libertinus}
+\item\texttt{libertinust1math}
+\item\texttt{gillius}
+\item\texttt{droidsansmono}
+\item\texttt{ragged2e}
+\item\texttt{titlesec}
+\item\texttt{titletoc}
+\item\texttt{tocloft}
+\item\texttt{fancyhdr}
+\item\texttt{graphicx} \item\texttt{microtype} \item\texttt{amsfonts} \item\texttt{amsmath} \item\texttt{mathtools} \item\texttt{physics} \item\texttt{xcolor} \item\texttt{mdframed} \item\texttt{tabularx} \item\texttt{booktabs} \item\texttt{enumitem} \item\texttt{hyperref} \item\texttt{etoolbox} \item\texttt{changepage} \item\texttt{placeins} \item\texttt{xparse} \item\texttt{xpatch} \item\texttt{biblatex} \item\texttt{listings}
+\end{itemize}
+\end{multicols}
+\end{wide}
 
 This section has come quite thick, so a cheat sheet should come soon to summarize all this.
 
@@ -696,63 +726,6 @@ Marginpar on page 1 moved.
 \item Need to renew the \texttt{itemize} and \texttt{enumerate} environment to \texttt{\textbackslash tightlist} them up.
 \end{itemize}
 
-
-\section{Package definition}
-
-The class requires the following packages :
-\begin{codebox}{tex}
-%	P A C K A G E   D E F I N I T I O N
-%
-\RequirePackage{geometry}		% page geometry, margin definition
-\RequirePackage{emptypage}		% if a page is empty, is is really empty
-\RequirePackage{fullwidth}		% for wide environments
-\RequirePackage{sidenotes}		% for margin stuff
-\RequirePackage[
-	hypcap=false				% hypcap=true spits an error
-]{caption}						% for caption formatting
-\RequirePackage[T1]{fontenc}	% font encoding
-\RequirePackage[osf]{libertinus}% main font
-\RequirePackage{libertinust1math}
-\RequirePackage{gillius}		% sans font
-\if@sans
-	\RequirePackage[			% font for full sans document
-		osf,
-		default
-	]{sourcesanspro}
-\fi
-\RequirePackage[
-	defaultmono,
-	scale=.86
-]{droidsansmono}				% mono font
-\RequirePackage{ragged2e}		% for better raggedright
-\RequirePackage{titlesec}		% header customization
-\RequirePackage{titletoc}		% toc customization
-\RequirePackage{fancyhdr}		% page header customization
-\RequirePackage{graphicx}		% for images
-\RequirePackage[
-	protrusion=true,
-	expansion=true,
-	final,
-	tracking,
-]{microtype}					% microtypography: fine-tuning in text
-\RequirePackage{amsfonts}		% math fonts
-\RequirePackage{amsmath}		% math stuff
-\RequirePackage{mathtools}		% amsmath extension
-\RequirePackage{physics}		% handy shortcuts for physics
-\RequirePackage{minted} 		% for code display
-\RequirePackage{xcolor}			% colorz
-\RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
-\RequirePackage{tabularx}		% adaptive columns on tables
-\RequirePackage{booktabs}		% better looking tables
-\RequirePackage{enumitem}		% better looking lists
-\RequirePackage[
-	super,
-	square
-]{natbib}						% customize \cite{}
-\RequirePackage[hidelinks]{hyperref}	% automatic references in pdf
-\RequirePackage{etoolbox}		% really idk what this does
-\RequirePackage{verbatim}   	% for verbatim environments
-\end{codebox}
 
 
 \end{document}

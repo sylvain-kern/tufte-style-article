@@ -64,11 +64,14 @@
 	\renewcommand{\familydefault}{\sfdefault}
 }
 \newif\if@colorful\@colorfulfalse
-\DeclareOption{black}{
-	\@colorfulfalse
-}
+\newif\if@black\@blackfalse
 \DeclareOption{colorful}{
 	\@colorfultrue
+	\@blackfalse
+}
+\DeclareOption{black}{
+	\@blacktrue
+	\@colorfulfalse
 }
 \newif\if@nomargins\@nomarginsfalse
 \DeclareOption{notufte}{
@@ -183,7 +186,6 @@
 \RequirePackage{amsmath}		% math stuff
 \RequirePackage{mathtools}		% amsmath extension
 \RequirePackage{physics}		% handy shortcuts for physics
-\RequirePackage{minted} 		% for code display
 \RequirePackage{xcolor}			% colorz
 \RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
 \RequirePackage{tabularx}		% adaptive columns on tables
@@ -195,58 +197,57 @@
 ]{natbib}						% customize \cite{}
 \RequirePackage[hidelinks]{hyperref}	% automatic references in pdf
 \RequirePackage{etoolbox}		% really idk what this does
-\RequirePackage{verbatim}   	% for verbatim environments
-\RequirePackage[export]{adjustbox}
 \RequirePackage[strict]{changepage}	% needed by sidenotes
 \RequirePackage{placeins}		% for floatbarrier
+\RequirePackage{listings}
+\RequirePackage[titles]{tocloft}
 
 
 %	C O L O R  D E F I N I T I O N
 %
+\definecolor{niceRed}{HTML}{980326}
+\definecolor{niceBlue}{HTML}{025472}
+\definecolor{tooRed}{HTML}{cc0000}
 \if@colorful
-	\definecolor{main_accent}{HTML}{cb3004}
-	\definecolor{lighter_accent}{HTML}{e45826}
-	\definecolor{darker_gray}{HTML}{393136}
-	\definecolor{dark_gray}{HTML}{5a565c}
-	\definecolor{light_blue}{HTML}{0695c4}
-	\definecolor{dark_blue}{HTML}{084983}
 	\hypersetup{
 		colorlinks = true,
-		linkcolor = .,
-		anchorcolor = main_accent,
-		citecolor = main_accent,
-		urlcolor = light_blue
+		linkcolor = niceBlue,
+		% anchorcolor = niceBlue,
+		citecolor = .,
+		urlcolor = niceBlue,
 	}
-	\renewcommand\thefootnote{\color{main_accent}\arabic{footnote}}
-	\renewcommand\thesidenote{\color{main_accent}\arabic{sidenote}}
+	\renewcommand\thefootnote{\color{niceBlue}\arabic{footnote}}
+	\renewcommand\thesidenote{\color{niceBlue}\arabic{sidenote}}
 \else
-	\definecolor{main_accent}{HTML}{000000}
-	\definecolor{lighter_accent}{HTML}{000000}
-	\definecolor{darker_gray}{HTML}{000000}
-	\definecolor{dark_gray}{HTML}{000000}
 \fi
+\if@black
+	\definecolor{niceRed}{HTML}{000000}
+	\definecolor{niceBlue}{HTML}{000000}
+\else
+\fi
+\newcommand\red[1]{\textcolor{niceRed}{#1}}
 
 
 %	G E O M E T R Y  D E F I N I T I O N
 %
 \newgeometry{
-	textwidth = .8\paperwidth,
+	textwidth = .82\paperwidth,
 	textheight = .8\paperheight,
 	lmargin = 70pt,
 	marginparwidth = .28\textwidth,
 	marginparsep = 10pt,
-	headheight = 15pt,
+	headheight = 16pt,
 	tmargin = 80pt,
 	%showframe,
 }
 \savegeometry{headaz}
 \newgeometry{
-	textwidth = .62\paperwidth,
+	textwidth = .58\paperwidth,
 	textheight = .8\paperheight,
 	lmargin = 70pt,
-	marginparwidth = .28\textwidth,
-	marginparsep = 10pt,
-	headheight = 15pt,
+	marginparwidth = .32\textwidth,
+	marginparsep = 20pt,
+	headheight = 16pt,
 	tmargin = 80pt,
 	%showframe,
 }
@@ -283,7 +284,7 @@
 \makeatletter
 \RenewDocumentCommand\sidenotetext{ o o +m }{%
     \IfNoValueOrEmptyTF{#1}{%
-        \@sidenotes@placemarginal{#2}{\noindent\footnotesize\RaggedRight{\thesidenote{}}~~\color{darker_gray} #3}%
+        \@sidenotes@placemarginal{#2}{\noindent\footnotesize\RaggedRight{\thesidenote{}}~~ #3}%
         \refstepcounter{sidenote}%
     }{%
         \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%
@@ -292,7 +293,7 @@
 \makeatother
 
 \newcommand{\sidetext}[1]
-{\marginpar{\color{darker_gray}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
+{\marginpar{\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
 \newenvironment{wide}{
 \begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
@@ -309,10 +310,10 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[LO]{
-	\small\textls{\color{dark_gray}\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
+	\small\textls{\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
 }
 \fancyhead[RE]{
-	\normalfont\normalsize\thepage \hfill \small\textls{\color{dark_gray}\MakeUppercase{\sffamily\leftmark}}
+	\normalfont\normalsize\thepage \hfill \small\textls{\MakeUppercase{\sffamily\leftmark}}
 }
 
 \fancypagestyle{plain}{
@@ -326,19 +327,19 @@
 %
 \titleformat{\section}
 	{\itshape\Large}
-	{\color{main_accent}\normalfont\thesection}
+	{\normalfont\thesection}
 	{1em}
-	{\raggedright\color{main_accent}\itshape}
+	{\raggedright\itshape}
 \titleformat{\subsection}
 	{\itshape\large}
-	{\raggedright\color{lighter_accent}\normalfont\thesubsection}
+	{\raggedright\normalfont\thesubsection}
 	{1em}
-	{\color{lighter_accent}\itshape}
+	{\itshape}
 \titleformat{\subsubsection}
 	{\itshape}
-	{\color{dark_gray}\normalfont\thesubsubsection}
+	{\normalfont\thesubsubsection}
 	{1em}
-	{\raggedright\color{dark_gray}\itshape}
+	{\raggedright\itshape}
 
 % new title without numbering
 \newcommand{\littletitle}[1]{%
@@ -357,7 +358,7 @@
 		\let\footnote\thanks
 		{\LARGE\raggedright \@title \par }
 		\vskip 10pt
-		{\color{darker_gray}\Large \itshape \@author \hfill \normalsize \@date}
+		{\Large \itshape \@author \hfill \normalsize \@date}
 		\vskip 60pt~
 	\end{minipage}
 }
@@ -373,51 +374,51 @@
 \DeclareCaptionLabelFormat{lc}{\MakeLowercase{#1}~#2}
 \DeclareCaptionLabelSeparator{mysep}{.\quad}
 \captionsetup{
-	labelfont = {bf, color=main_accent},
+	labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{sidecaption}{
-    labelfont = {bf, color=main_accent},
+    labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{marginfigure}{
-    labelfont = {bf, color=main_accent},
+    labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{widefigure}{
-    labelfont = {bf, color=main_accent},
+    labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{margintable}{
-    labelfont = {bf, color=main_accent},
+    labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{widetable}{
-    labelfont = {bf, color=main_accent},
+    labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize, color=darker_gray},
+	font={footnotesize},
 	singlelinecheck=off,
 }
 
@@ -493,9 +494,9 @@
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
-	{\makebox[-1em][r]{\color{darker_gray}\bfseries\large\thecontentslabel}\large\hspace{1em}}
+	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\large\hspace{1em}}
 	{\large}
-	{~~~~{\color{main_accent}\contentspage}}[\vskip 0pt]
+	{~~~~\textcolor{niceBlue}{\contentspage}}[\vskip 0pt]
 % \titlecontents{subsection}[0em]
 % 	{\vspace{4pt}}
 % 	{\normalfont\thecontentslabel\enspace\itshape}
@@ -505,8 +506,8 @@
 	[0em]
 	{}
 	{{\thecontentslabel}~~\itshape}
-	{\color{darker_gray}\itshape}
-	{~~{\color{main_accent}\contentspage}}
+	{\itshape}
+	{~~\textcolor{niceBlue}{\contentspage}}
 	[\qquad]
 % \titlecontents{subsubsection}[1em]
 % 	{\vspace{0pt}}
@@ -514,6 +515,61 @@
 % 	{\itshape}
 % 	{\quad\quad\contentspage}[\vskip 0pt]
 \pretocmd{\contentsname}{}{}{}
+
+% TOCLOFT (stolen from classicthesis)
+\renewcommand{\cftfigpresnum}{\scshape\MakeTextLowercase}%
+\renewcommand{\cftfigfont}{\normalfont}%
+\renewcommand{\cftfigleader}{\hspace{2.5em}}%
+\renewcommand{\cftfigafterpnum}{\cftparfillskip}%
+\renewcommand{\cftfigpresnum}{\figurename~}%Fig.~}
+\newlength{\figurelabelwidth}
+\settowidth{\figurelabelwidth}{\cftfigpresnum~999}
+\addtolength{\figurelabelwidth}{1em}
+\cftsetindents{figure}{0em}{\figurelabelwidth}
+% tables
+\renewcommand{\cfttabfont}{\normalfont}%
+\renewcommand{\cfttableader}{\hspace{2.5em}}%
+\renewcommand{\cfttabafterpnum}{\cftparfillskip}%
+\renewcommand{\cfttabpresnum}{\tablename~}%Tab.~}
+\newlength{\tablelabelwidth}
+\settowidth{\tablelabelwidth}{\cfttabpresnum~999}
+\addtolength{\tablelabelwidth}{1em}
+%\cftsetindents{table}{0em}{\tablelabelwidth}
+\cftsetindents{table}{0em}{\figurelabelwidth}
+% listings
+\newcommand\listingsname{Listing}
+\renewcommand\lstlistingname{Listing}
+\renewcommand\lstlistlistingname{List of Listings}
+\newlistof{listings}{lol}{\lstlistlistingname}%
+\renewcommand{\cftlistingspresnum}{\scshape\MakeTextLowercase}%
+\renewcommand{\cftlistingsfont}{\normalfont}%
+\renewcommand{\cftlistingspresnum}{\lstlistingname~}%
+\renewcommand{\cftlistingspagefont}{\normalfont}%
+\renewcommand{\cftlistingsleader}{\hspace{1.5em}}%
+\renewcommand{\cftlistingsafterpnum}{\cftparfillskip}%
+\newlength{\listingslabelwidth}%
+\settowidth{\listingslabelwidth}{\cftlistingspresnum~999}%
+\addtolength{\listingslabelwidth}{2.5em}%
+\cftsetindents{listings}{0em}{\figurelabelwidth}%
+% \let\l@lstlisting\l@listings%
+\let\lstlistoflistings\listoflistings%
+% blue page numbers
+\renewcommand{\cftsecpagefont}{\color{niceBlue}}
+\renewcommand{\cftsubsecpagefont}{\color{niceBlue}}
+\renewcommand{\cftsubsubsecpagefont}{\color{niceBlue}}
+\renewcommand{\cftfigpagefont}{\color{niceBlue}}
+\renewcommand{\cfttabpagefont}{\color{niceBlue}}
+\renewcommand{\cftlistingspagefont}{\color{niceBlue}}
+% TOCLOFT over
+%	toc offset
+\let\oldtoc\tableofcontents
+\renewcommand{\tableofcontents}{
+\begin{quote}
+\oldtoc
+\end{quote}
+}
+%	toc depth
+\AtBeginDocument{\setcounter{tocdepth}{1}}
 
 %	toc offset
 \let\oldtoc\tableofcontents
@@ -529,7 +585,7 @@
 %	T I G H T  L I S T S
 %
 \AtBeginDocument{
-	\setlist{topsep=0pt, itemsep=0pt}
+	\setlist{topsep=0pt, itemsep=0pt, noitemsep}
 }
 
 % 	smallet bullets
@@ -537,177 +593,108 @@
 
 %	C O D E
 %
-\usemintedstyle{colorful}
-\definecolor{bg}{rgb}{.95,.95,.95} % background color
+%   colors
+\definecolor{bg}{rgb}{.95,.95,.95}
+\definecolor{key}{HTML}{333399}
+\definecolor{comment}{HTML}{6b6b99}
+\definecolor{codegray}{rgb}{0.4,0.4,0.4}
+\definecolor{string}{HTML}{2b4f2b}
+%   boxes
 \mdfdefinestyle{code_box}{%
-	backgroundcolor=bg,
-	linewidth=1pt,
-	linecolor=lightgray,
-	topline=false,
-	bottomline=false,
-	leftline=false,
-	rightline=false,
-	innerleftmargin=32pt,
-	innertopmargin=1em,
-	innerbottommargin=1em,
-	roundcorner=3pt
+    roundcorner= 2pt,
+	backgroundcolor=white,
+    linecolor = lightgray,
+    linewidth = .5pt,
+    topline = true,
+    bottomline = true,
+    leftline = true,
+    rightline = true,
+	innertopmargin=.2em,
+	innerbottommargin=.2em,
 }
-\mdfdefinestyle{code_box_nonos}{%
-	backgroundcolor=bg,
-	linewidth=1pt,
-	linecolor=lightgray,
-	topline=false,
-	bottomline=false,
-	leftline=false,
-	rightline=false,
-	innerleftmargin=12pt,
-	innertopmargin=1em,
-	innerbottommargin=1em,
-	roundcorner=3pt
+%   listing styles
+\lstdefinestyle{unnumbered}{
+    commentstyle=\color{comment},
+    keywordstyle=\color{key},
+    stringstyle=\color{string},
+    basicstyle=\ttfamily\normalsize\lst@ifdisplaystyle\small\fi,
+    breakatwhitespace=false,
+    breaklines=true,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    framexleftmargin=30pt,
 }
-\renewcommand{\theFancyVerbLine}{
-	\scriptsize
-	\textcolor{black}{
-		\texttt
-		\oldstylenums{}
-		\arabic{FancyVerbLine}
-	}
+\lstdefinestyle{numbered}{
+    commentstyle=\color{comment},
+    keywordstyle=\color{key},
+    stringstyle=\color{string},
+    basicstyle=\ttfamily\normalsize\lst@ifdisplaystyle\small\fi,
+    breakatwhitespace=false,
+    breaklines=true,
+    keepspaces=true,
+    numbers=left,
+    numberstyle = \color{codegray}\footnotesize\ttfamily,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    framexleftmargin=30pt,
+    framextopmargin=100pt,
+    framexbottommargin=30pt,
 }
-
-%	macro environments
-\newenvironment{codeboxnum}[1]{%
-	\VerbatimEnvironment
-	\begin{mdframed}[style = code_box]%
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			linenos,
-			tabsize=2,
-			autogobble,
-			numbersep=4pt,
-		]{#1}%
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+%   code macros
+\lstnewenvironment{codebox}[1]{%
+	\mdframed[style = code_box, innerleftmargin=10pt]%
+	\lstset{style=unnumbered, language=#1}
 }
-\newenvironment{codebox}[1]{%
-	\VerbatimEnvironment
-	\begin{mdframed}[style = code_box_nonos]%
-		\begin{minted}[
-			breaklines,
-		 	breakanywhere,
-			fontsize=\small,
-			tabsize=2,
-		]{#1}%
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+{
+    \endmdframed
 }
-\newenvironment{altcodebox}[1]{% to cite latex code containing codeboxes
-	\VerbatimEnvironment
-	\begin{mdframed}[style = code_box_nonos]%
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			tabsize=2,
-		]{#1}%
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+\lstnewenvironment{altcodebox}[1]{%
+	\mdframed[style = code_box, innerleftmargin=10pt]%
+	\lstset{style=unnumbered, language=#1}
 }
-\newenvironment{nextcodebox}[1]{
-	\VerbatimEnvironment
-	\begin{mdframed}[style = code_box]
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			linenos,
-			firstnumber = last,
-			tabsize=2,
-			autogobble,
-			numbersep=4pt,
-		]{#1}
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+{
+    \endmdframed
 }
-
+\lstnewenvironment{codeboxnum}[1]{%
+	\mdframed[style = code_box, innerleftmargin=25pt]%
+	\lstset{style=numbered, language=#1}
+}
+{
+    \endmdframed
+}
+\newcommand{\inlinecode}[1]{\lstinline[style=unnumbered, language=#1]}
 %	snippet environments
-\newenvironment{snippetnum}[3]{%
-	\VerbatimEnvironment%
-	\marginpar{%
-		\vskip 8pt%
-		\captionof{listing}{#2}%
-		\label{#3}%
-	}\nopagebreak%
-	\begin{mdframed}[style = code_box]%
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			linenos,
-			tabsize=2,
-			autogobble,
-			numbersep=4pt,
-		]{#1}%
-}%
-{%
-		\end{minted}%
-	\end{mdframed}%
+\lstnewenvironment{snippet}[3]{%
+	\marginpar{~\vskip 10pt\captionof{listings}{#2}}
+	\mdframed[style = code_box, innerleftmargin=10pt]%
+	\lstset{style=unnumbered, language=#1}
 }
-\newenvironment{snippet}[3]{
-	\VerbatimEnvironment
-	\marginpar{
-		\vskip 8pt
-		\captionof{listing}{#2}
-		\label{#3}
-	}\nopagebreak%
-	\begin{mdframed}[style = code_box_nonos]%
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			tabsize=2,
-			autogobble,
-		]{#1}%
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+{
+    \endmdframed
 }
-\newenvironment{nextsnippet}[3]{
-	\VerbatimEnvironment
-	\marginpar{
-		\vskip 8pt
-		\captionof{listing}{#2}
-		\label{#3}
-	}\nopagebreak%
-	\begin{mdframed}[style = code_box]%
-		\begin{minted}[
-			breaklines,
-			breakanywhere,
-			fontsize=\small,
-			linenos,
-			firstnumber = last,
-			tabsize=2,
-			autogobble,
-			numbersep=4pt,
-		]{#1}
-}%
-{%
-		\end{minted}
-	\end{mdframed}
+\lstnewenvironment{snippetnum}[3]{%
+	\marginpar{~\vskip 10pt\captionof{listings}{#2\label{#3}}}
+	\mdframed[style = code_box, innerleftmargin=25pt]%
+	\lstset{style=numbered, language=#1}
+}
+{
+    \endmdframed
 }
 
-%   Inline code
-\newcommand{\inlinecode}[1]{\mintinline[bgcolor=bg, fontsize=\small]{#1}}
+
+%	I N - T E X T  F I N E T U N I N G
+%
+% widows and orphans
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
 
 %	M I S C E L L A N E O U S
 %

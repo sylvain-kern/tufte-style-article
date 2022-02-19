@@ -46,7 +46,7 @@ I am aware that numerous Tufte or Bringhurst-based classes exist within the \LaT
 Before I dive into the details, I want to thank the members of\\\noindent \href{www.tex.stackexchange.com}{\texttt{tex.stackexchange.com}}, who are basically an endless source of knowledge. They basically prevented me from give up upon the first issue.
 
 \newpage
-\tableofcontents
+% \tableofcontents
 \newpage
 
 
@@ -59,7 +59,7 @@ This class' source file is \texttt{tufte-style-article.cls}, available on the fo
 The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your system.
 
 In order to make the code environments\sidenote{See section \href{sub:code}{code}.} and syntax highlighting work, it is needed to have Python\sidenote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
-\begin{codebox}{text}
+\begin{codebox}{}
 pip install pygments
 \end{codebox}
 
@@ -68,23 +68,23 @@ pip install pygments
 \begin{enumerate}
 
 \item Create a \texttt{localtexmf}\sidenote{More on \texttt{texmf} and how to install custom classes and packages on \hologo{MiKTeX} here:\\\url{https://tex.stackexchange.com/questions/10498/installing-a-class}.} directory if you do not already have one, for instance
-\begin{codebox}{text}
+\begin{codebox}{}
 C:\Users\<you>\localtexmf
 \end{codebox}
 
-\item Create a \inlinecode{text}{tex\latex\} directory in the \texttt{localtexmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
+\item Create a \inlinecode{}{tex\latex\} directory in the \texttt{localtexmf} one, and inside it, create a folder named \inlinecode{tex}{tufte-style-article}.
 
-\item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
-\begin{codebox}{text}
+\item Paste the \inlinecode{}{tufte-style-article.cls} file in that \inlinecode{}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
+\begin{codebox}{}
 C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
 \end{codebox}
 
-\item Open \hologo{MiKTeX} console, go to \inlinecode{text}{Settings}, \inlinecode{latex}{Directories} tab. Click on \inlinecode{text}{add}, and enter yout \texttt{texmf} path.
-\begin{codebox}{text}
+\item Open \hologo{MiKTeX} console, go to \inlinecode{}{Settings}, \inlinecode{tex}{Directories} tab. Click on \inlinecode{}{add}, and enter yout \texttt{texmf} path.
+\begin{codebox}{}
 C:\Users\<you>\localtexmf
 \end{codebox}
 
-\item Finally, go to the \inlinecode{text}{tasks} tab, and hit \inlinecode{text}{Refresh file name database}.
+\item Finally, go to the \inlinecode{}{tasks} tab, and hit \inlinecode{}{Refresh file name database}.
 
 \end{enumerate}
 
@@ -102,9 +102,9 @@ $HOME/.texmf
 
 \iffalse $ \fi % to keep syntax coloring neat
 
-\item Create a \inlinecode{text}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{latex}{tufte-style-article}.
+\item Create a \inlinecode{}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{tex}{tufte-style-article}.
 
-\item Paste the \inlinecode{text}{tufte-style-article.cls} file in that \inlinecode{text}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
+\item Paste the \inlinecode{}{tufte-style-article.cls} file in that \inlinecode{}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
 \begin{codebox}{bash}
 $HOME/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
 \end{codebox}
@@ -132,7 +132,7 @@ This section has come quite thick, so a cheat sheet should come soon to summariz
 
 This class is named \texttt{tufte-style-article}. The preamble is therfore written as follows.
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \documentclass[<options>]{tufte-style-article}
 \end{codebox}
 It is inherited from the \texttt{article} class, so all the options of the latter fit in \texttt{tufte-style-article}'s options. There are also new ones for this class, which are:
@@ -140,7 +140,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \medskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{raggedright}
+	\inlinecode{tex}{raggedright}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Makes all paragraphs align on the left without right-justification, as it is the case in this very document.\sidetext{E.Tufte prefers left over full justification because it reduces the variation of spaces between words. The irregularities on the right makes the lines also easier to follow. Howewer, R.Bringhurst fully justifies the main text in his \textit{Elements}, so I decided to give this choice to the user. Both indent paragraphs on the first line, except just after title headers.} \\
@@ -148,7 +148,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{parskip}
+	\inlinecode{tex}{parskip}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Separates paragraphs with a vertical space instead of indenting so that all text is rigorously left-aligned.
@@ -156,7 +156,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{noheaders}
+	\inlinecode{tex}{noheaders}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Deletes the current section reminder on page header, just displays the page number on the top outer corner.
@@ -164,7 +164,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{casual}
+	\inlinecode{tex}{casual}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Makes all sections numberless. Puts them natively in the toc anyway.
@@ -172,7 +172,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{sans}
+	\inlinecode{tex}{sans}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Turns the font to sans serif Source Sans Pro, for extreme casualness.
@@ -180,7 +180,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{colorful}
+	\inlinecode{tex}{colorful}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Like in this document, makes titles, figure labels and note numbers colored. The accent color is defined by \texttt{main\_accent}.
@@ -188,7 +188,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \smallskip
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
-	\inlinecode{latex}{notufte}
+	\inlinecode{tex}{notufte}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Remove margins. Turns sidenotes to footnotes and makes figure captions appear under them. Appropried for small casual reports or for \texttt{pandoc conversion}.
@@ -209,13 +209,13 @@ As one may have noticed, there is a big outer margin, a design feature present i
 \end{itemize}
 All in all, this design is neither too crowded as everything is at its place, nor too empty due to huge blank margins.
 
-To insert a numbered margin note, use \inlinecode{latex}{\sidenote{<your note>}}. This gives the following result in the margin.\sidenote{This is a numbered note.}
+To insert a numbered margin note, use \inlinecode{tex}_\sidenote{<your note>}_. This gives the following result in the margin.\sidenote{This is a numbered note.}
 
-To insert an unnumbered piece of text in the margin, use\\\noindent\inlinecode{latex}{\sidetext{<your text>}}, which gives the following result in the margin.\sidetext{This is unnumbered margin text.}
+To insert an unnumbered piece of text in the margin, use\\\noindent\inlinecode{tex}_\sidetext{<your text>}_, which gives the following result in the margin.\sidetext{This is unnumbered margin text.}
 
 All pieces of text in the margin are in \texttt{\textbackslash footnotesize} and \texttt{\textbackslash raggedright}, as defined in this class' macros.
 
-To insert raw, unformatted text or graphics or whatever in the margin, use the command\\ \inlinecode{latex}{\marginpar{<unformatted margin text>}} and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick out way too much.}. Note how it is the same size as the main text.
+To insert raw, unformatted text or graphics or whatever in the margin, use the command\\ \inlinecode{tex}_\marginpar{<unformatted margin text>}_ and it will look like what appears here in the margin\marginpar{This is just unformatted text in the margin. It is in \texttt{\textbackslash normalsize}, which makes it stick out way too much.}. Note how it is the same size as the main text.
 
 \subsection{Paragraphs}
 
@@ -228,19 +228,19 @@ The indents are one em wide, \textit{i.e.} the size of the font in pt. If you ch
 \setlength{\parskip}{1em}
 This one and the following are paragraphs with vertical space separation. It works better for documents not intended to be read linearly, or when there is few text compared to figures, equations or anything which does not fit in the prose.
 
-The vertical space looks like this, with a separation of one em. This is just some more text to fill the paragraph, and give a glimpse of the overall look. Quick reminder, load the vertical separation with the \inlinecode{latex}{parskip} option in the class definition.
+The vertical space looks like this, with a separation of one em. This is just some more text to fill the paragraph, and give a glimpse of the overall look. Quick reminder, load the vertical separation with the \inlinecode{tex}{\parskip} option in the class definition.
 \endgroup
 
 \begin{wide}
 \hspace{1em}
-There is a way to make paragraphs stretch all the way to the margins, like this one.	See how it continues and reaches for the most outer or inner margin. It also works for two-sided documents so that for odd pages it stretches to the right, and for even pages it stretched to the left. Of course, side notes might be difficult to use here, and I do not predict how \inlinecode{latex}{\sidenote} and  \inlinecode{latex}{\sidetext} act here, but it may become handy to have an environment stretch a bit more than the regular text span.
+There is a way to make paragraphs stretch all the way to the margins, like this one.	See how it continues and reaches for the most outer or inner margin. It also works for two-sided documents so that for odd pages it stretches to the right, and for even pages it stretched to the left. Of course, side notes might be difficult to use here, and I do not predict how \inlinecode{tex}{\sidenote} and  \inlinecode{tex}{\sidetext} act here, but it may become handy to have an environment stretch a bit more than the regular text span.
 
-To stretch the main text area to the margins, use the following environment.
-\begin{codebox}{latex}
-\begin{wide}
-<...your content will be displayed in a wide mode...>
-\end{wide}
-\end{codebox}
+% To stretch the main text area to the margins, use the following environment.
+% \begin{codebox}{tex}
+% \begin{wide}
+% <...your content will be displayed in a wide mode...>
+% \end{wide}
+% \end{codebox}
 
 \LaTeX{} may not get the formatting right upon first compilation, so if that occurs, just re-execute the compiling program and it should work properly.
 \end{wide}
@@ -298,7 +298,7 @@ The 1.5-column design fixes this by putting all captions in the margins, as well
 
 To put a graphics in the text like in the figure \ref{fig:figure-text}, use\sidenote{The \texttt{\textbackslash label} \textit{has} to be inside the \texttt{\textbackslash sidecaption} command, otherwise references with \texttt{\textbackslash ref} won't work.}
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{figure}
 	\sidecaption{<caption>\label{<label>}} % put this on top
 	% \label HAS to be inside the \sidecaption
@@ -310,7 +310,7 @@ To put a graphics in the text like in the figure \ref{fig:figure-text}, use\side
 
 To put a figure in the margin like the figure \ref{fig:figure-margin}, use
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{marginfigure}
 	\includegraphics[]{<>} % or tikz or anything
 	\caption{<caption>\label{<label>}}
@@ -319,7 +319,7 @@ To put a figure in the margin like the figure \ref{fig:figure-margin}, use
 
 For wide figures like the figure \ref{fig:figure-fullwidth}, use
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{figure*}
 	\includegraphics[]{<>} % or tikz or anything
 	\sidecaption{<caption>\label{<label>}}
@@ -334,15 +334,15 @@ For wide figures like the figure \ref{fig:figure-fullwidth}, use
 
 I find typing figure environments repetitive for long (even short) documents, so I made the following macro for figures with \texttt{\textbackslash sidecaption}s :
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \textfig[<optional width>]{<file path>}{<caption>}{<label>}
 \end{codebox}
 
-The \inlinecode{text}{<optional width>} is a number between zero and one wich determines the image width relative to the text width. The default value is 1, like on the figure \ref{fig:figure-text}.
+The \inlinecode{}{<optional width>} is a number between zero and one wich determines the image width relative to the text width. The default value is 1, like on the figure \ref{fig:figure-text}.
 
 The same macros are provided for images in the magins and wide images, respectively shown in figures \ref{fig:figure-margin} and \ref{fig:figure-fullwidth}.
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 % figure in the margin
 \marginfig[<optional width>]{<file path>}{<caption>}{<label>}
 % wide figure
@@ -351,9 +351,9 @@ The same macros are provided for images in the magins and wide images, respectiv
 
 
 
-If for any reason a figure caption has to be put in the main text block, just use the regular \texttt{figure} environment. The following shortcut macros will also do. The result of \inlinecode{latex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
+If for any reason a figure caption has to be put in the main text block, just use the regular \texttt{figure} environment. The following shortcut macros will also do. The result of \inlinecode{tex}{\plainfig} is shown in figure \ref{fig:figure-plain}.
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 % plain figure with textwidth
 \plainfig[<optional width>]{<file path>}{<caption>}{<label>}
 % plain figure with full width
@@ -391,26 +391,26 @@ Table environments work the same as figures, as is is shown in tables \ref{tab:t
 \end{table}
 
 
-\begin{table*}[!htb]\small
-\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
-	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
-	\toprule
-	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
-	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
-	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
-	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
-	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
-	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
-	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
-	\bottomrule
-\end{tabularx}
-\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{latex}{table*} environment. The caption is also a \inlinecode{latex}{\sidecaption{}}.\label{tab:table-wide}}
-\end{table*}\FloatBarrier
+% \begin{table*}[!htb]\small
+% \begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
+% 	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
+% 	\toprule
+% 	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
+% 	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
+% 	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+% 	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
+% 	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+% 	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
+% 	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+% 	\bottomrule
+% \end{tabularx}
+% \sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{tex}{table*} environment. The caption is also a \inlinecode{tex}_\sidecaption{}_.\label{tab:table-wide}}
+% \end{table*}\FloatBarrier
 
 
-To typeset the table \ref{tab:table-text}, use the following code, which is just a \inlinecode{latex}{table} environment with a \inlinecode{latex}{\sidecaption}. For table \ref{tab:table-wide}, use the \inlinecode{latex}{table*} environment with either \inlinecode{latex}{\sidecaption} or \inlinecode{latex}{\caption}.\inlinecode{latex}{\FloatBarrier} is there to make sure the floats appear in order.\sidenote[][100pt]{\inlinecode{latex}{\FloatBarrier} works for all floating environments, including figures.}
+% To typeset the table \ref{tab:table-text}, use the following code, which is just a \inlinecode{tex}{table} environment with a \inlinecode{tex}{\sidecaption}. For table \ref{tab:table-wide}, use the \inlinecode{tex}{table*} environment with either \inlinecode{tex}{\sidecaption} or \inlinecode{tex}{\caption}.\inlinecode{tex}{\FloatBarrier} is there to make sure the floats appear in order.\sidenote[][100pt]{\inlinecode{tex}{\FloatBarrier} works for all floating environments, including figures.}
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{table}[!htb]\small
 	\sidecaption{The elementary particles included in the standard model. This is a table with a \texttt{\textbackslash sidecaption}.\label{tab:table-text}}
 	\begin{tabular}{lllll}
@@ -431,7 +431,7 @@ To typeset the table \ref{tab:table-text}, use the following code, which is just
 \end{table}
 \end{codebox}
 
-% \begin{codebox}{latex}
+% \begin{codebox}{tex}
 % \begin{table*}[!htb]\small
 % 	\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
 % 		\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
@@ -445,11 +445,11 @@ To typeset the table \ref{tab:table-text}, use the following code, which is just
 % 		\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
 % 		\bottomrule
 % 	\end{tabularx}
-% 	\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{latex}{table*} environment. The caption is also a \inlinecode{latex}{\sidecaption{}}.\label{tab:table-wide}}
+% 	\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{tex}{table*} environment. The caption is also a \inlinecode{tex}{\sidecaption{}}.\label{tab:table-wide}}
 % \end{table*}\FloatBarrier
 % \end{codebox}
 
-To produce tables in the margin like table \ref{tab:table-margin}, use the \inlinecode{latex}{margintable} environment like in the following.
+To produce tables in the margin like table \ref{tab:table-margin}, use the \inlinecode{tex}{margintable} environment like in the following.
 
 \begin{margintable}[0pt]\small
 \caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
@@ -474,7 +474,7 @@ To produce tables in the margin like table \ref{tab:table-margin}, use the \inli
 \end{tabular}
 \end{margintable}
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{margintable}[]\small
 	\caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
 	\begin{tabular}{ll}
@@ -519,18 +519,18 @@ For a simple code box with neither line numbering nor caption, the macro environ
 \sidetext{%
 This supports most of the classic languages. Here are some examples for the language option:
 
-\inlinecode{text}{c},
+\inlinecode{}{c},
 
-\indent\inlinecode{text}{c++},
+\indent\inlinecode{}{c++},
 
-\indent\inlinecode{text}{python},
+\indent\inlinecode{}{python},
 
-\indent\inlinecode{text}{java},
+\indent\inlinecode{}{java},
 
-\indent\inlinecode{text}{latex}\dots\\
-If a specific language is not recognized, use the \inlinecode{text}{text} option instead: it will display the code without syntax coloring.
+\indent\inlinecode{}{latex}\dots\\
+If a specific language is not recognized, use the \inlinecode{}{text} option instead: it will display the code without syntax coloring.
 }%
-\begin{altcodebox}{latex}
+\begin{altcodebox}{tex}
 \begin{codebox}{<your language in lowercase>}
 <
 Your code. It can contain all special characters such as { } ( ) [ ] \ % (the percent mark here is grayed just because on this very code box the language is set on latex)
@@ -541,7 +541,7 @@ It will end only when reading the %\end{codebox} below.
 \end{altcodebox}
 
 For a code box \textit{with} line numbering --still without a caption-- use the following environment.
-\begin{altcodebox}{latex}
+\begin{altcodebox}{tex}
 \begin{codeboxnum}{<your language in lowercase>}
 <your code>
 \end{codeboxnum}
@@ -549,7 +549,7 @@ For a code box \textit{with} line numbering --still without a caption-- use the 
 
 For captioned code snippets, the same environments exist, as shown as follows. For example, the listings \ref{snp:hello-world} and \ref{snp:snowflakeos} are respectively unnumbered and numbered code snippets.
 
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 \begin{snippet}{<language>}{<caption>}{<label>}
 This code will be displayed in a captioned code box, without line numbering.
 \end{snippet}
@@ -562,15 +562,15 @@ This code will be displayed in a captioned code box, with line numbering.
 Small pieces of code can be useful to put in flow of the text. This class provides a command to things like this: \inlinecode{c++}_public int size() {}_. Use the following to insert a piece of code in the text.
 
 
-\sidetext{If the piece of code inside the \inlinecode{latex}{\inlinecode} contains curly braces, use another character to delimit your code, the same at beginning and end. Underscore (\texttt{\char`_}) and pipe (\texttt{|}) will do fine.}
-\begin{codebox}{latex}
+\sidetext{If the piece of code inside the \texttt{\textbackslash inlinecode} contains curly braces, use another character to delimit your code, the same at beginning and end. Underscore (\texttt{\char`_}) and pipe (\texttt{|}) will do fine.}
+\begin{codebox}{tex}
 \inlinecode{<language>}{<your code>}
 % if there are curly braces in your code
 \inlinecode{<language>}_<your code>_ % or
 \inlinecode{<language>}|<your code>|
 \end{codebox}
 
-\inlinecode{latex}{\inlinecode} does not break at lines, so be careful, it can sometimes protrude on the right margin. If it is the case, go to a new line by inserting \inlinecode{latex}{\\} just before \inlinecode{latex}{\inlinecode}.
+\inlinecode{tex}{\inlinecode} does not break at lines, so be careful, it can sometimes protrude on the right margin. If it is the case, go to a new line by inserting \inlinecode{tex}{\\} just before \inlinecode{tex}{\inlinecode}.
 
 
 The following chunk is an example snippet to show the look when the code is a bit heftier. See how the box breaks at the end of the page.
@@ -647,9 +647,9 @@ mb2_tag_t* mb2_find_tag(mb2_t* boot, uint32_t tag_type) {
 
 \subsection{Compilation}
 
-This class compiles with \texttt{pdflatex}. I tested it with \hologo{MiKTeX} on Windows, \TeX-live on Linux and Overleaf. If you use code boxes or snippets, make sure you compile with the \texttt{--shell-escape} flag. Eventually, the following compilation line should work everywhere.
-\begin{codebox}{text}
-pdflatex --shell-escape yourdocument.tex
+This class compiles with \texttt{pdflatex}. I tested it with \hologo{MiKTeX} on Windows, \TeX-live on Linux and Overleaf.
+\begin{codebox}{}
+pdflatex yourdocument.tex
 \end{codebox}
 The compilation times can be quite long, especially if there is a lot of heavy code,\sidetext{I am still working to optimize the class by reducing the compilation time.} hopefully it is not a problem for most cases.
 
@@ -659,8 +659,8 @@ The compilation times can be quite long, especially if there is a lot of heavy c
 
 \subsection{Language}
 
-\texttt{babel} works fine, but it can sometimes change some design and layout features.\sidenote{For example, the \inlinecode{text}{french} option changes bullet lists for dashes, indents paragraphs just after section headers, and puts figure labels to \inlinecode{text}_\textsc{}_.} To prevent \texttt{babel} from changing anything, use the following in the preamble --here it is shown for french, you can adapt the language.
-\begin{codebox}{latex}
+\texttt{babel} works fine, but it can sometimes change some design and layout features.\sidenote{For example, the \texttt{french} option changes bullet lists for dashes, indents paragraphs just after section headers, and puts figure labels to \texttt{\textbackslash textsc\{\}}}. To prevent \texttt{babel} from changing anything, use the following in the preamble --here it is shown for french, you can adapt the language.
+\begin{codebox}{tex}
 \frenchsetup{StandardLayout=true, SmallCapsFigTabCaptions=false}
 \end{codebox}
 
@@ -681,13 +681,13 @@ In this section I gather the issues that have popped and been reported. I will t
 \bigskip
 
 \begin{itemize}\tightlist
-\item When used, \inlinecode{text}{colorful}, \inlinecode{text}{sans}, and \inlinecode{text}{notufte} are considered unused. It generates the following warning :
-\begin{codebox}{text}
+\item When used, \inlinecode{}{colorful}, \inlinecode{}{sans}, and \inlinecode{}{notufte} are considered unused. It generates the following warning :
+\begin{codebox}{}
 Unused global option(s) : colorful.
 \end{codebox}
-\item Bad page breaks can still occur for \inlinecode{latex}_\textfig{}_, \inlinecode{latex}_\widefig{}_, and code snippet environments.
+\item Bad page breaks can still occur for \inlinecode{tex}_\textfig{}_, \inlinecode{tex}_\widefig{}_, and code snippet environments.
 \item Marginpar systematically generates the following warnings:
-\begin{codebox}{text}
+\begin{codebox}{}
 Marginpar on page 1 moved.
 \end{codebox}
 \item I have to work on overfull \textbackslash hboxes.
@@ -698,7 +698,7 @@ Marginpar on page 1 moved.
 \section{Package definition}
 
 The class requires the following packages :
-\begin{codebox}{latex}
+\begin{codebox}{tex}
 %	P A C K A G E   D E F I N I T I O N
 %
 \RequirePackage{geometry}		% page geometry, margin definition

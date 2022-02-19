@@ -514,7 +514,7 @@
 % 	{\normalfont\thecontentslabel\enspace\itshape}
 % 	{\itshape}
 % 	{\quad\quad\contentspage}[\vskip 0pt]
-\pretocmd{\contentsname}{}{}{}
+% \pretocmd{\contentsname}{}{}{}
 
 % TOCLOFT (stolen from classicthesis)
 \renewcommand{\cftfigpresnum}{\scshape\MakeTextLowercase}%
@@ -562,12 +562,12 @@
 \renewcommand{\cftlistingspagefont}{\color{niceBlue}}
 % TOCLOFT over
 %	toc offset
-\let\oldtoc\tableofcontents
-\renewcommand{\tableofcontents}{
-\begin{quote}
-\oldtoc
-\end{quote}
-}
+% \let\oldtoc\tableofcontents
+% \renewcommand{\tableofcontents}{
+% \begin{quote}
+% \oldtoc
+% \end{quote}
+% }
 %	toc depth
 \AtBeginDocument{\setcounter{tocdepth}{1}}
 
@@ -585,10 +585,9 @@
 %	T I G H T  L I S T S
 %
 \AtBeginDocument{
-	\setlist{topsep=0pt, itemsep=0pt, noitemsep}
+	\setlist{topsep=0pt, itemsep=0pt, noitemsep, leftmargin = 0pt}
 }
-
-% 	smallet bullets
+% 	smaller bullets
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\scriptsize$\bullet$}}$}
 
 %	C O D E

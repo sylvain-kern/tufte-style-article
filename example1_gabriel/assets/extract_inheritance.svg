@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="100"
+   viewBox="0 0 132.29166 26.458334"
+   version="1.1"
+   id="svg22701"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="extract_inheritance.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview22703"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     units="px"
+     inkscape:zoom="1.859259"
+     inkscape:cx="264.0837"
+     inkscape:cy="36.304785"
+     inkscape:window-width="1920"
+     inkscape:window-height="1047"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid23002" />
+  </sodipodi:namedview>
+  <defs
+     id="defs22698" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';stroke-width:0.264583"
+       x="5.4044762"
+       y="8.6912918"
+       id="text25008"><tspan
+         sodipodi:role="line"
+         id="tspan25006"
+         style="font-size:4.93889px;stroke-width:0.264583"
+         x="5.4044762"
+         y="8.6912918">\py{class Region(object)}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';stroke-width:0.264583"
+       x="108.47916"
+       y="23.8125"
+       id="text35170"><tspan
+         sodipodi:role="line"
+         id="tspan35168"
+         style="stroke-width:0.264583"
+         x="108.47916"
+         y="23.8125" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';stroke-width:0.264583"
+       x="5.4044762"
+       y="21.920458"
+       id="text36190"><tspan
+         sodipodi:role="line"
+         id="tspan36188"
+         style="font-size:4.93889px;stroke-width:0.264583"
+         x="5.4044762"
+         y="21.920458">\py{class HyperTreeGridExtractor(Region)}</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7.1039418,10.583333 V 15.875"
+       id="path44835" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;stroke:none;stroke-linecap:round"
+       id="path44859"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="255"
+       sodipodi:cy="60"
+       sodipodi:r1="5"
+       sodipodi:r2="2.5"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 255,65 -2.16506,-3.75 -2.16507,-3.75 4.33013,0 4.33013,0 -2.16507,3.75 z"
+       transform="matrix(0.26458333,0,0,0.26458333,-60.409753,0)"
+       inkscape:transform-center-y="0.33072918" />
+  </g>
+</svg>

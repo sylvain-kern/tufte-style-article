@@ -6,10 +6,17 @@ The overall look and features of this class can be seen in `documentation.pdf`, 
 
 # Latest changes
 
-- 22/07/2021 :
+- **[19/02/2022]**
+    - `minted` -> `listings`. It is better and no need for `--shell-escape` or Pygments anymore.
+
+        You can still use the same code macros !
+    - Changed color scheme.
+    - Changed code box looks.
+
+- **[22/07/2021]**
     - **BIG CHANGES** : `\marginnote{}` and `\margintext{}` are now replaced with `\sidenote{}` and `\sidetext{}` (see the documentation, it is all updated here).
 
-    - Figures are now cleaned up. All kinds of figures can float freely !
+    - Figures are now cleaned up. All kinds of figures can float freely!
 
     - Main font was Palatino, now it is Linux Libertine (I find it better).
 

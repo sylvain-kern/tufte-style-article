@@ -11,11 +11,10 @@
 
 \documentclass[
 	raggedright,
-	twoside,
 	12pt,
 	colorful,
-	% notufte,
 	% sans,
+	% twoside,
 ]{tufte-style-article}
 
 % packages just for this documentation (the class will work without them)
@@ -49,87 +48,10 @@ Before I dive into the details, I want to thank the members of\\\noindent \href{
 
 \newpage
 \tableofcontents
-\newpage
 
-
-\section{Installation}
-
-This class' source file is \texttt{tufte-style-article.cls}, available on the following repository:
-
-\url{www.github.com/sylvain-kern/tufte-style-article}.
-
-The file can just be put in the same folder as your main \texttt{.tex} file. Overleaf users will have to do this, since it does not support custom class installation. For Windows or Linux users with an installed \LaTeX{} distribution, please see respectively the two following sections, on how to install \texttt{tufte-style-article} on your system.
-
-In order to make the code environments\sidenote{See section \href{sub:code}{code}.} and syntax highlighting work, it is needed to have Python\sidenote{Python has to be on the \texttt{PATH}.} installed on your system, along with the \texttt{pygments} package. With \texttt{pip} simply execute
-\begin{codebox}{}
-pip install pygments
-\end{codebox}
-
-\subsection{\hologo{MiKTeX} users on Windows}
-
-\begin{enumerate}
-
-\item Create a \texttt{localtexmf}\sidenote{More on \texttt{texmf} and how to install custom classes and packages on \hologo{MiKTeX} here:\\\url{https://tex.stackexchange.com/questions/10498/installing-a-class}.} directory if you do not already have one, for instance
-\begin{codebox}{}
-C:\Users\<you>\localtexmf
-\end{codebox}
-
-\item Create a \inlinecode{}{tex\latex\} directory in the \texttt{localtexmf} one, and inside it, create a folder named \inlinecode{tex}{tufte-style-article}.
-
-\item Paste the \inlinecode{}{tufte-style-article.cls} file in that \inlinecode{}{tufte-style-article} folder and you should be good. Eventually, the class file is located at
-\begin{codebox}{}
-C:\Users\<you>\localtexmf\tex\latex\tufte-style-article\tufte-style-article.cls
-\end{codebox}
-
-\item Open \hologo{MiKTeX} console, go to \inlinecode{}{Settings}, \inlinecode{tex}{Directories} tab. Click on \inlinecode{}{add}, and enter yout \texttt{texmf} path.
-\begin{codebox}{}
-C:\Users\<you>\localtexmf
-\end{codebox}
-
-\item Finally, go to the \inlinecode{}{tasks} tab, and hit \inlinecode{}{Refresh file name database}.
-
-\end{enumerate}
-
-\texttt{tufte-style-article} is now installed on your system ! \hologo{MiKTeX} will recognize and find the class file without it having to be in your project folder.
-
-\newpage
-\subsection{\TeX{} Live users on Linux}
-
-\begin{enumerate}
-
-\item Create a \texttt{localtexmf}\sidenote{More on \texttt{texmf} and how to install custom classes and packages on \TeX{} Live here:\\\url{https://tex.stackexchange.com/questions/96976/install-custom-cls-using-tex-live-in-local-directory}.} directory if you do not already have one, for instance
-\begin{codebox}{bash}
-$HOME/.texmf
-\end{codebox}
-
-\iffalse $ \fi % to keep syntax coloring neat
-
-\item Create a \inlinecode{}{tex/latex/} directory in the \texttt{.texmf} one, and inside it, create a folder named \inlinecode{tex}{tufte-style-article}.
-
-\item Paste the \inlinecode{}{tufte-style-article.cls} file in that \inlinecode{}{tufte-style-article} folder and you should be good. Eventually, the class file is located at:
-\begin{codebox}{bash}
-$HOME/.texmf/tex/latex/tufte-style-article/tufte-style-article.cls
-\end{codebox}
-
-\item Update the \texttt{texmf} with
-\begin{codebox}{bash}
-mktexlsr $HOME/.texmf
-\end{codebox}
-
-\item Check if it worked with
-\begin{codebox}{bash}
-kpsewhich tufte-style-article.cls
-\end{codebox}
-
-\end{enumerate}
-
-\texttt{tufte-style-article} is now installed on your system ! \TeX{} Live will recognize and find the class file without it having to be in your project folder.
-
-
-\newpage
 \section{Presentation and usage}
 
-\subsection{Packages already loaded}
+\subsection{Dependencies}
 
 Here are the packages already loaded, so there is no need to re-include them in your document:
 
@@ -173,9 +95,10 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 	\inlinecode{tex}{raggedright}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
-	Makes all paragraphs align on the left without right-justification, as it is the case in this very document.\sidetext{E.Tufte prefers left over full justification because it reduces the variation of spaces between words. The irregularities on the right makes the lines also easier to follow. Howewer, R.Bringhurst fully justifies the main text in his \textit{Elements}, so I decided to give this choice to the user. Both indent paragraphs on the first line, except just after title headers.} \\
+	Makes all paragraphs align on the left without right-justification, as it is the case in this very document.\sidetext{E.Tufte prefers left over full justification because it reduces the variation of spaces between words. The irregularities on the right makes the lines also easier to follow. Howewer, R.Bringhurst fully justifies the main text in his \textit{Elements}, so I decided to give this choice to the user. Both indent paragraphs on the first line, except just after title headers.}
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{parskip}
@@ -183,7 +106,8 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Separates paragraphs with a vertical space instead of indenting so that all text is rigorously left-aligned.
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{noheaders}
@@ -191,7 +115,8 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Deletes the current section reminder on page header, just displays the page number on the top outer corner.
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{casual}
@@ -199,7 +124,8 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Makes all sections numberless. Puts them natively in the toc anyway.
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{sans}
@@ -207,7 +133,8 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Turns the font to sans serif Source Sans Pro, for extreme casualness.
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{colorful}
@@ -215,7 +142,8 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
 	Like in this document, makes titles, figure labels and note numbers colored. The accent color is defined by \texttt{main\_accent}.
 \end{minipagewithmarginpars}
-\smallskip
+\bigskip
+
 \begin{minipagewithmarginpars}[t]{.2\textwidth}
 	\raggedleft
 	\inlinecode{tex}{notufte}
@@ -347,8 +275,6 @@ To put a figure in the margin like the figure \ref{fig:figure-margin}, use
 \end{figure}
 \end{codebox}
 
-\newpage
-
 For wide figures like the figure \ref{fig:figure-fullwidth}, use
 
 \begin{codebox}{tex}
@@ -396,8 +322,7 @@ If for any reason a figure caption has to be put in the main text block, just us
 
 \plainfig[.7]{figures/mandelbrot.png}{The Mandelbrot set with different depths of iteration. This caption is not in the margin but in the main text area. It can sometimes be useful with really really long captions. \lipsum[1]}{fig:figure-plain}
 
-\newpage
-
+\FloatBarrier
 \subsubsection{Tables}
 
 Table environments work the same as figures, as is is shown in tables \ref{tab:table-text} and \ref{tab:table-wide}.
@@ -423,24 +348,26 @@ Table environments work the same as figures, as is is shown in tables \ref{tab:t
 \end{table}
 
 
-% \begin{table*}[!htb]\small
-% \begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
-% 	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
-% 	\toprule
-% 	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
-% 	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
-% 	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
-% 	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
-% 	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
-% 	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
-% 	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
-% 	\bottomrule
-% \end{tabularx}
-% \sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{tex}{table*} environment. The caption is also a \inlinecode{tex}_\sidecaption{}_.\label{tab:table-wide}}
-% \end{table*}\FloatBarrier
+\begin{table*}[!htb]\small
+\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
+	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
+	\toprule
+	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
+	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
+	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
+	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
+	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+	\bottomrule
+\end{tabularx}
+\sidecaption{%
+	Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \texttt{table*} environment. The caption is also a \texttt{\textbackslash sidecaption}.\label{tab:table-wide}
+}
+\end{table*}
 
-
-% To typeset the table \ref{tab:table-text}, use the following code, which is just a \inlinecode{tex}{table} environment with a \inlinecode{tex}{\sidecaption}. For table \ref{tab:table-wide}, use the \inlinecode{tex}{table*} environment with either \inlinecode{tex}{\sidecaption} or \inlinecode{tex}{\caption}.\inlinecode{tex}{\FloatBarrier} is there to make sure the floats appear in order.\sidenote[][100pt]{\inlinecode{tex}{\FloatBarrier} works for all floating environments, including figures.}
+To typeset the table \ref{tab:table-text}, use the following code, which is just a \inlinecode{tex}_table_ environment with a \inlinecode{tex}_\sidecaption_. For table \ref{tab:table-wide}, use the \inlinecode{tex}_table*_ environment with either \inlinecode{tex}_\sidecaption_ or \inlinecode{tex}_\caption_.\inlinecode{tex}_\FloatBarrier_ is there to make sure the floats appear in order.
+\sidenote[][100pt]{\texttt{\textbackslash FloatBarrier} works for all floating environments, including figures.}
 
 \begin{codebox}{tex}
 \begin{table}[!htb]\small
@@ -463,23 +390,25 @@ Table environments work the same as figures, as is is shown in tables \ref{tab:t
 \end{table}
 \end{codebox}
 
-% \begin{codebox}{tex}
-% \begin{table*}[!htb]\small
-% 	\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
-% 		\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
-% 		\toprule
-% 			& \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
-% 			& heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
-% 		\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
-% 		\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
-% 		\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
-% 		\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
-% 		\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
-% 		\bottomrule
-% 	\end{tabularx}
-% 	\sidecaption{Table des marées à Douarnenez du 23 au 26 juillet 2021, Service Hydrographique et Océanographique de la Marine, \url{maree.shom.fr}.\\This is a wide table, called with the \inlinecode{tex}{table*} environment. The caption is also a \inlinecode{tex}{\sidecaption{}}.\label{tab:table-wide}}
-% \end{table*}\FloatBarrier
-% \end{codebox}
+\begin{codebox}{tex}
+\begin{table*}[!htb]\small
+	\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
+		\multicolumn{14}{l}{\textbf{Table des marees au port de Douarnenez (Finistere).}} \\
+		\toprule
+			& \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
+			& heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
+		\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
+		\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
+		\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+		\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
+		\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+		\bottomrule
+	\end{tabularx}
+	\sidecaption{%
+		%
+	}
+\end{table*}\FloatBarrier
+\end{codebox}
 
 To produce tables in the margin like table \ref{tab:table-margin}, use the \inlinecode{tex}{margintable} environment like in the following.
 
@@ -723,7 +652,8 @@ Unused global option(s) : colorful.
 Marginpar on page 1 moved.
 \end{codebox}
 \item I have to work on overfull \textbackslash hboxes.
-\item Need to renew the \texttt{itemize} and \texttt{enumerate} environment to \texttt{\textbackslash tightlist} them up.
+\item \inlinecode{tex}_\inlinecode_ and \inlinecode{tex}_\sidenote_ are not friends.
+\item Accented characters in listings don't work.
 \end{itemize}
 
 

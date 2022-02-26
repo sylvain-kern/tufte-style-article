@@ -201,6 +201,7 @@
 \RequirePackage{placeins}		% for floatbarrier
 \RequirePackage{listings}
 \RequirePackage[titles]{tocloft}
+\RequirePackage{setspace}
 
 
 %	C O L O R  D E F I N I T I O N
@@ -284,7 +285,7 @@
 \makeatletter
 \RenewDocumentCommand\sidenotetext{ o o +m }{%
     \IfNoValueOrEmptyTF{#1}{%
-        \@sidenotes@placemarginal{#2}{\noindent\footnotesize\RaggedRight{\thesidenote{}}~~ #3}%
+        \@sidenotes@placemarginal{#2}{\setstretch{1.0}\noindent\footnotesize\RaggedRight{\thesidenote{}}~~ #3}%
         \refstepcounter{sidenote}%
     }{%
         \@sidenotes@placemarginal{#2}{\textsuperscript{#1}~#3}%
@@ -293,7 +294,7 @@
 \makeatother
 
 \newcommand{\sidetext}[1]
-{\marginpar{\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
+{\marginpar{\setstretch{1.0}\RaggedRight\footnotesize\noindent #1 \vskip 4pt}}
 
 \newenvironment{wide}{
 \begin{fullwidth}[outermargin=-\marginparwidth-\marginparsep, width=\linewidth+\marginparwidth+\marginparsep]
@@ -329,17 +330,17 @@
 	{\itshape\Large}
 	{\normalfont\thesection}
 	{1em}
-	{\raggedright\itshape}
+	{\setstretch{0.9}\raggedright\itshape}
 \titleformat{\subsection}
 	{\itshape\large}
 	{\raggedright\normalfont\thesubsection}
 	{1em}
-	{\itshape}
+	{\setstretch{0.9}\itshape}
 \titleformat{\subsubsection}
 	{\itshape}
 	{\normalfont\thesubsubsection}
 	{1em}
-	{\raggedright\itshape}
+	{\setstretch{0.9}\raggedright\itshape}
 
 % new title without numbering
 \newcommand{\littletitle}[1]{%
@@ -353,6 +354,7 @@
 \makeatletter
 \newcommand\@maketitlebis{%
 	\hfill
+	\setstretch{1.0}
 	\begin{minipage}{0.9\textwidth}
 		\vskip -40pt
 		\let\footnote\thanks
@@ -361,10 +363,11 @@
 		{\Large \itshape \@author \hfill \normalsize \@date}
 		\vskip 60pt~
 	\end{minipage}
+	\setstretch{1.12}
 }
 \renewcommand\maketitle{
-\@maketitlebis
-\thispagestyle{empty}
+	\@maketitlebis
+	\thispagestyle{empty}
 }
 \makeatother
 
@@ -378,15 +381,15 @@
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
-	singlelinecheck=off,
+	font={footnotesize, stretch=1},
+	singlelinecheck=on,
 }
 \DeclareCaptionStyle{sidecaption}{
     labelfont = {bf},
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
+	font={footnotesize, stretch=1},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{marginfigure}{
@@ -394,7 +397,7 @@
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
+	font={footnotesize, stretch=1},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{widefigure}{
@@ -402,7 +405,7 @@
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
+	font={footnotesize, stretch=1},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{margintable}{
@@ -410,7 +413,7 @@
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
+	font={footnotesize, stretch=1},
 	singlelinecheck=off,
 }
 \DeclareCaptionStyle{widetable}{
@@ -418,7 +421,7 @@
 	%labelformat = lc,
 	labelsep = mysep,
 	justification=RaggedRight,
-	font={footnotesize},
+	font={footnotesize, stretch=1},
 	singlelinecheck=off,
 }
 
@@ -573,10 +576,11 @@
 
 %	toc offset
 \let\oldtoc\tableofcontents
-\renewcommand{\tableofcontents}{
-\begin{quote}
-\oldtoc
-\end{quote}
+\renewcommand{\tableofcontents}{%
+	\thispagestyle{plain}
+	\begin{quote}\setstretch{1.0}
+	\oldtoc
+	\end{quote}
 }
 
 %	toc depth
@@ -719,16 +723,22 @@
 % uncomment this \iffalse
 %and the \fi at the end to disable (or delete)
 
-% i find it more pleasing
-\renewcommand{\phi}{\varphi}
-\renewcommand{\epsilon}{\varepsilon}
-\newcommand{\N}{\mathbb{N}}     % shortcuts for usual number sets
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-% powers of 10
-\newcommand{\ee}[1]{\cdot 10^{#1}}
-% new vect with overrightarrow style
-\newcommand{\vect}[1]{\:\overrightarrow{#1}}
+	% i find it more pleasing
+	\renewcommand{\phi}{\varphi}
+	\renewcommand{\epsilon}{\varepsilon}
+	\newcommand{\N}{\mathbb{N}}     % shortcuts for usual number sets
+	\newcommand{\Z}{\mathbb{Z}}
+	\newcommand{\Q}{\mathbb{Q}}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\C}{\mathbb{C}}
+	% powers of 10
+	\newcommand{\ee}[1]{\cdot 10^{#1}}
+	% new vect with overrightarrow style
+	\newcommand{\vect}[1]{\:\overrightarrow{#1}}
 %fi
+
+%		S  T   R   E   T     C      H
+%
+\AtBeginDocument{%
+	\setstretch{1.12}
+}

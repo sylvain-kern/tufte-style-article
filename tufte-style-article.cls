@@ -186,21 +186,26 @@
 \RequirePackage{amsmath}		% math stuff
 \RequirePackage{mathtools}		% amsmath extension
 \RequirePackage{physics}		% handy shortcuts for physics
-\RequirePackage{xcolor}			% colorz
+\RequirePackage[table]{xcolor}			% colorz
 \RequirePackage[framemethod=TikZ]{mdframed} % for custom code boxes
 \RequirePackage{tabularx}		% adaptive columns on tables
 \RequirePackage{booktabs}		% better looking tables
 \RequirePackage{enumitem}		% better looking lists
-\RequirePackage[
-	super,
-	square
-]{natbib}						% customize \cite{}
 \RequirePackage[hidelinks]{hyperref}	% automatic references in pdf
 \RequirePackage{etoolbox}		% really idk what this does
 \RequirePackage[strict]{changepage}	% needed by sidenotes
 \RequirePackage{placeins}		% for floatbarrier
 \RequirePackage{listings}
 \RequirePackage[titles]{tocloft}
+\RequirePackage[
+	autocite = superscript,
+	backend = biber,
+	bibstyle = ieee,
+	% citecolor = niceBlue,
+	style = numeric-comp,
+	sorting=none,
+	texencoding=ascii,
+]{biblatex}
 \RequirePackage{setspace}
 
 
@@ -577,14 +582,80 @@
 %	toc offset
 \let\oldtoc\tableofcontents
 \renewcommand{\tableofcontents}{%
+	\bgroup
 	\thispagestyle{plain}
-	\begin{quote}\setstretch{1.0}
+	\setstretch{1.0}
 	\oldtoc
-	\end{quote}
+	\egroup
 }
 
 %	toc depth
 \AtBeginDocument{\setcounter{tocdepth}{2}}
+
+%	B I B L I O G R A P H I C
+%	      R E F E R E N C E S  %this is black magic to me but it seems 2b working
+\newbibmacro{sidecite}{%
+	\textsuperscript{
+		\printtext[labelnumberwidth]{%
+		\printfield{labelnumber}}%
+	}%
+	\addspace
+	\printnames{author}%
+	\setunit{\printdelim{nametitledelim}}%
+	\printfield[citetitle]{labeltitle}%
+	\setunit{\addcomma\space}%
+	\printfield{year}}
+
+% \DeclareCiteCommand{\sidecitehelper}[\bibfootnotewrapper]
+% 	{\usebibmacro{prenote}}
+% 	{\usebibmacro{citeindex}%
+% 	\usebibmacro{sidecite}}
+% 	{\multicitedelim}
+% 	{\usebibmacro{postnote}}
+% \DeclareCiteCommand{\supercite}[\mkbibsuperscript]
+% 	{\iffieldundef{prenote}
+% 	   {}
+% 	   {\BibliographyWarning{Ignoring prenote argument}}%
+% 	 \iffieldundef{postnote}
+% 	   {}
+% 	   {\BibliographyWarning{Ignoring postnote argument}}%
+% 	 \bibopenbracket}%
+% 	{\usebibmacro{citeindex}%
+% 	 \usebibmacro{cite}}
+% 	{\supercitedelim}
+% 	{\bibclosebracket}
+
+
+% \ExplSyntaxOn
+% \NewDocumentCommand\sidecite{D<>{}O{}om}{%
+%   \iftoggle{blx@footnote}
+%     {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\mkbibparens{##2}}}
+%     {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\sidetext[][##1]{##2}}}
+%     {\IfNoValueTF{#3}
+% 		{\__sct_wrapper:nn{#1}{\sidecitehelper[#2]{#4}}}
+% 		{\__sct_wrapper:nn{#1}{\sidecitehelper[#2][#3]{#4}}}
+% 	}
+% }
+% \ExplSyntaxOff
+
+\DeclareCiteCommand{\supercite}[\mkbibsuperscript]
+  {\usebibmacro{cite:init}%
+   \let\multicitedelim=\supercitedelim
+   \iffieldundef{prenote}
+     {}
+     {\BibliographyWarning{Ignoring prenote argument}}%
+   \iffieldundef{postnote}
+     {}
+     {\BibliographyWarning{Ignoring postnote argument}}%
+  \bibopenbracket}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}\bibclosebracket}
+
+\AtNextBibliography{\small}
+
+\newcommand{\sidecite}[1]{\autocite{#1}\sidetext{\cite{#1} \citeauthor{#1}, \citetitle{#1}, \citeyear{#1}.}}
 
 %	T I G H T  L I S T S
 %

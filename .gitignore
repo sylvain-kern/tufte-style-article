@@ -11,6 +11,10 @@
 *.synctex.gz
 *.toc
 *.log
+*.bbl
+*.bcf
+*.blg
+*.xml
 
 _minted-documentation/*
 _minted-minimal/*

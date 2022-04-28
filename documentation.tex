@@ -51,6 +51,8 @@ Before I dive into the details, I want to thank the members of\\\noindent \href{
 
 \section{Presentation and usage}
 
+For a minimal example of the features, see \inlinecode{}{minimal.tex}.
+
 \subsection{Dependencies}
 
 Here are the packages already loaded, so there is no need to re-include them in your document:
@@ -78,7 +80,6 @@ Here are the packages already loaded, so there is no need to re-include them in 
 \end{multicols}
 \end{wide}
 
-This section has come quite thick, so a cheat sheet should come soon to summarize all this.
 
 \subsection{Class definition and options}
 
@@ -140,7 +141,7 @@ It is inherited from the \texttt{article} class, so all the options of the latte
 	\inlinecode{tex}{colorful}
 \end{minipagewithmarginpars}\hfill%
 \begin{minipagewithmarginpars}[t]{.72\textwidth}
-	Like in this document, makes titles, figure labels and note numbers colored. The accent color is defined by \texttt{main\_accent}.
+	Brings a bit of color.
 \end{minipagewithmarginpars}
 \bigskip
 
@@ -348,17 +349,17 @@ Table environments work the same as figures, as is is shown in tables \ref{tab:t
 \end{table}
 
 
-\begin{table*}[!htb]\small
+\begin{table*}[!htb]\small\sffamily
 \begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
 	\multicolumn{14}{l}{\textbf{Table des marées au port de Douarnenez (Finistère).}} \\
 	\toprule
 	 & \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
 	 & heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
 	\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
-	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
-	\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
-	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
-	\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+	\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 &  & 01:08 & 0.88 &  \\
+	\textsc{pm} & 11:05 & 1.38 &  & 11:55 & 1.19 &  & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+	\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 &  & 13:26 & 1.12 &  \\
+	\textsc{pm} & 23:33 & 1.10 &  &  &  &  & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
 	\bottomrule
 \end{tabularx}
 \sidecaption{%
@@ -391,17 +392,17 @@ To typeset the table \ref{tab:table-text}, use the following code, which is just
 \end{codebox}
 
 \begin{codebox}{tex}
-\begin{table*}[!htb]\small
+\begin{table*}[!htb]\small\sffamily
 	\begin{tabularx}{\linewidth}{rXXXXXXrXXXXXX}
 		\multicolumn{14}{l}{\textbf{Table des marees au port de Douarnenez (Finistere).}} \\
 		\toprule
 			& \multicolumn{3}{c}{\textbf{Ven. 23 juillet 2021}} & \multicolumn{3}{c}{\textbf{Sam. 24 juillet 2021}} & & \multicolumn{3}{c}{\textbf{Dim. 25 juillet 2021}} & \multicolumn{3}{c}{\textbf{Lun. 26 juillet 2021}} \\
 			& heure & hauteur & coef. & heure & hauteur & coef. & & heure & hauteur & coef. & heure & hauteur & coef. \\
 		\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-11}\cmidrule(lr){12-14}
-		\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 & -- & 01:08 & 0.88 & -- \\
-		\textsc{pm} & 11:05 & 1.38 & -- & 11:55 & 1.19 & -- & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
-		\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 & -- & 13:26 & 1.12 & -- \\
-		\textsc{pm} & 23:33 & 1.10 & -- & ---:--- & -- & -- & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
+		\textsc{bm} & 04:54 & 6.06 & 81 & 05:46 & 6.24 & 88 & \textsc{pm} & 00:21 & 0.92 &  & 01:08 & 0.88 &  \\
+		\textsc{pm} & 11:05 & 1.38 &  & 11:55 & 1.19 &  & \textsc{bm} & 06:34 & 6.34 & 92 & 07:19 & 6.33 & 92 \\
+		\textsc{bm} & 17:17 & 6.39 & 85 & 18:06 & 6.59 & 91 & \textsc{pm} & 12:41 & 1.10 &  & 13:26 & 1.12 &  \\
+		\textsc{pm} & 23:33 & 1.10 &  &  &  &  & \textsc{bm} & 18:52 & 6.67 & 93 & 19:36 & 6.63 & 91 \\
 		\bottomrule
 	\end{tabularx}
 	\sidecaption{%
@@ -414,7 +415,7 @@ To produce tables in the margin like table \ref{tab:table-margin}, use the \inli
 
 \begin{margintable}[0pt]\small
 \caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
-\begin{tabular}{ll}
+\begin{tabular}{rl}
 	\toprule
 	\textbf{ST.} & \textbf{Intervals} \\
 	\midrule
@@ -438,7 +439,7 @@ To produce tables in the margin like table \ref{tab:table-margin}, use the \inli
 \begin{codebox}{tex}
 \begin{margintable}[]\small
 	\caption{Major, minor and perfect music intervals. ST. stands for \textit{semitones}. This table is in the margin. \label{tab:table-margin}}
-	\begin{tabular}{ll}
+	\begin{tabular}{rl}
 		\toprule
 		\textbf{ST.} & \textbf{Intervals} \\
 		\midrule

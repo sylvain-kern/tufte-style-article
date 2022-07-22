@@ -237,40 +237,32 @@
 %	G E O M E T R Y  D E F I N I T I O N
 %
 \newgeometry{
-	textwidth = .82\paperwidth,
-	textheight = .8\paperheight,
-	lmargin = 70pt,
-	marginparwidth = .28\textwidth,
-	marginparsep = 10pt,
-	headheight = 16pt,
 	tmargin = 80pt,
-	%showframe,
+	bmargin = 80pt,
+	lmargin = 100pt,
+	rmargin = 100pt,
 }
-\savegeometry{headaz}
+\savegeometry{titlepage}
 \newgeometry{
-	textwidth = .58\paperwidth,
+	textwidth = .56\paperwidth,
 	textheight = .8\paperheight,
 	lmargin = 70pt,
-	marginparwidth = .32\textwidth,
-	marginparsep = 20pt,
+	marginparwidth = .38\textwidth,
+	marginparsep = 28pt,
 	headheight = 16pt,
 	tmargin = 80pt,
-	%showframe,
+	% showframe,
 }
 \savegeometry{regular}
+\newgeometry{
+	tmargin = 80pt,
+	bmargin = 80pt,
+	lmargin = 70pt,
+	rmargin = 70pt,
+}
+\savegeometry{evenmargins}
 
 \if@nomargins
-	\newgeometry{
-		textheight = .8\paperheight,
-		lmargin = 80pt,
-		rmargin = 80pt,
-		marginparwidth = 50pt,
-		marginparsep = 10pt,
-		headheight = 15pt,
-		tmargin = 100pt,
-		%showframe,
-	}
-	\savegeometry{headaz}
 	\newgeometry{
 		textheight = .8\paperheight,
 		lmargin = 80pt,
@@ -311,21 +303,21 @@
 
 %	P A G E  H E A D E R S
 %
-\loadgeometry{headaz}
+\loadgeometry{evenmargins} %%%%%
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[LO]{
-	\small\textls{\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
+	\footnotesize\textls{\MakeUppercase{\sffamily\rightmark}} \hfill \normalfont\normalsize\thepage
 }
-\fancyhead[RE]{
-	\normalfont\normalsize\thepage \hfill \small\textls{\MakeUppercase{\sffamily\leftmark}}
+\fancyhead[LE]{
+	\normalfont\normalsize\thepage \hfill \footnotesize\textls{\MakeUppercase{\sffamily\leftmark}}
 }
 
 \fancypagestyle{plain}{
 \fancyhf{}
 \fancyhead[RO]{\thepage}
-\fancyhead[LE]{\hfill}
+\fancyhead[LE]{\thepage}
 }
 \loadgeometry{regular}
 
@@ -499,24 +491,25 @@
 
 %	T O C  C U S T O M I Z A T I O N
 %
+%	T O C  C U S T O M I Z A T I O N
+%
 \contentsmargin[1cm]{0cm}
 \titlecontents{section}[0em]
 	{\large\vspace{16pt}}
 	{\makebox[-1em][r]{\bfseries\large\thecontentslabel}\large\hspace{1em}}
 	{\large}
-	{~~~~\textcolor{niceBlue}{\contentspage}}[\vskip 0pt]
+	{~~~~\textcolor{niceBlue}{\contentspage}}[\vskip 4pt]
 % \titlecontents{subsection}[0em]
 % 	{\vspace{4pt}}
 % 	{\normalfont\thecontentslabel\enspace\itshape}
 % 	{\itshape}
 % 	{\qquad\contentspage}[\vskip 0pt]
-\titlecontents*{subsection}
-	[0em]
+\titlecontents*{subsection}[0em]
 	{}
-	{{\thecontentslabel}~~\itshape}
-	{\itshape}
+	{{\thecontentslabel}~~}
+	{}
 	{~~\textcolor{niceBlue}{\contentspage}}
-	[\qquad]
+	[\vskip 4pt]
 % \titlecontents{subsubsection}[1em]
 % 	{\vspace{0pt}}
 % 	{\normalfont\thecontentslabel\enspace\itshape}
@@ -589,8 +582,6 @@
 	\egroup
 }
 
-%	toc depth
-\AtBeginDocument{\setcounter{tocdepth}{2}}
 
 %	B I B L I O G R A P H I C
 %	      R E F E R E N C E S  %this is black magic to me but it seems 2b working
